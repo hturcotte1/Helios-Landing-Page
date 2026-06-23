@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Irrigant</title>
+  <desc id="description">Know when to water. And how much.</desc>
+  <defs>
+    <radialGradient id="blue" cx="18%" cy="15%" r="72%"><stop stop-color="#007cf0" stop-opacity=".85"/><stop offset="1" stop-color="#007cf0" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cyan" cx="74%" cy="6%" r="66%"><stop stop-color="#00dfd8" stop-opacity=".7"/><stop offset="1" stop-color="#00dfd8" stop-opacity="0"/></radialGradient>
+    <radialGradient id="green" cx="86%" cy="82%" r="64%"><stop stop-color="#34d399" stop-opacity=".55"/><stop offset="1" stop-color="#34d399" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#fafafa"/>
+  <rect width="1200" height="630" fill="url(#blue)"/>
+  <rect width="1200" height="630" fill="url(#cyan)"/>
+  <rect width="1200" height="630" fill="url(#green)"/>
+  <rect x="64" y="64" width="1072" height="502" rx="28" fill="#ffffff" fill-opacity=".78" stroke="#171717" stroke-opacity=".1"/>
+  <text x="116" y="168" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="-2">Irrigant</text>
+  <text x="116" y="332" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" letter-spacing="-5">Know when to water.</text>
+  <text x="116" y="438" fill="#0070f3" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700" letter-spacing="-5">And how much.</text>
+  <text x="116" y="512" fill="#4d4d4d" font-family="Arial, Helvetica, sans-serif" font-size="28">Clearer irrigation decisions, built for growers.</text>
+</svg>
