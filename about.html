@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Irrigant</title>
+  <meta name="description" content="Why we're building Irrigant. A note from the founders on the decision behind every drop of water that goes onto a field.">
+  <link rel="canonical" href="https://irrigant.xyz/about.html">
+  <meta property="og:title" content="Why we're building Irrigant">
+  <meta property="og:description" content="A note from the founders on the decision behind every drop of water that goes onto a field.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://irrigant.xyz/about.html">
+  <meta property="og:image" content="https://irrigant.xyz/assets/irrigant-social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why we're building Irrigant">
+  <meta name="twitter:description" content="A note from the founders.">
+  <meta name="twitter:image" content="https://irrigant.xyz/assets/irrigant-social-card.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #171717;
+      --body: #4d4d4d;
+      --mute: #888888;
+      --hairline: #ebebeb;
+      --hairline-2: #e2e2e2;
+      --hairline-strong: #a1a1a1;
+      --canvas: #ffffff;
+      --canvas-soft: #fafafa;
+      --link: #0070f3;
+      --font: 'Geist', Inter, system-ui, -apple-system, sans-serif;
+      --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --maxw: 1100px;
+      --pad: clamp(72px, 11vh, 128px);
+      --shadow-2: 0 1px 1px rgba(0,0,0,0.02), 0 2px 2px rgba(0,0,0,0.04), inset 0 0 0 1px rgba(0,0,0,0.06);
+      --shadow-3: 0 2px 2px rgba(0,0,0,0.03), 0 8px 12px -8px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--canvas-soft);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01", "cv01";
+      line-height: 1.5;
+      letter-spacing: -0.011em;
+    }
+    ::selection { background: var(--ink); color: #f2f2f2; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    h1, h2, h3 { font-weight: 600; }
+    .h-hero { font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; letter-spacing: -0.04em; }
+    .lead   { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; color: var(--body); font-weight: 400; letter-spacing: -0.012em; }
+    .eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: 0.02em; color: var(--mute); text-transform: uppercase; }
+
+    @keyframes up { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: none;} }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* nav (matches index.html) */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; display: flex; align-items: center; transition: background .3s, border-color .3s, backdrop-filter .3s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(250,250,250,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--hairline); }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-brand img { height: 48px; width: auto; display: block; }
+    .foot-brand img { height: 34px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link { font-size: 14px; letter-spacing: -0.02em; color: var(--body); text-decoration: none; transition: color .15s; background: none; border: none; font-family: var(--font); cursor: pointer; }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link[aria-current] { color: var(--ink); }
+    @media (max-width: 640px) { .nav-link.hide-sm { display: none; } }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: flex; align-items: center; gap: 4px; cursor: pointer; background: none; border: none; padding: 0; font-family: var(--font); }
+    .nav-dropdown-toggle svg { transition: transform .2s; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-6px); background: #fff; border: 1px solid var(--hairline); border-radius: 12px; box-shadow: var(--shadow-3); padding: 6px; min-width: 220px; opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-item { display: block; padding: 10px 14px; font-size: 14px; letter-spacing: -0.02em; color: var(--body); text-decoration: none; border-radius: 8px; transition: background .12s, color .12s; }
+    .nav-dropdown-item:hover { background: var(--canvas-soft); color: var(--ink); }
+    .nav-dropdown-item strong { display: block; color: var(--ink); font-weight: 500; margin-bottom: 2px; }
+    .nav-dropdown-item span { font-size: 12px; color: var(--mute); }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font); font-weight: 500; text-decoration: none; cursor: pointer; border-radius: 100px; transition: background .2s, color .2s, border-color .2s, transform .15s; white-space: nowrap; }
+    .btn-primary { background: var(--ink); color: #fff; font-size: 16px; padding: 0 22px; height: 48px; border: 1px solid var(--ink); }
+    .btn-primary:hover { background: #000; transform: translateY(-1px); }
+    .btn-sm { height: 36px; font-size: 14px; padding: 0 16px; }
+    .btn .arr { transition: transform .2s; }
+    .btn:hover .arr { transform: translateX(2px); }
+
+    /* about hero */
+    .about-hero { position: relative; padding: 150px 0 0; overflow: hidden;
+      background:
+        radial-gradient(82% 72% at 8% -12%, rgba(0,124,240,0.48), transparent 66%),
+        radial-gradient(80% 70% at 92% -12%, rgba(34,205,158,0.48), transparent 66%),
+        radial-gradient(72% 62% at 50% -16%, rgba(120,140,250,0.30), transparent 64%); }
+    .about-hero .wrap { position: relative; z-index: 1; text-align: center; }
+    .about-hero .eyebrow { display: block; margin-bottom: 22px; }
+    .about-hero h1 { max-width: 14ch; margin: 0 auto; }
+    .about-hero .sub { font-family: var(--mono); font-size: 13px; color: var(--mute); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 22px; }
+
+    /* hero illustration */
+    .about-figure { margin: clamp(40px, 6vh, 60px) auto 0; max-width: 480px; }
+    .about-figure .frame {
+      background: var(--canvas);
+      border: 1px solid var(--hairline);
+      border-radius: 16px;
+      box-shadow: var(--shadow-3);
+      padding: clamp(16px, 3vw, 32px);
+    }
+    .about-figure img { display: block; width: 100%; height: auto; }
+    .about-figure figcaption { font-family: var(--mono); font-size: 11px; color: var(--mute); text-align: center; margin-top: 16px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* statement */
+    .statement { padding: var(--pad) 0; }
+    .statement .col { max-width: 660px; margin: 0 auto; }
+    .statement p { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.62; color: var(--ink); letter-spacing: -0.015em; margin-bottom: 28px; }
+    .statement p.soft { color: var(--body); }
+    .statement p:last-of-type { margin-bottom: 0; }
+
+    /* signature */
+    .sign { max-width: 660px; margin: clamp(40px, 6vh, 64px) auto 0; padding-top: 36px; border-top: 1px solid var(--hairline); }
+    .sign .who { font-size: 19px; font-weight: 600; letter-spacing: -0.025em; color: var(--ink); }
+    .sign .role { font-family: var(--mono); font-size: 12px; color: var(--mute); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 8px; }
+
+    /* closing cta */
+    .closing { padding: 0 0 var(--pad); text-align: center; }
+    .closing .col { max-width: 660px; margin: 0 auto; }
+
+    /* footer */
+    footer { border-top: 1px solid var(--hairline); padding: 36px 0; background: var(--canvas); }
+    footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-text { font-family: var(--mono); font-size: 12px; color: var(--mute); }
+    .footer-link { font-family: var(--mono); font-size: 12px; color: var(--mute); text-decoration: none; }
+    .footer-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="wrap">
+      <a class="nav-brand" href="index.html"><img src="assets/logos/IrrigantTRANSPARENT.png" alt="Irrigant"></a>
+      <div class="nav-right">
+        <div class="nav-dropdown hide-sm" id="guidesDropdown">
+          <button class="nav-link nav-dropdown-toggle" onclick="toggleGuidesDropdown(event)">
+            Guides
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="irrigation-scheduling.html" class="nav-dropdown-item">
+              <strong>Irrigation Scheduling</strong>
+              <span>How Helios times your irrigation runs</span>
+            </a>
+            <a href="soil-moisture-forecasting.html" class="nav-dropdown-item">
+              <strong>Soil Moisture Forecasting</strong>
+              <span>Predicting field conditions 7 days out</span>
+            </a>
+            <a href="machine-learning.html" class="nav-dropdown-item">
+              <strong>Machine Learning</strong>
+              <span>The models behind the predictions</span>
+            </a>
+            <a href="how-helios-helps.html" class="nav-dropdown-item">
+              <strong>How Helios Helps</strong>
+              <span>Real-world impact for growers</span>
+            </a>
+          </div>
+        </div>
+        <a href="pricing.html" class="nav-link hide-sm">Pricing</a>
+        <a href="about.html" class="nav-link hide-sm" aria-current="page">About</a>
+        <a href="index.html#waitlist" class="btn btn-primary btn-sm">Join the waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="about-hero">
+    <div class="wrap">
+      <span class="eyebrow reveal in">From the founders</span>
+      <h1 class="h-hero reveal in">Why we're building Irrigant</h1>
+      <figure class="about-figure reveal">
+        <div class="frame">
+          <img src="assets/CenterPivot.png" alt="Pen-and-ink illustration of a center-pivot irrigation system watering a field of crops">
+        </div>
+        <figcaption>Every drop that reaches a field was a decision.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- STATEMENT -->
+  <section class="statement">
+    <div class="col">
+      <p class="reveal">Somewhere right now, a grower is standing at the edge of a field, deciding whether to run the pivot tonight. The forecast says one thing, the soil says another, and the cost of being wrong runs in both directions. Water too early and you spend it, along with the energy and the money it takes to move it. Wait too long and the crop pays for it in yield you never get back.</p>
+
+      <p class="reveal soft">For most of farming's history that call has come down to experience and a hand in the dirt. That instinct is real and it is hard won. But it is being asked to do more every season, against weather that is harder to read, water that costs more than it used to, and margins that leave less room for a missed guess.</p>
+
+      <p class="reveal soft">The information that could sharpen the decision already exists. Soil moisture, evapotranspiration, weather models, crop water demand. It just lives in a dozen disconnected places, in formats built for researchers rather than for the person actually turning the valve. So most of it goes unused, and the most important decision on the farm stays a guess dressed up as a routine.</p>
+
+      <p class="reveal">We started Irrigant to close that gap. Helios, our first product, pulls field conditions, weather, and crop water needs into one clear call: water or wait, how much, and when. It is not there to replace the grower's judgment. It is there to give that judgment a forecast to stand on, a few days before the field forces the issue.</p>
+
+      <p class="reveal soft">We think the future of irrigation looks less like watering on a calendar and more like watering on the truth of the field. Less guessing, less waste, more water left for the next dry year. That is the whole idea behind the name. Every drop that goes onto a field cost something to put there, and we want every one of them to count.</p>
+    </div>
+
+    <div class="sign reveal">
+      <div class="who">Marco Trotta &amp; Henry Turcotte</div>
+      <div class="role">Founders, Irrigant</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <a class="foot-brand" href="index.html"><img src="assets/logos/IrrigantTRANSPARENT.png" alt="Irrigant"></a>
+      <span class="footer-text">© 2026 Irrigant</span>
+      <a class="footer-link" href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+  function toggleGuidesDropdown(e) {
+    e.stopPropagation();
+    document.getElementById('guidesDropdown').classList.toggle('open');
+  }
+  document.addEventListener('click', function() {
+    var d = document.getElementById('guidesDropdown');
+    if (d) d.classList.remove('open');
+  });
+
+  (function(){
+    var nav = document.getElementById('nav');
+    var ticking = false;
+    function onScroll(){
+      var y = window.scrollY || window.pageYOffset;
+      nav.classList.toggle('scrolled', y > 16);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, { passive:true });
+    onScroll();
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var sibs = e.target.parentElement.querySelectorAll('.reveal');
+          var i = Array.prototype.indexOf.call(sibs, e.target);
+          e.target.style.transitionDelay = (i * 0.06) + 's';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('.reveal').forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
+  })();
+  </script>
+</body>
+</html>

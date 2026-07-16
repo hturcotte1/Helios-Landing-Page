@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil-Moisture Forecasting for Growers | Irrigant</title>
+  <meta name="description" content="Understand soil moisture trends before they become irrigation stress with Irrigant.">
+  <link rel="canonical" href="https://irrigant.xyz/soil-moisture-forecasting.html">
+  <meta property="og:title" content="Soil-Moisture Forecasting for Growers | Irrigant">
+  <meta property="og:description" content="Understand soil moisture trends before they become irrigation stress with Irrigant.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://irrigant.xyz/soil-moisture-forecasting.html">
+  <meta property="og:image" content="https://irrigant.xyz/assets/irrigant-social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Soil-Moisture Forecasting for Growers | Irrigant">
+  <meta name="twitter:description" content="Understand soil moisture trends before they become irrigation stress with Irrigant.">
+  <meta name="twitter:image" content="https://irrigant.xyz/assets/irrigant-social-card.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="guides.css">
+</head>
+<body>
+  <div id="progress"></div>
+
+  <nav class="site-nav" id="nav">
+    <div class="wrap">
+      <a class="nav-brand" href="/"><img src="assets/logos/IrrigantTRANSPARENT.png" alt="Irrigant"></a>
+      <div class="nav-right">
+        <div class="nav-dropdown" id="guidesDropdown">
+          <button class="nav-link nav-dropdown-toggle" onclick="toggleGuidesDropdown(event)">
+            Guides
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="irrigation-scheduling.html" class="nav-dropdown-item">
+              <strong>Irrigation Scheduling</strong>
+              <span>How Helios times your irrigation runs</span>
+            </a>
+            <a href="soil-moisture-forecasting.html" class="nav-dropdown-item current">
+              <strong>Soil Moisture Forecasting</strong>
+              <span>Predicting field conditions 7 days out</span>
+            </a>
+            <a href="machine-learning.html" class="nav-dropdown-item">
+              <strong>Machine Learning</strong>
+              <span>The models behind the predictions</span>
+            </a>
+            <a href="how-helios-helps.html" class="nav-dropdown-item">
+              <strong>How Helios Helps</strong>
+              <span>Real-world impact for growers</span>
+            </a>
+          </div>
+        </div>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="/#waitlist" class="btn btn-primary">Join the waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Irrigant guide</span>
+      <h1>See the trend before it becomes stress</h1>
+      <p class="lead">Soil moisture tells you where the field is now. A forward view gives you more time to make the next irrigation decision.</p>
+      <a class="cta" href="/#waitlist">Join the waitlist <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <div class="sections">
+        <section class="section">
+          <h2>Soil moisture tells you what the field needs now</h2>
+          <p>It is one of the clearest signals available before you irrigate. It helps separate a field that needs water today from one that still has room to wait.</p>
+        </section>
+        <section class="section">
+          <h2>A forecast gives you time to act</h2>
+          <p>Weather and crop water demand can change the picture quickly. Seeing the direction of soil moisture before the next pass helps you avoid making every decision under pressure.</p>
+        </section>
+        <section class="section">
+          <h2>Know more before the next pass</h2>
+          <p>Irrigant is built to turn field conditions and the near-term forecast into a clearer view of what comes next, without taking the decision away from the grower.</p>
+        </section>
+      </div>
+      <nav class="guide-nav" aria-label="Irrigant guides">
+        <strong>More guides</strong>
+        <a href="irrigation-scheduling.html">Irrigation scheduling</a>
+        <a href="soil-moisture-forecasting.html" class="current">Soil-moisture forecasting</a>
+        <a href="how-helios-helps.html">How Helios helps</a>
+        <a href="machine-learning.html">Machine learning</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Irrigant</span>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+  function toggleGuidesDropdown(e) {
+    e.stopPropagation();
+    document.getElementById('guidesDropdown').classList.toggle('open');
+  }
+  document.addEventListener('click', function() {
+    var d = document.getElementById('guidesDropdown');
+    if (d) d.classList.remove('open');
+  });
+  (function() {
+    var nav = document.getElementById('nav');
+    var progress = document.getElementById('progress');
+    function onScroll() {
+      var y = window.scrollY || window.pageYOffset;
+      nav.classList.toggle('scrolled', y > 16);
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (docH > 0 ? (y / docH * 100) : 0) + '%';
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+  </script>
+</body>
+</html>

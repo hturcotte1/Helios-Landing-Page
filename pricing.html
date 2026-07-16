@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing | Irrigant</title>
+  <meta name="description" content="You already pay to move every drop. Helios helps you keep more of it in the root zone, and pays for itself in a season. About ten dollars an acre.">
+  <link rel="canonical" href="https://irrigant.xyz/pricing.html">
+  <meta property="og:title" content="It pays for itself in water | Irrigant">
+  <meta property="og:description" content="Pumping is one of the biggest costs on an irrigated farm. Helios helps you keep more of what you pump in the root zone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://irrigant.xyz/pricing.html">
+  <meta property="og:image" content="https://irrigant.xyz/assets/irrigant-social-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="It pays for itself in water | Irrigant">
+  <meta name="twitter:description" content="Pumping is one of the biggest costs on an irrigated farm. Helios helps you keep more of what you pump in the root zone.">
+  <meta name="twitter:image" content="https://irrigant.xyz/assets/irrigant-social-card.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #171717;
+      --body: #4d4d4d;
+      --mute: #888888;
+      --hairline: #ebebeb;
+      --hairline-2: #e2e2e2;
+      --hairline-strong: #a1a1a1;
+      --canvas: #ffffff;
+      --canvas-soft: #fafafa;
+      --canvas-soft-2: #f5f5f5;
+      --link: #0070f3;
+      --link-deep: #0761d1;
+      --water: #0070f3;
+      --wait: #f5a623;
+      --app-bg: #0a0b0d;
+      --app-line: rgba(255,255,255,0.10);
+      --app-text: #ededee;
+      --app-mute: #8b929c;
+      --font: 'Geist', Inter, system-ui, -apple-system, sans-serif;
+      --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+      --maxw: 1100px;
+      --pad: clamp(72px, 11vh, 128px);
+      --shadow-2: 0 1px 1px rgba(0,0,0,0.02), 0 2px 2px rgba(0,0,0,0.04), inset 0 0 0 1px rgba(0,0,0,0.06);
+      --shadow-3: 0 2px 2px rgba(0,0,0,0.03), 0 8px 12px -8px rgba(0,0,0,0.08), inset 0 0 0 1px rgba(0,0,0,0.06);
+      --shadow-4: 0 2px 4px rgba(0,0,0,0.04), 0 12px 24px -8px rgba(0,0,0,0.10), inset 0 0 0 1px rgba(0,0,0,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      background: var(--canvas-soft);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01", "cv01";
+      line-height: 1.5;
+      letter-spacing: -0.011em;
+    }
+    ::selection { background: var(--ink); color: #f2f2f2; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    h1, h2, h3 { font-weight: 600; }
+    .h-hero { font-size: clamp(40px, 5.6vw, 68px); line-height: 1.04; letter-spacing: -0.045em; }
+    .h-lg   { font-size: clamp(30px, 4vw, 46px); line-height: 1.06; letter-spacing: -0.038em; }
+    .h-md   { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.12; letter-spacing: -0.03em; }
+    .lead   { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; color: var(--body); font-weight: 400; letter-spacing: -0.012em; }
+    .eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: 0.02em; color: var(--mute); text-transform: uppercase; }
+    .eyebrow b { color: var(--ink); font-weight: 500; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    #progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: var(--ink); z-index: 200; transition: width .12s linear; }
+
+    /* nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; display: flex; align-items: center; transition: background .3s, border-color .3s, backdrop-filter .3s; border-bottom: 1px solid transparent; }
+    nav.scrolled { background: rgba(250,250,250,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--hairline); }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .nav-brand img { height: 48px; width: auto; display: block; }
+    .foot-brand img { height: 34px; width: auto; display: block; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link { font-size: 14px; letter-spacing: -0.02em; color: var(--body); text-decoration: none; transition: color .15s; background: none; border: none; cursor: pointer; font-family: var(--font); }
+    .nav-link:hover { color: var(--ink); }
+    .nav-link[aria-current="page"] { color: var(--ink); font-weight: 500; }
+    @media (max-width: 640px) { .nav-link.hide-sm { display: none; } }
+
+    /* guides dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-toggle { display: flex; align-items: center; gap: 4px; cursor: pointer; background: none; border: none; padding: 0; font-family: var(--font); }
+    .nav-dropdown-toggle svg { transition: transform .2s; }
+    .nav-dropdown.open .nav-dropdown-toggle svg { transform: rotate(180deg); }
+    .nav-dropdown-menu { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid var(--hairline); border-radius: 12px; box-shadow: var(--shadow-3); padding: 6px; min-width: 220px; opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(-6px); transition: opacity .18s, transform .18s; }
+    .nav-dropdown.open .nav-dropdown-menu { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-item { display: block; padding: 10px 14px; font-size: 14px; letter-spacing: -0.02em; color: var(--body); text-decoration: none; border-radius: 8px; transition: background .12s, color .12s; }
+    .nav-dropdown-item:hover { background: var(--canvas); color: var(--ink); }
+    .nav-dropdown-item strong { display: block; color: var(--ink); font-weight: 500; margin-bottom: 2px; }
+    .nav-dropdown-item span { font-size: 12px; color: var(--mute); }
+
+    /* buttons (pills) */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font); font-weight: 500; text-decoration: none; cursor: pointer; border-radius: 100px; transition: background .2s, color .2s, border-color .2s, transform .15s; white-space: nowrap; }
+    .btn-primary { background: var(--ink); color: #fff; font-size: 16px; padding: 0 22px; height: 48px; border: 1px solid var(--ink); }
+    .btn-primary:hover { background: #000; transform: translateY(-1px); }
+    .btn-secondary { background: var(--canvas); color: var(--ink); font-size: 16px; padding: 0 22px; height: 48px; border: 1px solid var(--hairline-strong); }
+    .btn-secondary:hover { border-color: var(--ink); }
+    .btn-sm { height: 36px; font-size: 14px; padding: 0 16px; }
+    .btn .arr { transition: transform .2s; }
+    .btn:hover .arr { transform: translateX(2px); }
+
+    /* pricing hero */
+    .phero { position: relative; padding: 160px 0 calc(var(--pad) * 0.7); overflow: hidden; text-align: center;
+      background:
+        radial-gradient(82% 72% at 8% -12%, rgba(0,124,240,0.40), transparent 66%),
+        radial-gradient(80% 70% at 92% -12%, rgba(34,205,158,0.40), transparent 66%),
+        radial-gradient(72% 62% at 50% -16%, rgba(120,140,250,0.26), transparent 64%); }
+    .phero .eyebrow { display: block; margin-bottom: 20px; }
+    .phero h1 { max-width: 16ch; margin: 0 auto 22px; }
+    .phero .lead { max-width: 620px; margin: 0 auto; }
+
+    /* sections */
+    section.block { padding: var(--pad) 0; }
+    .sec-head { max-width: 660px; margin: 0 auto; text-align: center; }
+    .sec-head .eyebrow { display: block; margin-bottom: 18px; }
+    .sec-head .lead { margin: 18px auto 0; max-width: 560px; }
+
+    /* arbitrage */
+    .arb { max-width: 900px; margin: 0 auto; }
+    .arb-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(40px, 6vh, 64px); }
+    .arb-stat { background: var(--canvas); border: 1px solid var(--hairline); border-radius: 16px; padding: 30px 28px; box-shadow: var(--shadow-2); text-align: left; }
+    .arb-num { font-family: var(--mono); font-weight: 500; font-size: clamp(40px, 6vw, 60px); letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
+    .arb-stat.waste .arb-num { color: var(--wait); }
+    .arb-cap { font-size: 14.5px; color: var(--body); margin-top: 16px; line-height: 1.5; }
+    .arb-src { font-family: var(--mono); font-size: 11px; color: var(--mute); margin-top: 12px; line-height: 1.4; }
+
+    /* bar comparison */
+    .arb-bars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; align-items: end; margin: clamp(44px, 7vh, 72px) auto 0; max-width: 600px; }
+    .arb-col { display: flex; flex-direction: column; align-items: center; }
+    .arb-track { width: 100%; max-width: 132px; height: 280px; display: flex; align-items: flex-end; }
+    .arb-bar { width: 100%; border-radius: 10px 10px 0 0; height: 0; transition: height 1s cubic-bezier(.2,.7,.2,1); }
+    .arb-bars.in .arb-bar { height: var(--h); }
+    .arb-bar.b-water  { background: linear-gradient(180deg, #0078ff, #0761d1); }
+    .arb-bar.b-waste  { background: linear-gradient(180deg, #f5b340, #e08c00); }
+    .arb-bar.b-helios { background: linear-gradient(180deg, #2ec86f, #16a34a); }
+    .arb-label { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--mute); margin-top: 14px; text-align: center; }
+    .arb-val { font-family: var(--mono); font-size: 14px; color: var(--ink); margin-top: 5px; }
+    .arb-note { text-align: center; max-width: 580px; margin: clamp(36px, 5vh, 52px) auto 0; font-size: 16px; color: var(--body); line-height: 1.6; }
+    .arb-note b { color: var(--ink); font-weight: 500; }
+
+    /* dark band, speed */
+    .dark-panel { position: relative; color: #fff; border-radius: 28px; padding: clamp(52px, 8vh, 92px) clamp(28px, 5vw, 72px); text-align: center; border: 1px solid transparent;
+      background: linear-gradient(var(--ink), var(--ink)) padding-box, linear-gradient(135deg, rgba(0,124,240,0.9), rgba(0,223,216,0.68) 36%, rgba(52,211,153,0.62) 66%, rgba(249,203,40,0.78)) border-box;
+      box-shadow: 0 24px 60px -34px rgba(0,0,0,0.35); }
+    .dark-panel .eyebrow { color: #8b929c; display: block; margin-bottom: 18px; }
+    .dark-panel h2 { text-align: center; }
+    .dark-panel .lead { color: #b6bcc4; text-align: center; margin: 18px auto 0; max-width: 560px; }
+    .speed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: clamp(44px, 7vh, 68px); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; text-align: left; }
+    .speed { background: var(--ink); padding: 32px 30px; }
+    .speed .v { font-family: var(--mono); font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; color: #fff; }
+    .speed .k { font-size: 14px; color: #9aa1aa; margin-top: 12px; line-height: 1.5; }
+
+    /* pricing card */
+    .price-card { max-width: 420px; margin: clamp(40px,6vh,64px) auto 0; text-align: center; }
+    .price-amt { font-size: clamp(48px, 8vw, 68px); font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
+    .price-amt .per { font-size: 18px; color: var(--mute); font-weight: 400; letter-spacing: -0.01em; }
+    .price-sub { font-size: 15px; color: var(--body); margin: 12px 0 24px; }
+    .price-feats { list-style: none; text-align: left; margin-bottom: 28px; }
+    .price-feats li { font-size: 14.5px; color: var(--body); padding: 9px 0; border-bottom: 1px solid var(--hairline); display: flex; gap: 10px; align-items: center; }
+    .price-feats li:last-child { border-bottom: none; }
+    .price-feats svg { flex-shrink: 0; color: var(--link); }
+
+    /* closing cta */
+    .close-cta { text-align: center; }
+    .close-cta .btn { margin-top: 28px; }
+
+    /* footer */
+    footer { border-top: 1px solid var(--hairline); padding: 36px 0; }
+    footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-text { font-family: var(--mono); font-size: 12px; color: var(--mute); }
+    .footer-link { font-family: var(--mono); font-size: 12px; color: var(--mute); text-decoration: none; }
+    .footer-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+
+    @media (max-width: 640px) {
+      .arb-stats { grid-template-columns: 1fr; }
+      .speed-grid { grid-template-columns: 1fr; }
+      .arb-bars { gap: 14px; height: 240px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition: none; }
+      .arb-bar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <nav id="nav">
+    <div class="wrap">
+      <span class="nav-brand"><a href="index.html"><img src="assets/logos/IrrigantTRANSPARENT.png" alt="Irrigant"></a></span>
+      <div class="nav-right">
+        <div class="nav-dropdown hide-sm" id="guidesDropdown">
+          <button class="nav-link nav-dropdown-toggle" onclick="toggleGuidesDropdown(event)">
+            Guides
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="irrigation-scheduling.html" class="nav-dropdown-item">
+              <strong>Irrigation Scheduling</strong>
+              <span>How Helios times your irrigation runs</span>
+            </a>
+            <a href="soil-moisture-forecasting.html" class="nav-dropdown-item">
+              <strong>Soil Moisture Forecasting</strong>
+              <span>Predicting field conditions 7 days out</span>
+            </a>
+            <a href="machine-learning.html" class="nav-dropdown-item">
+              <strong>Machine Learning</strong>
+              <span>The models behind the predictions</span>
+            </a>
+            <a href="how-helios-helps.html" class="nav-dropdown-item">
+              <strong>How Helios Helps</strong>
+              <span>Real-world impact for growers</span>
+            </a>
+          </div>
+        </div>
+        <a href="pricing.html" class="nav-link" aria-current="page">Pricing</a>
+        <a href="about.html" class="nav-link hide-sm">About</a>
+        <a href="index.html#waitlist" class="btn btn-primary btn-sm">Join the waitlist</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="phero">
+    <div class="wrap">
+      <span class="eyebrow reveal">Pricing</span>
+      <h1 class="h-hero reveal">You pay by the drop.</h1>
+      <p class="lead reveal">Pumping water is one of the biggest costs on an irrigated farm. On most fields, some of it drains below the root zone before the crop can use it. Helios helps you keep more of what you are already paying for.</p>
+    </div>
+  </header>
+
+  <!-- THE COST YOU ALREADY CARRY -->
+  <section class="block" id="cost">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">01 · The cost you already carry</span>
+        <h2 class="h-lg">Start with the bill you already pay.</h2>
+      </div>
+      <div class="arb">
+        <div class="arb-stats">
+          <div class="arb-stat reveal">
+            <div class="arb-num" data-count="20000" data-prefix="$" data-suffix="+">$0</div>
+            <div class="arb-cap">What a typical 300 acre operation spends pumping water in a single growing season.</div>
+            <div class="arb-src">USDA ERS: about $48 to $68 per acre to pump, before purchased water.</div>
+          </div>
+          <div class="arb-stat waste reveal">
+            <div class="arb-num" data-count="5000" data-prefix="$" data-suffix="+">$0</div>
+            <div class="arb-cap">The share that drains below the root zone before the crop can use it, around 20 to 30 percent on many fields.</div>
+            <div class="arb-src">Extension and ATTRA irrigation efficiency studies.</div>
+          </div>
+        </div>
+
+        <div class="arb-bars reveal" id="arbBars">
+          <div class="arb-col">
+            <div class="arb-track"><div class="arb-bar b-water" style="--h:100%"></div></div>
+            <div class="arb-label">Water you pump</div>
+            <div class="arb-val">$20,000+/yr</div>
+          </div>
+          <div class="arb-col">
+            <div class="arb-track"><div class="arb-bar b-waste" style="--h:25%"></div></div>
+            <div class="arb-label">Past the root zone</div>
+            <div class="arb-val">$5,000+/yr</div>
+          </div>
+          <div class="arb-col">
+            <div class="arb-track"><div class="arb-bar b-helios" style="--h:15%"></div></div>
+            <div class="arb-label">Helios</div>
+            <div class="arb-val">~$3,000/yr</div>
+          </div>
+        </div>
+
+        <p class="arb-note reveal">You will always pay to pump. On most fields, some of that water drains below the roots before the crop can use it. <b>Helios costs less than that loss</b>, and helps you put more of what you pump to work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEED -->
+  <section class="block" id="speed">
+    <div class="wrap">
+      <div class="dark-panel reveal">
+        <span class="eyebrow reveal">02 · Speed</span>
+        <h2 class="h-lg reveal">Cheaper, and faster.</h2>
+        <p class="lead reveal">The savings only matter if the call comes in time. Helios is built to be early, and to answer the moment you ask.</p>
+        <div class="speed-grid">
+          <div class="speed reveal">
+            <div class="v">24 to 72 hr ahead</div>
+            <div class="k">You see soil moisture before it drops, so you act on the forecast instead of reacting to a field that has already dried out.</div>
+          </div>
+          <div class="speed reveal">
+            <div class="v">Instant</div>
+            <div class="k">A crop consultant comes on their schedule. Helios gives a clear Water or Wait call the moment you open it, on any device.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU PAY -->
+  <section class="block" id="pricing">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">03 · What you pay</span>
+        <h2 class="h-lg">The whole thing costs about ten dollars an acre.</h2>
+        <p class="lead">Less than the water Helios helps you keep in the root zone. No contracts, no hardware to bury.</p>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-amt">~$10<span class="per"> / acre</span></div>
+        <div class="price-sub">Per growing season. No contracts.</div>
+        <ul class="price-feats">
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg> 24 to 72 hour soil-moisture forecasts</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg> Confidence-scored Water / Wait calls</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg> Dashboard on any device</li>
+          <li><svg width="17" height="17" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg> Email &amp; chat support</li>
+        </ul>
+        <a href="index.html#waitlist" class="btn btn-primary" style="width:100%;">Join the waitlist <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="block close-cta" id="start">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">04 · Early access</span>
+        <h2 class="h-lg">Start before next season.</h2>
+        <p class="lead">Free access at launch, and your pricing locked in for good.</p>
+        <a href="index.html#waitlist" class="btn btn-primary reveal">Join the waitlist <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="foot-brand"><img src="assets/logos/IrrigantTRANSPARENT.png" alt="Irrigant"></span>
+      <span class="footer-text">© 2026 Irrigant</span>
+      <a class="footer-link" href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+  function toggleGuidesDropdown(e) {
+    e.stopPropagation();
+    document.getElementById('guidesDropdown').classList.toggle('open');
+  }
+  document.addEventListener('click', function() {
+    var d = document.getElementById('guidesDropdown');
+    if (d) d.classList.remove('open');
+  });
+  </script>
+  <script>
+  (function(){
+    'use strict';
+    var nav = document.getElementById('nav');
+    var progress = document.getElementById('progress');
+    var ticking = false;
+    function onScroll(){
+      var y = window.scrollY || window.pageYOffset;
+      nav.classList.toggle('scrolled', y > 16);
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (h > 0 ? Math.min(100, y / h * 100) : 0) + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking = true; } }, { passive:true });
+    onScroll();
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* reveal on scroll */
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var sibs = e.target.parentElement.querySelectorAll('.reveal');
+          var i = Array.prototype.indexOf.call(sibs, e.target);
+          e.target.style.transitionDelay = (i * 0.07) + 's';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    /* count-up numbers */
+    function fmt(n, prefix, suffix){ return (prefix||'') + Math.round(n).toLocaleString('en-US') + (suffix||''); }
+    function countUp(el){
+      var target = parseFloat(el.getAttribute('data-count'));
+      var prefix = el.getAttribute('data-prefix') || '';
+      var suffix = el.getAttribute('data-suffix') || '';
+      if(reduce){ el.textContent = fmt(target, prefix, suffix); return; }
+      var dur = 1400, start = null;
+      function step(ts){
+        if(start === null) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(target * eased, prefix, suffix);
+        if(p < 1) requestAnimationFrame(step);
+        else el.textContent = fmt(target, prefix, suffix);
+      }
+      requestAnimationFrame(step);
+    }
+    var countIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ countUp(e.target); countIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('[data-count]').forEach(function(el){ countIO.observe(el); });
+
+    /* animated arbitrage bars */
+    var bars = document.getElementById('arbBars');
+    if(bars){
+      var barIO = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); barIO.unobserve(e.target); }
+        });
+      }, { threshold: 0.4 });
+      barIO.observe(bars);
+    }
+  })();
+  </script>
+</body>
+</html>
