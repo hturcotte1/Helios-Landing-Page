@@ -47,3 +47,5 @@
 - No universal-factor identity exists (E_(1) = E_∅' and (log E_∅)' is not a polynomial); corrected recursion has an extra term C_λ (chains ending at partitions with last part 1). DU−UD = I−Π (unweighted), D'U−UD' = I (weighted 2/1).
 - Truncated census separates all strict partitions of each n ≤ 60 (K=21); sibling rigidity to depth 59; every automorphism fixes depth ≤ 60. K_n ~ n/3.
 - Section 5 of results.md written accordingly.
+- Sibling test (src/explore_siblings.py): f alone, (f,r), (r,d2,f), (f,C2) all fail to separate some non-mirror siblings (n ≤ 34); the full d-vector separates all 719,562 pairs. So B'' cannot be reduced to a hook-length inequality.
+- K_n (separating depth of the d-vector) = n−3 for all 6 ≤ n ≤ 45 (src/separating_depth.py).
