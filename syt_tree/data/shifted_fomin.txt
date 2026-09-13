@@ -1,0 +1,6 @@
+# Fomin commutation relations on the shifted Young lattice, all strict partitions of n <= 10
+D'U - UD' = I (D' weighted: off-diagonal box 2, diagonal box 1): HOLDS on all 43 strict partitions; failures: []
+DU - UD (D unweighted) = I - Pi, Pi = projection on strict partitions with last part 1: HOLDS; failures: []
+  examples (DU-UD) lam: [((1,), {}), ((2,), {(2,): 1}), ((2, 1), {}), ((3, 1), {}), ((3, 2), {(3, 2): 1}), ((3, 2, 1), {})]
+  so DU - UD = I fails exactly on the strict partitions ending in 1 (where (DU-UD) lam = 0),
+  because #addable(lam) - #removable(lam) = 1 - [lam_l = 1] while all cross terms cancel.

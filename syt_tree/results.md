@@ -1,0 +1,297 @@
+# The tree of standard Young tableaux: automorphisms and the rank census
+
+Mathematical write-up for Worley, *On the combinatorics of tableaux — a notebook of open problems*,
+arXiv:2509.25446 (v3), Problem 3 (unshifted tree) and Problem 2 (shifted tree).
+
+Every statement below carries one of the labels
+
+* **PROVED** — complete proof given here and checked line by line;
+* **COMPUTATIONALLY VERIFIED** — checked by the code in `src/` over the stated range (exact integer arithmetic unless stated otherwise);
+* **CONJECTURAL** — not proved.
+
+Section 0 summarises; Sections 1–5 contain the mathematics; Section 6 lists open sub-questions; Section 7 is a candid assessment.
+
+---
+
+## 0. Summary of results
+
+Notation is fixed in Section 1. Throughout, $\lambda^t$ is the conjugate partition, $f^\lambda$ the number of standard Young tableaux (SYT) of shape $\lambda$, $s_k(\lambda)$ the *up-census* (number of vertices at depth $k$ below a vertex of shape $\lambda$ in the tree $\mathrm{SYT}$), and $d_j(\lambda)$ the *down-census* (number of ways to remove $j$ boxes from $\lambda$ one at a time through partitions).
+
+1. **(PROVED; known — Stanley 2003.)** $\displaystyle\sum_{k\ge 0} s_k(\lambda)\frac{t^k}{k!} \;=\; e^{\,t+t^2/2}\sum_{j=0}^{|\lambda|} d_j(\lambda)\frac{t^j}{j!}$. Hence the infinite census $(s_k(\lambda))_k$ and the finite vector $(d_0(\lambda),\dots,d_{|\lambda|}(\lambda))$ determine each other, and **Conjecture B is equivalent to: the $d$-vector determines $\lambda$ up to transpose.** The identity is Theorem 2.2, eq. (10), of R. P. Stanley, *On the enumeration of skew Young tableaux*, Adv. Appl. Math. 30 (2003) 283–294, obtained there as the exponential specialisation of the skew Littlewood identity (Macdonald, *Symmetric functions and Hall polynomials*, 2nd ed., I.5, Ex. 27(a)). We give a self-contained proof via Young's lattice as a differential poset (the mechanism of Stanley, *Differential posets*, JAMS 1 (1988), Cor. 2.6(c)), plus the symmetric-function derivation. Verified coefficientwise for all $|\lambda|\le 14$, $k\le 14$ against brute-force chain enumeration.
+
+2. **(COMPUTATIONALLY VERIFIED.)** Conjecture B holds for **all partitions of all $n\le 75$**: for every $n\le 75$, two partitions of $n$ have the same $d$-vector only if they are equal or conjugate. Exact integer arithmetic for $n\le 60$ (Python), arithmetic modulo the prime $2^{61}-1$ for $n\le 75$ (C++; also modulo $2^{62}-57$), which is a rigorous negative since an exact collision would persist modulo every prime. The two programs agree on all levels $n\le 60$ (counts and an order-independent digest). Independent cross-checks of the recursion against direct skew-chain counting: all partitions of $n\le 14$ and samples up to $n=24$. Worley states "computation suggests" without a range; this extends it to $n\le 75$ ($8{,}118{,}264$ partitions at $n=75$).
+
+3. **(PROVED.) Conjecture A as literally stated is false.** Let $\tau_T$ be Worley's partial-transpose automorphism at a vertex $T$ of symmetric shape (transpose everything in the subtree of $T$). The natural precise form of "every automorphism is a (possibly infinite, convergent) composition of the $\tau_T$" is: the closed subgroup $\overline{\langle \tau_T\rangle}$ of $\mathrm{Aut}(\mathrm{SYT})$ (profinite topology) is all of $\mathrm{Aut}(\mathrm{SYT})$. This is false: for $T$ of shape $(3,2,1)$ the automorphism $\theta$ that transposes only the subtrees of the two children of shapes $(4,2,1)$ and $(3,2,1,1)$ and fixes everything else is not in $\overline{\langle\tau_T\rangle}$. The obstruction is a family of continuous homomorphisms $E_{\lambda,p}\colon \mathrm{Aut}_1\to\mathbb Z/2$ (one per symmetric $\lambda$ and mirror pair $p$ of addable corners) which coincide on all $\tau_T$ but not on $\theta$ (Theorem 3.5). Confirmed by an independent group computation with sympy on the tree truncated at depth 7: the $\tau$'s generate a group of order $2^{27}$, the pair-transposes $\theta$ generate a group of order $2^{43}$, and $\theta\notin\langle\tau\rangle$.
+
+4. **(PROVED.) Corrected Conjecture A.** Let $\theta_{T,p}$ be the *pair transpose*: for $T$ of symmetric shape and $p=\{c,c^t\}$ an off-diagonal mirror pair of addable corners, transpose the subtrees of $T+c$ and $T+c^t$ (this swaps them) and fix everything else. Then $\tau_T$ is a product of pair transposes, and
+   $$\overline{\langle \theta_{T,p}\rangle}=\mathrm{Aut}(\mathrm{SYT}) \iff \text{B}''\;\text{(siblings with isomorphic subtrees are mirror images; Def. 3.1)},$$
+   and B $\Rightarrow$ B$'$ $\Rightarrow$ B$''$. Under B$''$ every automorphism is a *unique* convergent product $\eta_0\eta_1\eta_2\cdots$ with $\eta_d$ a product of commuting pair transposes at depth $d$ (Theorem 3.7). **Unconditionally** (using item 2): every automorphism of $\mathrm{SYT}$ agrees on levels $\le 75$ with a finite product of pair transposes (Corollary 3.8).
+
+5. **(PROVED.) Partial results on Conjecture B.** The $d$-vector determines: $n$, the number of corners $r$, $f^\lambda$, the quantity $m=\min_i\min(a_i,b_i)$ of the corner-run parametrisation, $A_m+B_m$ (number of corner boxes with a side of length $m$), the product $\prod_i P_{a_i^{b_i}}(t)$ modulo $t^{2m+1}$ (the "local product theorem", Theorem 4.2), and the sum of squared contents $C_2(\lambda)=\sum_{(i,j)\in\lambda}(j-i)^2$ (Theorem 4.6, via Jucys–Murphy elements). Consequently Conjecture B holds for all rectangles (Theorem 4.4). A Pfaffian formula for $P_\lambda(t)$ (Theorem 4.7) gives an explicit formula for two-row shapes (Corollary 4.8). Additional results proved by the referee-checked background work are collected in Section 4.9.
+
+6. **(CONJECTURAL.)** Conjecture B (equivalently, injectivity of $\lambda\mapsto(d_j(\lambda))_j$ up to transpose) and Conjecture B$''$ remain open in general. Section 6 lists what would suffice.
+
+7. Shifted analogue (Problem 2): Section 5.
+
+---
+
+## 1. Definitions and conventions
+
+**Partitions.** $\lambda=(\lambda_1\ge\dots\ge\lambda_\ell>0)\vdash n$, identified with its Young diagram $\{(i,j):1\le i\le\ell,\ 1\le j\le\lambda_i\}$ (English convention; box $(i,j)$ = row $i$, column $j$). The *content* of box $(i,j)$ is $c=j-i$. $\lambda^t$ is the conjugate; $\lambda$ is *symmetric* if $\lambda=\lambda^t$. Young's lattice $\mathbb Y$ is the set of partitions ordered by containment of diagrams; $\nu\lessdot\lambda$ means $\lambda=\nu\cup\{\text{one box}\}$. A box of $\lambda$ that can be removed leaving a partition is a *removable corner*; a box outside $\lambda$ that can be added is an *addable corner*. Removable corners are the boxes $(i,\lambda_i)$ with $\lambda_i>\lambda_{i+1}$ (where $\lambda_{\ell+1}=0$); addable corners are the boxes $(i,\lambda_i+1)$ with $i=1$ or $\lambda_{i-1}>\lambda_i$, $1\le i\le \ell+1$.
+
+**Corner-run parametrisation.** Write the distinct part sizes of $\lambda$ as $\alpha_1>\dots>\alpha_r>0$ with multiplicities $b_1,\dots,b_r\ge 1$, and put $a_i=\alpha_i-\alpha_{i+1}$ ($\alpha_{r+1}=0$). Then $\lambda\leftrightarrow((a_1,b_1),\dots,(a_r,b_r))\in(\mathbb Z_{>0}^2)^r$ is a bijection between partitions and finite sequences of pairs of positive integers ($r=0$ for $\emptyset$); $r$ is the number of removable corners, the $i$-th corner is $c_i=(R_i,\alpha_i)$ with $R_i=b_1+\dots+b_i$, and conjugation acts by $((a_1,b_1),\dots,(a_r,b_r))\mapsto((b_r,a_r),\dots,(b_1,a_1))$. The *corner region* of $c_i$ is the $b_i\times a_i$ rectangle $\mathrm{Reg}_i=\{(p,q): R_{i-1}<p\le R_i,\ \alpha_{i+1}<q\le\alpha_i\}\subseteq\lambda$ ($R_0=0$). We write $m(\lambda)=\min_i\min(a_i,b_i)$ and $A_m=\#\{i:a_i=m\}$, $B_m=\#\{i:b_i=m\}$.
+
+**Tableaux and chains.** An SYT of shape $\lambda\vdash n$ is identified with the saturated chain $\emptyset=\lambda^{(0)}\lessdot\lambda^{(1)}\lessdot\dots\lessdot\lambda^{(n)}=\lambda$ (entry $i$ sits in $\lambda^{(i)}/\lambda^{(i-1)}$); $f^\lambda$ is their number. For $\nu\subseteq\lambda$, $f^{\lambda/\nu}$ is the number of saturated chains from $\nu$ to $\lambda$ (standard skew tableaux of shape $\lambda/\nu$); $f^{\lambda/\nu}=0$ if $\nu\not\subseteq\lambda$.
+
+**The tree.** $\mathrm{SYT}$ has as vertices all SYT of all sizes (including $\emptyset$) and an edge $T-T'$ whenever $T'$ is obtained from $T$ by adding one box with entry $|T|+1$. It is a tree rooted at $\emptyset$; the *depth* of $T$ is $|T|$; the *children* of $T$ (shape $\lambda$) are the $T+c$ for addable corners $c$ of $\lambda$ — they have pairwise distinct shapes $\lambda+c$; the *subtree* $\mathrm{Sub}(T)$ is the set of tableaux extending $T$. Since $\mathrm{Sub}(T)\cong$ the tree of saturated chains starting at $\lambda$, its rooted isomorphism type depends only on $\lambda$; we write $\mathrm{Sub}(\lambda)$ for this type. $\mathrm{Aut}(\mathrm{SYT})$ is the group of automorphisms of the unlabelled graph.
+
+**Census.** For $\lambda\vdash n$ and $k,j\ge0$:
+$$ s_k(\lambda)=\sum_{\mu\supseteq\lambda,\ |\mu|=n+k} f^{\mu/\lambda},\qquad d_j(\lambda)=\sum_{\nu\subseteq\lambda,\ |\lambda/\nu|=j} f^{\lambda/\nu}\quad(0\le j\le n).$$
+So $s_k(\lambda)$ is the number of vertices at depth $n+k$ in $\mathrm{Sub}(T)$ for any $T$ of shape $\lambda$, and $d_j(\lambda)$ the number of ways to remove $j$ boxes one at a time through partitions. Clearly $d_0=1$, $d_1=r$, $d_j(\lambda)=\sum_{c}d_{j-1}(\lambda-c)$ (sum over removable corners), $d_n=d_{n-1}=f^\lambda$, and (since every chain from $(1)$ to $\lambda$ passes through $(2)$ or $(1,1)$) $d_{n-2}=f^{\lambda/(2)}+f^{\lambda/(1,1)}=f^{\lambda/(1)}=f^\lambda$. We put
+$$E_\lambda(t)=\sum_{k\ge0}s_k(\lambda)\frac{t^k}{k!},\qquad P_\lambda(t)=\sum_{j=0}^{n}d_j(\lambda)\frac{t^j}{j!},\qquad u_i(\lambda)=d_{n-i}(\lambda)=\sum_{\nu\vdash i}f^{\lambda/\nu}.$$
+Both census vectors are invariant under $\lambda\mapsto\lambda^t$ (transposition is an automorphism of $\mathbb Y$).
+
+**Filters.** A subset $S\subseteq\lambda$ is a *filter* (order filter of the poset $\lambda$ with $(i,j)\le(i',j')$ iff $i\le i'$, $j\le j'$) if $u\in S$, $v\in\lambda$, $u\le v$ imply $v\in S$; equivalently $\lambda\setminus S$ is a partition $\nu\subseteq\lambda$. Removing the boxes of $S=\lambda/\nu$ one at a time through partitions means removing at each step a maximal element of what is left of $S$; hence
+$$ d_j(\lambda)=\sum_{S\text{ filter of }\lambda,\ |S|=j} e(S),\qquad e(S)=\#\text{linear extensions of the poset }S. \tag{1.1}$$
+
+**Involution numbers.** $I_k=\#\{\text{SYT with }k\text{ boxes}\}=\#\{\text{involutions of }[k]\}$, $\sum_k I_k t^k/k!=e^{t+t^2/2}$, $I_k=I_{k-1}+(k-1)I_{k-2}$.
+
+**The conjectures** (Worley, Problem 3, verbatim in `data/literature_search.md`):
+
+* **A.** Every automorphism of $\mathrm{SYT}$ is a composition of the partial transposes $\tau_T$ (Definition 3.2). Precise form fixed in Section 3.3.
+* **B.** $(s_k(\lambda))_{k\ge0}=(s_k(\mu))_{k\ge0}\Rightarrow \mu\in\{\lambda,\lambda^t\}$.
+* **B$'$.** $\mathrm{Sub}(\lambda)\cong\mathrm{Sub}(\mu)$ (rooted trees) $\Rightarrow\mu\in\{\lambda,\lambda^t\}$.
+* **B$''$.** For every $\lambda$ and distinct addable corners $c\neq c'$ of $\lambda$: $\mathrm{Sub}(\lambda+c)\cong\mathrm{Sub}(\lambda+c')\Rightarrow \lambda=\lambda^t$ and $c'=c^t$ (Definition 3.1).
+
+B $\Rightarrow$ B$'$ $\Rightarrow$ B$''$: the census is an invariant of the rooted isomorphism type, and by Lemma 3.4 below $\lambda+c'\in\{\lambda+c,(\lambda+c)^t\}$ with $c\ne c'$ forces $\lambda=\lambda^t$, $c'=c^t$.
+
+---
+
+## 2. The generating-function identity
+
+### 2.1 Two facts about Young's lattice
+
+**Lemma 2.1 (PROVED).** For every partition $\lambda$, $\#\{\text{addable corners}\}=\#\{\text{removable corners}\}+1$.
+
+*Proof.* In the corner-run parametrisation the removable corners are $c_1,\dots,c_r$. The addable corners are $(1,\alpha_1+1)$, the boxes $(R_{i-1}+1,\alpha_i+1)$ for $2\le i\le r$ (the first row of the $i$-th run, which is shorter than the row above it), and $(R_r+1,1)$: in total $1+(r-1)+1=r+1$. For $\lambda=\emptyset$: $0$ and $1$. $\square$
+
+**Lemma 2.2 (PROVED).** Let $\lambda\ne\mu$ be partitions of the same size $n$. Then
+$\#\{\nu\vdash n+1:\nu\gtrdot\lambda,\ \nu\gtrdot\mu\}=\#\{\nu\vdash n-1:\nu\lessdot\lambda,\ \nu\lessdot\mu\}\in\{0,1\}$.
+
+*Proof.* As sets of boxes, $\nu\supseteq\lambda\cup\mu$ with $|\nu|=n+1$ forces $\nu=\lambda\cup\mu$ and $|\lambda\cup\mu|=n+1$; conversely if $|\lambda\cup\mu|=n+1$ then $\lambda\cup\mu$, a union of two order ideals of $\mathbb N^2$, is a partition covering both. Likewise a common lower cover exists iff $|\lambda\cap\mu|=n-1$, and then it is $\lambda\cap\mu$. Finally $|\lambda\cup\mu|+|\lambda\cap\mu|=2n$. $\square$
+
+Let $V$ be the free abelian group on $\mathbb Y$, $U,D\colon V\to V$ the up and down operators $U\lambda=\sum_{\mu\gtrdot\lambda}\mu$, $D\lambda=\sum_{\nu\lessdot\lambda}\nu$, and $\omega\colon V\to\mathbb Z$ the linear functional with $\omega(\lambda)=1$ for all $\lambda$. Lemmas 2.1–2.2 say exactly (comparing coefficients of $\mu$ in $DU\lambda$ and $UD\lambda$):
+$$ DU-UD=I\quad\text{on }V,\qquad \omega\circ U=\omega\circ D+\omega. \tag{2.1}$$
+(That is, $\mathbb Y$ is a $1$-differential poset in the sense of Stanley.) By definition of chains,
+$$ s_k(\lambda)=\omega(U^k\lambda),\qquad d_j(\lambda)=\omega(D^j\lambda). \tag{2.2}$$
+
+### 2.2 The identity
+
+**Theorem 2.3 (PROVED; Stanley 2003, Thm 2.2 (10)).** For every partition $\lambda$,
+$$ E_\lambda(t)=e^{\,t+t^2/2}\,P_\lambda(t),\qquad\text{i.e.}\qquad s_k(\lambda)=\sum_{j=0}^{\min(k,|\lambda|)}\binom kj I_{k-j}\,d_j(\lambda). $$
+
+*Proof.* From $DU=UD+I$ one gets by induction $DU^k=U^kD+kU^{k-1}$ for $k\ge1$ (indeed $DU^{k}=(UD+I)U^{k-1}=U(U^{k-1}D+(k-1)U^{k-2})+U^{k-1}$). Apply $\omega\circ U=\omega\circ D+\omega$ to the vector $U^k\lambda$:
+$$ \omega(U^{k+1}\lambda)=\omega(DU^k\lambda)+\omega(U^k\lambda)=\omega(U^kD\lambda)+k\,\omega(U^{k-1}\lambda)+\omega(U^k\lambda). $$
+Writing $A_v(t)=\sum_k\omega(U^kv)t^k/k!$ for $v\in V$ (linear in $v$) and multiplying by $t^k/k!$, summing over $k\ge0$:
+$$ A_\lambda'(t)=A_{D\lambda}(t)+t\,A_\lambda(t)+A_\lambda(t),\qquad A_{D\lambda}=\sum_{\nu\lessdot\lambda}A_\nu . $$
+Put $B_\lambda(t)=e^{-t-t^2/2}A_\lambda(t)$. Then $B_\lambda'=e^{-t-t^2/2}(A_\lambda'-(1+t)A_\lambda)=e^{-t-t^2/2}A_{D\lambda}=\sum_{\nu\lessdot\lambda}B_\nu$, and $B_\lambda(0)=A_\lambda(0)=1$. The polynomials $P_\lambda$ satisfy the same system: $P_\lambda'=\sum_{\nu\lessdot\lambda}P_\nu$ (from $d_j(\lambda)=\sum_c d_{j-1}(\lambda-c)$) and $P_\lambda(0)=1$. By induction on $|\lambda|$: for $\lambda=\emptyset$, $D\emptyset=0$ so $B_\emptyset'=P_\emptyset'=0$ and $B_\emptyset=P_\emptyset=1$; for general $\lambda$, $B_\lambda'=\sum_\nu B_\nu=\sum_\nu P_\nu=P_\lambda'$ by induction and $B_\lambda(0)=P_\lambda(0)$, so $B_\lambda=P_\lambda$ as formal power series. Hence $E_\lambda=A_\lambda=e^{t+t^2/2}P_\lambda$. The coefficient form follows by multiplying the series. $\square$
+
+*Remarks.* (i) The same proof shows that in an $r$-differential poset, $\sum_k\omega(U^kx)t^k/k!=e^{r(t+t^2/2)}\sum_j\omega(D^jx)t^j/j!$ for every element $x$; this is the fixed-start-vertex form of Stanley (1988), Cor. 2.6(c). (ii) Sanity checks: $\lambda=\emptyset$ gives $E_\emptyset=e^{t+t^2/2}$ (the EGF of $I_k$), and $\lambda=(1)$ gives $(1+t)e^{t+t^2/2}=\frac{d}{dt}e^{t+t^2/2}$.
+
+**Second derivation (symmetric functions; sketch, after Stanley 2003).** With the Hall inner product $\langle p_\rho,p_\sigma\rangle=z_\rho\delta_{\rho\sigma}$ one has $\langle p_1f,g\rangle=\langle f,\partial g/\partial p_1\rangle$ (check on the $p$-basis: $z_{\rho\cup 1}=z_\rho\,(m_1(\rho)+1)$), hence $\partial s_\lambda/\partial p_1=\sum_{\nu\lessdot\lambda}s_\nu$ (adjoint of the Pieri rule $p_1s_\nu=\sum_{\mu\gtrdot\nu}s_\mu$). Let $F=\sum_\mu s_\mu=\prod_i(1-x_i)^{-1}\prod_{i<j}(1-x_ix_j)^{-1}=\exp\big(\sum_{k\ge1}\frac{p_k}{k}+\sum_{k\ge1}\frac{p_k^2-p_{2k}}{2k}\big)$ (Littlewood). Then $s_k(\lambda)=\langle s_\lambda p_1^k,F\rangle$, so $E_\lambda(t)=\langle s_\lambda,F(p_1+t)\rangle$; the only $p_1$-dependence of $\log F$ is $p_1+p_1^2/2$, so $F(p_1+t)=F\cdot e^{t+t^2/2}e^{tp_1}$, and $\langle s_\lambda,p_1^jF\rangle=\langle\partial^j s_\lambda/\partial p_1^j,F\rangle=\sum_{|\lambda/\nu|=j}f^{\lambda/\nu}\langle s_\nu,F\rangle=d_j(\lambda)$. This also shows
+$$ d_j(\lambda)=\langle s_\lambda,\ p_1^jF\rangle,\qquad \sum_\lambda P_\lambda(t)\,s_\lambda=e^{tp_1}F. \tag{2.3}$$
+
+**Computational verification.** `src/verify_identity.py`: $s_k(\lambda)$ computed by brute-force enumeration of upward chains (`census.s_up`, memoised recursion on the definition) and independently by enumerating all $\mu\vdash n+k$ and counting skew chains (`s_up_by_skew`), compared with $\sum_j\binom kjI_{k-j}d_j(\lambda)$: **identity holds for all $|\lambda|\le14$, $k\le14$** (`data/identity_check_n14_k14.txt`), and the two routes for $s_k$ agree for $|\lambda|\le6$, $k\le5$.
+
+**Corollary 2.4 (PROVED).** $(s_k(\lambda))_{k\ge0}=(s_k(\mu))_{k\ge0}$ iff $(d_j(\lambda))_{j}=(d_j(\mu))_{j}$ (as finite sequences; in particular $|\lambda|=\deg P_\lambda=|\mu|$). Hence **Conjecture B $\iff$ the $d$-vector determines $\lambda$ up to transpose.** $\square$
+
+---
+
+## 3. Automorphisms of the tree
+
+### 3.1 Basic facts
+
+**Lemma 3.0 (PROVED).** Every graph automorphism of $\mathrm{SYT}$ fixes $\emptyset$, preserves depth, and maps children of $T$ to children of $\varphi(T)$; $\varphi$ restricted to $\mathrm{Sub}(T)$ is an isomorphism of rooted trees onto $\mathrm{Sub}(\varphi(T))$.
+
+*Proof.* $\emptyset$ has degree $1$ (its only neighbour is $(1)$); a nonempty vertex of shape $\lambda$ has one parent and $r+1\ge2$ children (Lemma 2.1), so degree $\ge3$. Thus $\emptyset$ is the unique vertex of degree $1$ and is fixed; depth is the distance to $\emptyset$; the parent of $T\ne\emptyset$ is its unique neighbour of smaller depth. $\square$
+
+**Definition 3.2 (partial transposes).** Let $T$ be a vertex of symmetric shape $\lambda$, $n=|T|$. Every $V\in\mathrm{Sub}(T)$ is $V=T\cup S$ with $S$ a standard skew tableau of shape $\mu/\lambda$ (entries $n+1,\dots,|V|$), and $S^t$ is a standard skew tableau of shape $\mu^t/\lambda^t=\mu^t/\lambda$. Put
+$$\tau_T(V)=T\cup S^t\ (V\in\mathrm{Sub}(T)),\qquad \tau_T(V)=V\ \text{otherwise}.$$
+For an off-diagonal mirror pair $p=\{c,c^t\}$ of addable corners of $\lambda$ (i.e. $c=(i,j)$ addable with $i\ne j$; then $c^t=(j,i)$ is addable too, by symmetry) put
+$$\theta_{T,p}(V)=\tau_T(V)\ \text{if } V\in\mathrm{Sub}(T+c)\cup\mathrm{Sub}(T+c^t),\qquad \theta_{T,p}(V)=V\ \text{otherwise}.$$
+
+**Lemma 3.3 (PROVED; the warm-up).** $\tau_T$ and $\theta_{T,p}$ are involutive automorphisms of $\mathrm{SYT}$. Moreover $\tau_T=\prod_{p}\theta_{T,p}\cdot\prod_{c=c^t}\tau_{T+c}$ (products over the off-diagonal mirror pairs and over the at most one diagonal addable corner; all factors commute).
+
+*Proof.* $\tau_T$ is a bijection of $\mathrm{Sub}(T)$ ($S\mapsto S^t$ is an involution) fixing $T$ and all vertices outside $\mathrm{Sub}(T)$. If $V=T\cup S\in\mathrm{Sub}(T)$, $V\ne T$, its parent is $T\cup S'$ where $S'$ is $S$ minus its largest entry, and $\tau_T$ maps the edge $V-\text{parent}(V)$ to $T\cup S^t-T\cup(S')^t$, which is an edge since $(S')^t=(S^t)'$; the edge $T-\text{parent}(T)$ and all edges outside $\mathrm{Sub}(T)$ are fixed. So $\tau_T$ preserves the edge set. For $\theta_{T,p}$: $\tau_T$ maps $\mathrm{Sub}(T+c)$ onto $\mathrm{Sub}(T+c^t)$ (the entry $n+1$ of $S$ sits at $c$ iff that of $S^t$ sits at $c^t$), so $\theta_{T,p}$ is a bijection; edges inside the two subtrees are preserved as before, the edges $T-(T+c)$ and $T-(T+c^t)$ are swapped, all other edges are fixed. For the factorisation: $\mathrm{Sub}(T)\setminus\{T\}$ is the disjoint union of the $\mathrm{Sub}(T+c)$ over addable corners $c$; on $\mathrm{Sub}(T+c)\cup\mathrm{Sub}(T+c^t)$ ($c\ne c^t$) $\tau_T$ agrees with $\theta_{T,p}$; on $\mathrm{Sub}(T+c)$ with $c=c^t$ (necessarily $c=(k+1,k+1)$ where $k$ is the Durfee size, so at most one such $c$) the shape $\lambda+c$ is symmetric and $\tau_T(T+c\cup S')=T+c\cup(S')^t=\tau_{T+c}(T+c\cup S')$. $\square$
+
+**Lemma 3.4 (siblings; PROVED).** Let $c\ne c'$ be addable corners of $\lambda$ with $(\lambda+c)^t=\lambda+c'$. Then $\lambda=\lambda^t$ and $c'=c^t$.
+
+*Proof.* $\lambda\subseteq\lambda+c'=(\lambda+c)^t$, so (transposing) $\lambda^t\subseteq\lambda+c$; also $\lambda^t\subseteq\lambda^t+c^t=(\lambda+c)^t=\lambda+c'$. If $\lambda\ne\lambda^t$ then $\lambda\cup\lambda^t$ has more than $|\lambda|$ boxes and is contained in both $\lambda+c$ and $\lambda+c'$, which have $|\lambda|+1$ boxes; so $\lambda+c=\lambda\cup\lambda^t=\lambda+c'$, contradicting $c\ne c'$. Hence $\lambda=\lambda^t$, and then $\lambda+c'=(\lambda+c)^t=\lambda^t+c^t=\lambda+c^t$ gives $c'=c^t$. $\square$
+
+### 3.2 The parity obstruction: the literal Conjecture A is false
+
+**Topology.** $\mathrm{Aut}(\mathrm{SYT})$ is the inverse limit of its images in $\mathrm{Aut}(\mathrm{SYT}_{\le N})$ ($N\ge0$), where $\mathrm{SYT}_{\le N}$ is the truncation to depth $\le N$; give it the profinite topology (pointwise convergence). A subset is closed iff it is determined by finitely many levels at a time; "$g_N\to g$" iff for every $N$, $g_N$ eventually agrees with $g$ on levels $\le N$. The natural precise version of "convergent composition of $\tau$'s" is membership in the closure $\overline{\langle\tau_T\rangle}$ of the subgroup generated by all $\tau_T$; equivalently: for every $N$ the restriction to levels $\le N$ agrees with a finite product of $\tau$'s. (Any weaker reading — e.g. arbitrary infinite products — is contained in this one, because any limit of finite products lies in the closure.)
+
+Let $\mathrm{Aut}_1\subseteq\mathrm{Aut}(\mathrm{SYT})$ be the set of automorphisms $g$ with $\mathrm{shape}(g(V))\in\{\mathrm{shape}(V),\mathrm{shape}(V)^t\}$ for all vertices $V$. It is a closed subgroup (the condition is a conjunction of conditions each involving one level) containing every $\tau_T$ and every $\theta_{T,p}$.
+
+**Definition (parity homomorphisms).** Fix a symmetric $\lambda\vdash d$ and an off-diagonal mirror pair $p=\{c,c^t\}$ of addable corners of $\lambda$. For $g\in\mathrm{Aut}_1$ and $T$ of shape $\lambda$: $g(T)$ has shape $\lambda$ (as $\lambda^t=\lambda$), and $g(T+c)$ is a child of $g(T)$ of shape $\lambda+c$ or $(\lambda+c)^t=\lambda+c^t$, hence $g(T+c)\in\{g(T)+c,\ g(T)+c^t\}$. Put $\sigma_g(T,p)=1$ if $g(T+c)=g(T)+c^t$ and $0$ otherwise (this is symmetric in $c\leftrightarrow c^t$ because $g$ is injective on the children of $T$), and
+$$E_{\lambda,p}(g)=\sum_{T\text{ of shape }\lambda}\sigma_g(T,p)\ \bmod 2 .$$
+
+**Theorem 3.5 (PROVED).**
+1. $E_{\lambda,p}\colon\mathrm{Aut}_1\to\mathbb Z/2$ is a continuous group homomorphism.
+2. For $T_0$ of symmetric shape $\lambda_0$: $E_{\lambda,p}(\tau_{T_0})=f^{\lambda/\lambda_0}\bmod 2$ if $\lambda_0\subseteq\lambda$, and $0$ otherwise — **independent of $p$**. For $T$ of shape $\lambda$ and a pair $p'$: $E_{\lambda,p}(\theta_{T,p'})=[p=p']$.
+3. Consequently, if $\lambda$ is symmetric with two distinct off-diagonal mirror pairs $p_1\ne p_2$ (the smallest example is $\lambda=(3,2,1)$ with pairs $\{(1,4),(4,1)\}$, $\{(2,3),(3,2)\}$), then for any $T$ of shape $\lambda$, $\theta_{T,p_1}\in\mathrm{Aut}(\mathrm{SYT})\setminus\overline{\langle\tau_{T'}:T'\rangle}$. **Conjecture A in its literal form is false**, and $\overline{\langle\tau\rangle}\subsetneq\overline{\langle\theta\rangle}\subseteq\mathrm{Aut}(\mathrm{SYT})$.
+
+*Proof.* (1) For $g,h\in\mathrm{Aut}_1$: $h(T+c)=h(T)+c_1$ with $c_1=c$ or $c^t$ according to $\sigma_h(T,p)$, and $g(h(T)+c_1)=gh(T)+c_2$ with $c_2=c_1$ or $c_1^t$ according to $\sigma_g(h(T),p)$; so $\sigma_{gh}(T,p)=\sigma_h(T,p)+\sigma_g(h(T),p)\bmod2$. Summing over all $T$ of shape $\lambda$ and using that $T\mapsto h(T)$ permutes the SYT of shape $\lambda$ gives $E_{\lambda,p}(gh)=E_{\lambda,p}(h)+E_{\lambda,p}(g)$. Continuity: $E_{\lambda,p}(g)$ depends only on the action of $g$ on levels $d,d+1$.
+(2) $\tau_{T_0}$ fixes every $T\not\supseteq T_0$ together with its children, so $\sigma=0$ there. If $T=T_0\cup S\supseteq T_0$ then $\tau_{T_0}(T)=T_0\cup S^t$ and $\tau_{T_0}(T+c)=T_0\cup(S+c)^t=(T_0\cup S^t)+c^t$, so $\sigma_{\tau_{T_0}}(T,p)=1$ for every pair $p$. The number of SYT $T$ of shape $\lambda$ containing the fixed tableau $T_0$ is $f^{\lambda/\lambda_0}$. For $\theta_{T,p'}$: it moves only vertices strictly below $T$, so the only tableau of shape $\lambda$ with $\sigma\neq0$ is $T$ itself, where $\sigma(T,p)=[p=p']$.
+(3) By (2), $E_{\lambda,p_1}$ and $E_{\lambda,p_2}$ agree on every generator $\tau_{T'}$, hence (being homomorphisms) on $\langle\tau\rangle$, hence (being continuous, and $\{g:E_{\lambda,p_1}(g)=E_{\lambda,p_2}(g)\}$ being closed in $\mathrm{Aut}_1$) on $\overline{\langle\tau\rangle}\subseteq\mathrm{Aut}_1$. But $E_{\lambda,p_1}(\theta_{T,p_1})=1\ne0=E_{\lambda,p_2}(\theta_{T,p_1})$. Finally $\tau_T\in\langle\theta\rangle$ restricted to any finite depth by Lemma 3.3 and induction on depth, so $\overline{\langle\tau\rangle}\subseteq\overline{\langle\theta\rangle}$. $\square$
+
+**Computational confirmation** (`src/automorphism_check.py`, `src/tree.py`; sympy `PermutationGroup`). On $\mathrm{SYT}_{\le7}$ (352 vertices): all 28 $\tau_T$ ($|T|\le6$, symmetric shape) and all 43 $\theta_{T,p}$ are edge-preserving; $E_{(3,2,1),p_1}(\tau_T)=E_{(3,2,1),p_2}(\tau_T)$ for all 28 $\tau_T$; $E_{(3,2,1),p_1}(\theta_{T,p_1})=1$, $E_{(3,2,1),p_2}(\theta_{T,p_1})=0$; $|\langle\tau\rangle_7|=2^{27}$, $|\langle\theta\rangle_7|=2^{43}$; every $\tau_T\in\langle\theta\rangle_7$; and Schreier–Sims membership testing returns $\theta_{T,p_1}\notin\langle\tau\rangle_7$. (At depths 5 and 6 the two groups coincide, orders $2^5$ and $2^{11}$; the first symmetric shape with two off-diagonal mirror pairs is $(3,2,1)$ at depth 6. Note also $\tau_\emptyset=\tau_{(1)}$, which is why 28 generators give order $2^{27}$.)
+
+*Remark.* This is the same phenomenon as in the Young–Fibonacci tree (Zenodo record 21538865 on Worley's Problem 9, where it is remarked that "not every automorphism is a finite product of local swaps"); here the extra twist is that even the *closure* of the group generated by Worley's whole-subtree transposes is too small, and the correct local generators are the pair transposes.
+
+### 3.3 The corrected Conjecture A and its equivalence with B$''$
+
+**Definition 3.1 (B$''$).** For every partition $\lambda$ and distinct addable corners $c\ne c'$: $\mathrm{Sub}(\lambda+c)\cong\mathrm{Sub}(\lambda+c')$ implies $\lambda=\lambda^t$ and $c'=c^t$.
+
+**Conjecture A$_\theta$.** $\mathrm{Aut}(\mathrm{SYT})=\overline{\langle\theta_{T,p}\rangle}$, i.e. for every automorphism $\varphi$ and every $N$ there is a finite product of pair transposes agreeing with $\varphi$ on levels $\le N$.
+
+**Theorem 3.7 (PROVED).** A$_\theta$ $\iff$ B$''$. Moreover, if B$''$ holds then every $\varphi\in\mathrm{Aut}(\mathrm{SYT})$ can be written uniquely as a convergent product $\varphi=\lim_{N}\eta_0\eta_1\cdots\eta_N$ where $\eta_d=\prod_{(T,p)\in\Pi_d}\theta_{T,p}$ for a set $\Pi_d$ of pairs (vertex $T$ at depth $d$ of symmetric shape, off-diagonal mirror pair $p$) — the factors of each $\eta_d$ commute — and every choice of sets $(\Pi_d)_{d\ge0}$ arises. In particular $\mathrm{Aut}(\mathrm{SYT})$ is then an inverse limit of finite $2$-groups, of cardinality $2^{\aleph_0}$, and $\mathrm{Aut}(\mathrm{SYT})=\mathrm{Aut}_1$.
+
+*Proof.* (B$''\Rightarrow$ A$_\theta$ and the product decomposition.) Let $\varphi\in\mathrm{Aut}(\mathrm{SYT})$. We construct $\psi_d\in\langle\theta\rangle$ with $\psi_d=\varphi$ on levels $\le d$, $\psi_0=\mathrm{id}$, $\psi_{d+1}=\psi_d\eta_d$. Suppose $\psi_d$ is constructed and let $\chi=\psi_d^{-1}\varphi$; $\chi$ is an automorphism that is the identity on levels $\le d$. Let $T$ be a vertex at depth $d$ of shape $\lambda$ and $c$ an addable corner. Since $\chi$ fixes $T$ it permutes the children of $T$, and $\chi$ maps $\mathrm{Sub}(T+c)$ isomorphically onto $\mathrm{Sub}(\chi(T+c))$ (Lemma 3.0). If $\chi(T+c)=T+c'$ with $c'\ne c$ then $\mathrm{Sub}(\lambda+c)\cong\mathrm{Sub}(\lambda+c')$, so by B$''$, $\lambda=\lambda^t$ and $c'=c^t$. Hence: if $\lambda$ is not symmetric, $\chi$ fixes all children of $T$; if $\lambda$ is symmetric, $\chi$ fixes the child at the diagonal corner (if any) and, for each off-diagonal mirror pair $p=\{c,c^t\}$, either fixes $T+c$ and $T+c^t$ or swaps them. Let $\Pi_d$ be the set of $(T,p)$ ($T$ at depth $d$, symmetric shape) for which $\chi$ swaps the pair $p$, and $\eta_d=\prod_{(T,p)\in\Pi_d}\theta_{T,p}$; the factors have pairwise disjoint supports (different $T$'s at the same depth have disjoint subtrees; different pairs at the same $T$ involve disjoint pairs of subtrees), so they commute and the product is well defined. By construction $\eta_d$ is the identity on levels $\le d$ and agrees with $\chi$ on level $d+1$. Then $\psi_{d+1}:=\psi_d\eta_d$ agrees with $\varphi$ on levels $\le d+1$: for $V$ of depth $\le d+1$, $\psi_d\eta_d(V)=\psi_d\chi(V)=\varphi(V)$. Thus $\psi_N\to\varphi$, so $\varphi\in\overline{\langle\theta\rangle}$, and $\varphi=\lim\eta_0\cdots\eta_N$.
+*Uniqueness and freeness.* Given any sets $(\Pi_d)$, the partial products $\eta_0\cdots\eta_N$ stabilise on each level (factors of depth $\ge N$ act trivially on levels $\le N$), so they converge to an automorphism $\varphi$; and $\Pi_d$ is recovered from $\varphi$ as the set of pairs swapped by $(\eta_0\cdots\eta_{d-1})^{-1}\varphi$ at depth $d$ — note that this uses only $\varphi$ on levels $\le d+1$ and $\Pi_0,\dots,\Pi_{d-1}$. So $(\Pi_d)_d\mapsto\varphi$ is a bijection from $\prod_d 2^{\mathcal P_d}$ ($\mathcal P_d$ = the set of pairs at depth $d$) onto $\mathrm{Aut}(\mathrm{SYT})$; since $\mathcal P_d\ne\emptyset$ for infinitely many $d$ (e.g. every staircase $(k,k-1,\dots,1)$, $k\ge2$, is symmetric with the off-diagonal pair $\{(1,k+1),(k+1,1)\}$), the cardinality is $2^{\aleph_0}$. Every pair transpose lies in $\mathrm{Aut}_1$ and $\mathrm{Aut}_1$ is closed, so $\mathrm{Aut}(\mathrm{SYT})=\overline{\langle\theta\rangle}\subseteq\mathrm{Aut}_1$.
+(A$_\theta\Rightarrow$ B$''$.) Suppose B$''$ fails: $\lambda$, $c\ne c'$ with $\mathrm{Sub}(\lambda+c)\cong\mathrm{Sub}(\lambda+c')$ but not ($\lambda=\lambda^t$ and $c'=c^t$). Take any $T$ of shape $\lambda$ and a rooted-tree isomorphism $\iota\colon\mathrm{Sub}(T+c)\to\mathrm{Sub}(T+c')$; define $g=\iota$ on $\mathrm{Sub}(T+c)$, $g=\iota^{-1}$ on $\mathrm{Sub}(T+c')$, $g=\mathrm{id}$ elsewhere. Then $g$ is an automorphism (it preserves edges inside the two subtrees, swaps the edges $T-(T+c)$, $T-(T+c')$, and fixes all others), and $g(T+c)=T+c'$ has shape $\lambda+c'\notin\{\lambda+c,(\lambda+c)^t\}$ by Lemma 3.4. So $g\notin\mathrm{Aut}_1\supseteq\overline{\langle\theta\rangle}$, i.e. A$_\theta$ fails. $\square$
+
+**Corollary 3.8 (PROVED, with computer verification).** Let $N\le 75$. Every automorphism of $\mathrm{SYT}$ agrees on levels $\le N$ with a finite product of pair transposes $\theta_{T,p}$ with $|T|<N$. Equivalently, the image of $\mathrm{Aut}(\mathrm{SYT})$ in $\mathrm{Aut}(\mathrm{SYT}_{\le N})$ equals the image of $\langle\theta\rangle$, a $2$-group of order $2^{\#\{\text{pairs at depth}<N\}}$.
+
+*Proof.* The inductive step in the proof of Theorem 3.7 at depth $d$ uses B$''$ only for shapes $\lambda\vdash d$, i.e. only the statement "distinct non-mirror siblings $\lambda+c,\lambda+c'\vdash d+1$ have non-isomorphic subtrees". By Section 4.1 (Conjecture B verified for all $n\le75$) two partitions of $d+1\le75$ with isomorphic subtrees have equal census, hence are equal or conjugate, hence by Lemma 3.4 are mirror siblings. So the construction of $\psi_1,\dots,\psi_N$ goes through for $N\le75$. The order statement follows from the uniqueness part (the sets $\Pi_0,\dots,\Pi_{N-1}$ are free parameters and determine the action on levels $\le N$). $\square$
+
+*Consequences for the shape of the answer to Problem 3.* Assuming only B$''$, $\mathrm{Aut}(\mathrm{SYT})$ is exactly the group of "independent local swaps": at each vertex of symmetric shape one may swap, independently for each off-diagonal mirror pair of children, the two subtrees by transposition. Worley's $\tau_T$ are the products over all pairs at $T$ (and over the diagonal child); they generate a proper closed subgroup, of infinite index (the homomorphisms $E_{\lambda,p_1}-E_{\lambda,p_2}$ for the infinitely many symmetric $\lambda$ with $\ge2$ off-diagonal pairs are independent and vanish on it).
+
+---
+
+## 4. Conjecture B
+
+### 4.1 Computations
+
+`src/dcensus_scan.py` (Python, exact) computes level by level $(d_j(\lambda))_j$ for all $\lambda\vdash n$ from level $n-1$ via $d_j(\lambda)=\sum_cd_{j-1}(\lambda-c)$, groups the partitions of $n$ by $d$-vector and reports every group that is not $\{\lambda\}$ ($\lambda$ symmetric) or $\{\lambda,\lambda^t\}$. `src/dcensus_modp.cpp` does the same modulo a prime ($2^{61}-1$ or $2^{62}-57$), ranking partitions in reverse-lexicographic order.
+
+**Theorem 4.1 (COMPUTATIONALLY VERIFIED).** For every $n\le75$ and all $\lambda,\mu\vdash n$: $d(\lambda)=d(\mu)\Rightarrow\mu\in\{\lambda,\lambda^t\}$. Hence Conjecture B, B$'$ and B$''$ hold for all shapes of size $\le75$ (B$''$ for $|\lambda|\le74$).
+
+*Evidence.* (i) Exact, $n\le60$: `data/collisions_python.txt` (per $n$: $p(n)$, number of distinct $d$-vectors, number of symmetric shapes, number of transpose pairs, number of collision groups $=0$, SHA-256 of the sorted list of $d$-vectors, and the digest $\sum_{\lambda,j}d_j(\lambda)7^j\bmod(2^{61}-1)$); at every $n$ the number of distinct vectors equals (#symmetric) + (#transpose pairs). (ii) Modulo $2^{61}-1$, $n\le75$: `data/scan_modp_p0_n75.txt`, zero collisions; the counts and digests agree with (i) for every $n\le60$. Modulo $2^{62}-57$: `data/scan_modp_p1.txt` ($n\le60$) and `data/scan_modp_p1_n75.txt`. Since $d(\lambda)=d(\mu)$ over $\mathbb Z$ implies congruence modulo every prime, zero collisions modulo one prime already proves the statement. (iii) Independent checks of the recursion: `src/crosscheck_skew.py` recomputes $d_j$ from the definition (enumerating all $\nu\subseteq\lambda$ and counting skew chains) for all partitions of $n\le14$ and 25 random partitions of $n\in[20,24]$: 533 partitions, no mismatch; `tests/test_basic.py` checks hand-computed values. Full $d$-vectors for $n\le30$ are stored in `data/dvectors_nXX.txt.gz`. Running time: 6 min (Python, $n\le60$) and a few minutes (C++, $n\le75$, $\approx9$ GB RAM).
+
+### 4.2 The local product theorem
+
+For a rectangle $a^b$ (i.e. $b$ rows of length $a$) put $G_{a,b}(t)=P_{a^b}(t)$.
+
+**Lemma 4.1 (PROVED).** $d_j(a^b)=\sum_{\rho\vdash j,\ \ell(\rho)\le b,\ \rho_1\le a}f^\rho$ for all $j$; i.e. $G_{a,b}(t)=\sum_{\rho\subseteq b\times a}f^\rho t^{|\rho|}/|\rho|!$. In particular $G_{a,b}=G_{b,a}$ and $G_{a,b}\equiv e^{t+t^2/2}\pmod{t^{\min(a,b)+1}}$.
+
+*Proof.* A filter $S$ of the rectangle $a^b$ is the complement of a partition $\nu\subseteq a^b$; rotating by $180^\circ$ about the centre of the rectangle, $S$ becomes the diagram of a partition $\rho$ with $\ell(\rho)\le b$, $\rho_1\le a$, and the rotation reverses the order, so $e(S)=e(\rho)=f^\rho$. Apply (1.1). The last claim: every $\rho\vdash j\le\min(a,b)$ fits in the box, and $\sum_{\rho\vdash j}f^\rho=I_j$. $\square$
+
+**Theorem 4.2 (local product theorem; PROVED).** Let $\lambda$ have corner runs $((a_i,b_i))_{i=1}^r$ and $m=\min_i\min(a_i,b_i)$. Then
+$$P_\lambda(t)\equiv\prod_{i=1}^rG_{a_i,b_i}(t)\pmod{t^{2m+1}},$$
+i.e. $d_j(\lambda)=j!\,[t^j]\prod_iG_{a_i,b_i}(t)$ for $0\le j\le2m$. In particular
+1. $d_j(\lambda)=j!\,[t^j]\,e^{r(t+t^2/2)}$ for $0\le j\le m$;
+2. $d_{m+1}(\lambda)=(m+1)!\,[t^{m+1}]\,e^{r(t+t^2/2)}-(A_m+B_m)$, and $A_m+B_m\ge1$;
+3. the $d$-vector determines $n$, $r$, $m$ (as one less than the first index $j$ with $d_j\ne j![t^j]e^{r(t+t^2/2)}$; such $j\le n$ exists for $n\ge2$), $A_m+B_m$, and the polynomial $\prod_iG_{a_i,b_i}\bmod t^{2m+1}$, which depends only on the multiset of unordered pairs $\{a_i,b_i\}$;
+4. $d_2(\lambda)=r(r-1)+\#\{i:a_i\ge2\}+\#\{i:b_i\ge2\}$.
+
+*Proof.* Let $S$ be a filter of $\lambda$ with $|S|\le2m$. We use the following facts about the poset $S$ (induced from $\mathbb N^2$).
+(a) *The order on $S$ is generated by adjacency inside $S$.* If $u=(i,j)\le v=(i',j')$ are in $S$, then the boxes $(i,j),(i,j+1),\dots,(i,j')$ lie in $\lambda$ (row $i$ has length $\ge j'$ since $(i',j')\in\lambda$, $i\le i'$) and hence in $S$ (filter), and likewise $(i,j'),\dots,(i',j')$; this is a path of adjacent boxes in $S$ from $u$ to $v$. Consequently the connected components of $S$ (adjacency) are pairwise incomparable, and $S$ is the disjoint union, as a poset, of its components $K_1,\dots,K_s$; hence $e(S)=\binom{|S|}{|K_1|,\dots,|K_s|}\prod e(K_\iota)$.
+(b) *Every maximal element of $S$ is a removable corner of $\lambda$* (if $(i,j+1)\in\lambda$ it lies in $S$ and is larger; likewise $(i+1,j)$). Every component $K$ is a finite nonempty poset, so it contains a maximal element of $S$, i.e. a corner $c_\iota$ of $\lambda$.
+(c) *A component contains only one corner.* A path of adjacent boxes from $c_i=(R_i,\alpha_i)$ to $c_{i'}$, $i<i'$, has at least $(R_{i'}-R_i)+(\alpha_i-\alpha_{i'})+1\ge b_{i+1}+a_i+1\ge2m+1>|S|$ boxes.
+(d) *The component $K$ of $c_i$ lies in $\mathrm{Reg}_i$ and is a filter of the rectangle $\mathrm{Reg}_i$ with unique maximal element $c_i$.* By (b),(c), $c_i$ is the unique maximal element of $K$, so $K\subseteq\{(p,q):p\le R_i,q\le\alpha_i\}$. If $(p,q)\in K$ with $p\le R_{i-1}$ ($i\ge2$), then, $S$ being a filter, the adjacent boxes $(p,q),(p,q+1),\dots,(p,\lambda_p)$ all lie in $S$, so $(p,\lambda_p)\in K$ with $\lambda_p\ge\alpha_{i-1}>\alpha_i$, contradicting maximality of $c_i$; symmetrically $q>\alpha_{i+1}$. So $K\subseteq\mathrm{Reg}_i$. Moving right from a box of $\mathrm{Reg}_i$ within $\lambda$ stays in $\mathrm{Reg}_i$ (rows $R_{i-1}<p\le R_i$ have length $\alpha_i$), and moving down from row $R_i$ leaves $\lambda$ (row $R_i+1$ has length $\alpha_{i+1}<q$); hence $K$, being closed under moving right/down in $\lambda$, is a filter of the rectangle $\mathrm{Reg}_i$, i.e. by the proof of Lemma 4.1 the $180^\circ$-rotation of a partition $\rho_i\subseteq b_i\times a_i$, with $e(K)=f^{\rho_i}$.
+(e) *Conversely*, for any $(\rho_1,\dots,\rho_r)$ with $\rho_i\subseteq b_i\times a_i$, the union $S$ of the rotated $\rho_i$'s placed at the corners is a filter of $\lambda$ (each piece is closed under right/down moves in $\lambda$ by the argument in (d)), and its components are exactly the nonempty pieces (boxes of $\mathrm{Reg}_i$ and $\mathrm{Reg}_{i'}$ are never adjacent: consecutive regions occupy disjoint column ranges and disjoint row ranges).
+By (a)–(e), for $j\le2m$,
+$$d_j(\lambda)=\sum_{\substack{(\rho_i)_i,\ \rho_i\subseteq b_i\times a_i\\ \sum|\rho_i|=j}}\binom{j}{|\rho_1|,\dots,|\rho_r|}\prod_if^{\rho_i}=j!\,[t^j]\prod_i\Big(\sum_{\rho\subseteq b_i\times a_i}f^\rho\frac{t^{|\rho|}}{|\rho|!}\Big)=j!\,[t^j]\prod_iG_{a_i,b_i}(t).$$
+(1) For $j\le m$ every $\rho\vdash j$ fits in every $b_i\times a_i$ box, so each factor is $e^{t+t^2/2}$ modulo $t^{m+1}$. (2) $G_{a_i,b_i}\equiv e^{t+t^2/2}-([a_i=m]+[b_i=m])\frac{t^{m+1}}{(m+1)!}\pmod{t^{m+2}}$, because the only partitions of $m+1$ not fitting in a box with both sides $\ge m$ are $(m+1)$ (iff the width is $m$) and $(1^{m+1})$ (iff the height is $m$), each with $f=1$; multiply out modulo $t^{m+2}$. $A_m+B_m\ge1$ since some corner attains the minimum. (3) $n=\deg P_\lambda$, $r=d_1$; by (1),(2) $d_j$ agrees with $j![t^j]e^{r(t+t^2/2)}$ exactly for $j\le m$ and fails at $j=m+1$ (which is $\le n$ for $n\ge2$: $m^2\le a_1b_1\le n$ and $m+1\le\sqrt n+1\le n$ for $n\ge3$; $n=2$: $m=1$). $A_m+B_m$ is the deficit at $m+1$, and $G_{a,b}=G_{b,a}$. (4) is the case $m=1$, $j=2$ of the formula: $2![t^2]e^{r(t+t^2/2)}=r^2+r$, minus $A_1+B_1$. $\square$
+
+**Computational verification** (`src/explore_separation.py`): the congruence $P_\lambda\equiv\prod G_{a_i,b_i}\pmod{t^{2m+1}}$, statement (1) and the deficit formula (2) were checked for all $|\lambda|\le18$.
+
+*Remark.* The bound $2m$ is sharp in general: for $j=2m+1$ a single component can contain two adjacent corners (the "rim path" of length $a_i+b_{i+1}+1$ when $a_i=b_{i+1}=m$). Beyond $j=2m$ the coefficients depend on the *order* of the corners and on the orientation $(a_i,b_i)$ vs $(b_i,a_i)$, which is exactly what distinguishes non-conjugate shapes with the same multiset of corner boxes.
+
+### 4.3 Rectangles
+
+**Theorem 4.4 (PROVED).** Conjecture B holds for rectangles: if $d(\mu)=d(a^b)$ then $\mu\in\{a^b,b^a\}$.
+
+*Proof.* $d_1(\mu)=1$, so $\mu$ is a rectangle $a'^{b'}$ with $a'b'=ab=n$. By Theorem 4.2(3), $m=\min(a,b)=\min(a',b')$ and $A_m+B_m=1+[a=b]=1+[a'=b']$. If $a=b$ then $a'=b'=m$. Otherwise $\{a,b\}=\{m,n/m\}=\{a',b'\}$. $\square$
+
+### 4.4 Statistics at the top of the vector
+
+Recall $u_i=d_{n-i}=\sum_{\nu\vdash i}f^{\lambda/\nu}$ and $u_0=u_1=u_2=f^\lambda$.
+
+**Lemma 4.5 (PROVED).** For $\nu\vdash k\le n$, $f^{\lambda/\nu}=\langle s_\lambda,s_\nu p_1^{n-k}\rangle$, and for a partition $\rho\vdash k$, $\langle s_\lambda,p_\rho p_1^{n-k}\rangle=\chi^\lambda(\rho\cup1^{n-k})$ (irreducible character of $S_n$ at the cycle type $\rho\cup1^{n-k}$). Consequently
+$$u_i=\sum_{\rho\vdash i}\frac{\sigma(\rho)}{z_\rho}\,\chi^\lambda(\rho\cup1^{n-i}),\qquad \sigma(\rho)=\sum_{\nu\vdash i}\chi^\nu(\rho)=\#\{\pi\in S_i:\pi^2\text{ has cycle type }\rho\},$$
+and $u_3=\tfrac23f^\lambda+\tfrac13\chi^\lambda(3,1^{n-3})$, $u_4=\tfrac5{12}f^\lambda+\tfrac14\chi^\lambda(2,2,1^{n-4})+\tfrac13\chi^\lambda(3,1^{n-3})$, $u_5=\tfrac{13}{60}f^\lambda+\tfrac14\chi^\lambda(2,2,1^{n-4})+\tfrac13\chi^\lambda(3,1^{n-3})+\tfrac15\chi^\lambda(5,1^{n-5})$.
+
+*Proof.* $s_\nu p_1^{n-k}=\sum_\mu f^{\mu/\nu}s_\mu$ by the Pieri rule iterated; $p_\rho=\sum_\nu\chi^\nu(\rho)s_\nu$ (Frobenius); $s_\nu=\sum_\rho z_\rho^{-1}\chi^\nu(\rho)p_\rho$. The number of square roots formula $\sum_\nu\chi^\nu(\pi)=\#\{\tau:\tau^2=\pi\}$ is the classical Frobenius–Schur count (all $\chi^\nu$ are real with indicator $1$). The explicit cases: $\sigma(1^3)=4,\sigma(3)=1,\sigma(2,1)=0$; $\sigma(1^4)=10,\sigma(2,2)=2,\sigma(3,1)=1,\sigma(4)=\sigma(2,1,1)=0$; $\sigma(1^5)=26,\sigma(2,2,1)=2,\sigma(3,1,1)=2,\sigma(5)=1$, others $0$ (a permutation is a square iff its even cycle lengths occur an even number of times). $\square$
+
+**Theorem 4.6 (PROVED).** Let $n\ge3$ and $C_2(\lambda)=\sum_{(i,j)\in\lambda}(j-i)^2$. Then
+$$3\,d_{n-3}(\lambda)-2f^\lambda=\chi^\lambda(3,1^{n-3})=f^\lambda\cdot\frac{3C_2(\lambda)-\tfrac32n(n-1)}{n(n-1)(n-2)} .$$
+Hence the $d$-vector determines $C_2(\lambda)$.
+
+*Proof.* The first equality is Lemma 4.5 ($u_3=\frac23f+\frac13\chi(3\text{-cycle})$; equivalently, from $f=f^{\lambda/3}+2f^{\lambda/21}+f^{\lambda/111}$, $u_3=f^{\lambda/3}+f^{\lambda/21}+f^{\lambda/111}$ and $p_3=s_3-s_{21}+s_{111}$). For the second, use the Jucys–Murphy elements $J_k=\sum_{i<k}(i\,k)\in\mathbb Q S_n$ ($k=1,\dots,n$). Classical theorem (Jucys, Murphy; see Okounkov–Vershik): in the irreducible representation $V_\lambda$ with its Young (seminormal) basis $\{v_T\}$ indexed by SYT $T$ of shape $\lambda$, $J_kv_T=c_T(k)v_T$ where $c_T(k)$ is the content of the box of $T$ containing $k$. Hence $\mathrm{tr}_{V_\lambda}\sum_kJ_k^2=\sum_T\sum_kc_T(k)^2=f^\lambda C_2(\lambda)$. On the other hand, in the group algebra, $J_k^2=(k-1)\,e+\sum_{i\ne i'<k}(i\,k)(i'\,k)$ and $(i\,k)(i'\,k)$ is a $3$-cycle on $\{i,i',k\}$; the ordered pairs $(i,i')$ give each of the two $3$-cycles on a $3$-set with maximum $k$ exactly once. Summing over $k$: $\sum_kJ_k^2=\binom n2e+Z_3$ with $Z_3$ the sum of all $3$-cycles. Taking traces on $V_\lambda$: $f^\lambda C_2=\binom n2f^\lambda+2\binom n3\chi^\lambda(3,1^{n-3})$, which rearranges to the formula. $\square$
+
+**Computational verification** (`src/check_formulas.py`): both equalities checked for all $3\le|\lambda|\le16$ (with $\chi^\lambda(3\text{-cycle})$ computed independently as $f^{\lambda/3}-f^{\lambda/21}+f^{\lambda/111}$).
+
+*Remarks.* (i) The same method gives, from $u_4$ and $u_5$, the character values at $(2,2,1^{n-4})$ and $(5,1^{n-5})$, which are polynomials in $n$, $C_1^2$, $C_2$, $C_4$ ($C_k=\sum c^k$); values at odd permutations (e.g. transpositions, $C_1$ itself) are *not* determined, consistent with $C_k(\lambda^t)=(-1)^kC_k(\lambda)$. From $u_7$ on, each $u_i$ mixes at least two new even classes, so this route yields one new content polynomial per degree only up to degree 6. (ii) Since the content multiset determines $\lambda$, and the multiset $\{|c|\}$ is transpose-invariant, one may ask whether the *even* content power sums $C_2,C_4,\dots$ determine $\lambda$ up to transpose; the $d$-vector is not known to determine them all. (iii) `src/explore_invariants.py`: the pair $(f^\lambda,C_2)$ alone does **not** separate non-conjugate partitions (first collisions at $n=14$); nor does $(r,f^\lambda)$ or $(d_1,d_2,d_3,f^\lambda)$.
+
+### 4.5 A Pfaffian formula
+
+**Theorem 4.7 (PROVED).** Let $\ell\ge\ell(\lambda)$ be even, pad $\lambda$ with zeros to length $\ell$, and set $\alpha_i=\lambda_i+\ell-i$. Then
+$$P_\lambda(t)=\mathrm{Pf}\big(B_{ij}(t)\big)_{1\le i,j\le\ell},\qquad B_{ij}(t)=[x^{\alpha_i}y^{\alpha_j}]\ \frac{(x-y)\,e^{t(x+y)}}{(1-xy)(1-x)(1-y)},$$
+and $[x^py^q]\dfrac{x-y}{(1-xy)(1-x)(1-y)}=\mathrm{sgn}(p-q)$, so $B_{ij}(t)=\sum_{a\le\alpha_i,\ b\le\alpha_j}\mathrm{sgn}(\alpha_i-a-\alpha_j+b)\dfrac{t^{a+b}}{a!\,b!}$.
+
+*Proof.* By (2.3), $P_\lambda(t)$ is the coefficient of $s_\lambda$ in $e^{tp_1}F$. For any symmetric function $g$ and $\ell\ge\ell(\lambda)$, the coefficient of $s_\lambda$ in $g$ equals $[x^{\lambda+\delta}]\,a_\delta(x_1,\dots,x_\ell)\,g(x_1,\dots,x_\ell)$ with $\delta=(\ell-1,\dots,0)$ and $a_\delta=\prod_{i<j}(x_i-x_j)$ (because $a_\delta s_\mu=a_{\mu+\delta}$, $[x^{\lambda+\delta}]a_{\mu+\delta}=\delta_{\lambda\mu}$, and $s_\mu(x_1,\dots,x_\ell)=0$ for $\ell(\mu)>\ell$). In $\ell$ variables $e^{tp_1}F=\prod_i\frac{e^{tx_i}}{1-x_i}\prod_{i<j}\frac1{1-x_ix_j}$, so
+$$P_\lambda(t)=[x^{\alpha}]\ \prod_{i<j}\frac{x_i-x_j}{1-x_ix_j}\ \prod_i\phi(x_i),\qquad\phi(x)=\frac{e^{tx}}{1-x}.$$
+Schur's Pfaffian identity, in the form $\mathrm{Pf}\big(\frac{x_i-x_j}{1-x_ix_j}\big)_{i,j\le\ell}=\prod_{i<j}\frac{x_i-x_j}{1-x_ix_j}$ for even $\ell$, follows from the classical $\mathrm{Pf}\big(\frac{y_i-y_j}{y_i+y_j}\big)=\prod_{i<j}\frac{y_i-y_j}{y_i+y_j}$ by the substitution $x_i=\frac{1-y_i}{1+y_i}$, under which $\frac{x_i-x_j}{1-x_ix_j}=-\frac{y_i-y_j}{y_i+y_j}$ and the signs $(-1)^{\ell/2}$, $(-1)^{\ell(\ell-1)/2}$ agree for even $\ell$. Since $\mathrm{Pf}(\Delta M\Delta)=\det(\Delta)\mathrm{Pf}(M)$ for diagonal $\Delta$, the product equals $\mathrm{Pf}\big(\frac{x_i-x_j}{1-x_ix_j}\phi(x_i)\phi(x_j)\big)$; expanding the Pfaffian as a signed sum over perfect matchings, each term is a product of factors involving disjoint pairs of variables, so coefficient extraction $[x^\alpha]$ factors over the pairs, giving $\mathrm{Pf}(B)$. Finally $\frac1{(1-xy)(1-x)(1-y)}=\sum_{p,q}(\min(p,q)+1)x^py^q$, and multiplying by $x-y$ gives the coefficient $(\min(p-1,q)+1)[p\ge1]-(\min(p,q-1)+1)[q\ge1]=\mathrm{sgn}(p-q)$ (check the cases $p>q$, $p=q$, $p<q$). $\square$
+
+**Computational verification** (`src/check_formulas.py`, sympy): the Pfaffian formula was checked symbolically in $t$ for all partitions with $\le2$ rows and $|\lambda|\le7$ ($\ell=2$) and all with $\le4$ rows and $|\lambda|\le7$ ($\ell=4$).
+
+**Corollary 4.8 (two-row shapes; PROVED).** For $\lambda=(\lambda_1,\lambda_2)$, $\delta=\lambda_1-\lambda_2\ge0$, and $0\le j\le n$:
+$$ d_j(\lambda_1,\lambda_2)=\sum_{b=0}^{\min(j,\lambda_2)}\binom jb\ \mathrm{sgn}(\delta+1-j+2b)\ [\,j-b\le\lambda_1+1\,]. $$
+In particular $d_j=2^j$ for $j\le\min(\delta,\lambda_2)$, and $d_j\le2^j$ always.
+
+*Proof.* Take $\ell=2$: $P_\lambda=B_{12}$ with $\alpha=(\lambda_1+1,\lambda_2)$, and read off $j![t^j]$ with $a=j-b$. $\square$
+
+*Remark.* Combinatorially, a removal sequence from a two-row shape is a word in {row 1, row 2} and the formula is a reflection-principle count; the Pfaffian formula produces it mechanically. For hooks $(a,1^b)$ one has directly $d_j=\sum_i\binom ji[i\le a-1][j-i\le b]$ for $j<n$ and $d_n=\binom{n-1}b$ (the removal sequence is a word in {arm, leg} and the box $(1,1)$ is removed last).
+
+### 4.6 The hard pairs
+
+`src/explore_separation.py` computes, for each $n\le22$, the largest index $j_0$ at which two non-conjugate partitions of $n$ first differ. For $n\ge8$ the maximum is $j_0=n-3$, attained by $(2,2,1^{n-4})$ vs $(3,1^{n-3})$: **these two shapes have identical $d_j$ for all $j\le n-4$** and differ only in $d_{n-3},\dots,d_n$ ($f^{(3,1^{n-3})}=\binom{n-1}2$, $f^{(2,2,1^{n-4})}=\frac{n(n-3)}2$). So a proof of Conjecture B cannot rely on any bounded initial segment of the vector, nor (by Section 4.2) on the local corner data alone; the top entries $u_0=f^\lambda$, $u_3$ (i.e. $C_2$) are essential. Conversely (Remark 4.6(iii)) the top entries alone are not enough either.
+
+### 4.7 Reformulation via shifted Schur functions (for orientation)
+
+By the Okounkov–Olshanski theory, $(n)_{k}\,f^{\lambda/\nu}/f^\lambda=s^*_\nu(\lambda)$ ($\nu\vdash k$, $(n)_k=n(n-1)\cdots(n-k+1)$) is the value at $\lambda$ of the shifted Schur function $s^*_\nu$. Hence
+$$\frac{n!}{f^\lambda}P_\lambda(t)=\sum_{i=0}^ng_i(\lambda)\,t^{n-i},\qquad g_i=\sum_{\nu\vdash i}s^*_\nu\in\Lambda^*,$$
+and Conjecture B says that $f^\lambda$ together with the values $g_1(\lambda),\dots,g_n(\lambda)$ of these transpose-invariant shifted symmetric functions determine $\lambda$ up to transpose. Since $\Lambda^*$ is generated by the content power sums $C_k$ and transposition acts by $C_k\mapsto(-1)^kC_k$, the transpose-invariant subalgebra needs more than one generator per degree from degree 8 on, whereas the $g_i$ provide one function per degree; so a proof cannot proceed by showing that the $g_i$ generate the invariant subalgebra — it must use the integrality/discreteness of $\lambda$ (or the full $d$-vector in a different way). (This paragraph is orientation only; nothing below depends on it.)
+
+### 4.8 What is recoverable — summary
+
+From $(d_j(\lambda))_{j=0}^n$ one recovers (PROVED): $n$; $r$ (Thm 4.2); $f^\lambda$; $m$, $A_m+B_m$, and $\prod_iG_{a_i,b_i}\bmod t^{2m+1}$ (Thm 4.2); $C_2(\lambda)$ (Thm 4.6), $\chi^\lambda$ at $(2,2,1^{n-4})$ and $(5,1^{n-5})$ (Lemma 4.5). Conjecture B is PROVED for rectangles (Thm 4.4) and for the classes in Section 4.9, and COMPUTATIONALLY VERIFIED for all $n\le75$.
+
+### 4.9 Further classes (from the referee-checked background work)
+
+*(This section is filled in from `agent_notes/` after independent verification; see the end of the document.)*
+
+---
+
+## 5. The shifted tree (Problem 2)
+
+*(Filled in from `agent_notes/shifted.md` after review; see the end of the document.)*
+
+---
+
+## 6. Open sub-questions
+
+1. **Conjecture B** in general (CONJECTURAL; verified $n\le75$). Equivalent finite form: the vector $(d_j(\lambda))_{j\le n}$ determines $\lambda$ up to transpose.
+2. **B$''$** (CONJECTURAL; verified for $|\lambda|\le74$): would already give the full description of $\mathrm{Aut}(\mathrm{SYT})$ (Theorem 3.7). Is B$''$ strictly weaker than B$'$? Is B$'$ strictly weaker than B? (No examples known either way.)
+3. A conceptual proof that $C_4,C_6,\dots$ (even content power sums), or the multiset of absolute contents, is determined by the $d$-vector; and whether the multiset $\{|c(\square)|\}$ determines $\lambda$ up to transpose (true for $n\le$ small cases checked by hand; not investigated systematically).
+4. Does $P_\lambda$ determine the multiset $\{P_{\lambda-c}\}_c$ of its "children" polynomials (only $\sum_cP_{\lambda-c}=P_\lambda'$ is obvious)? A positive answer would give an inductive proof of B.
+5. The shifted analogue: an identity $E^{\mathrm{sh}}_\lambda=\Phi\cdot P^{\mathrm{sh}}_\lambda$ with a universal $\Phi$ (see Section 5).
+
+---
+
+## 7. Assessment
+
+*(Written at the end; see below.)*

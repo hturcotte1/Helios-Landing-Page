@@ -1,0 +1,17 @@
+n=0: identity holds for all partitions and k<=14
+n=1: identity holds for all partitions and k<=14
+n=2: identity holds for all partitions and k<=14
+n=3: identity holds for all partitions and k<=14
+n=4: identity holds for all partitions and k<=14
+n=5: identity holds for all partitions and k<=14
+n=6: identity holds for all partitions and k<=14
+n=7: identity holds for all partitions and k<=14
+n=8: identity holds for all partitions and k<=14
+n=9: identity holds for all partitions and k<=14
+n=10: identity holds for all partitions and k<=14
+n=11: identity holds for all partitions and k<=14
+n=12: identity holds for all partitions and k<=14
+n=13: identity holds for all partitions and k<=14
+n=14: identity holds for all partitions and k<=14
+identity holds for all |lam| <= 14 and k <= 14 : True (0.4s)
+independent skew-chain route agrees for |lam|<=6, k<=5: True

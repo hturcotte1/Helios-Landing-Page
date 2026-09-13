@@ -1,0 +1,34 @@
+# identity search: all strict partitions with |lam| <= 8, series mod t^11
+E_empty coefficients s_k(()) = total number of shifted SYT of size k: [1, 1, 1, 2, 3, 6, 12, 27, 63, 154, 398]
+log E_empty = [0, 1, 0, 1/6, -1/12, 1/24, -19/720, 89/5040, -227/20160, 529/72576, -17723/3628800]
+  (not of the form a t + b t^2: coefficient of t^3 is 1/6 != 0)
+E_lam / P_lam independent of lam? NO; 24/25 shapes differ from lam=(); first failures (lam, first differing t-power): [((1,), 1), ((2,), 2), ((3,), 3), ((2, 1), 1), ((4,), 4), ((3, 1), 1)]
+    E_()/P_lam(()) = [1, 1, 1/2, 1/3, 1/8, 1/20] ...;  E_(1,)/P_lam((1,)) = [1, 0, 1, -1/2, 3/4, -13/20] ...
+E_lam / P'_lam independent of lam? NO; 24/25 shapes differ from lam=(); first failures (lam, first differing t-power): [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1), ((4,), 1), ((3, 1), 1)]
+    E_()/P'_lam(()) = [1, 1, 1/2, 1/3, 1/8, 1/20] ...;  E_(1,)/P'_lam((1,)) = [1, 0, 1, -1/2, 3/4, -13/20] ...
+E_lam == E_empty(t) * P_lam(1 t)? NO; 24/25 failures; first: [((1,), 1), ((2,), 2), ((3,), 3), ((2, 1), 1), ((4,), 4), ((3, 1), 1)]
+    lam=(1,): coefficient of t^1: LHS 1, RHS 2
+    ... with an arbitrary universal factor Phi (ratio E_lam/P_lam(1 t) lam-independent)? NO; first: [((1,), 1), ((2,), 2), ((3,), 3), ((2, 1), 1)]
+E_lam == E_empty(t) * P_lam(1/2 t)? NO; 24/25 failures; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1), ((4,), 1), ((3, 1), 2)]
+    lam=(1,): coefficient of t^1: LHS 1, RHS 3/2
+    ... with an arbitrary universal factor Phi (ratio E_lam/P_lam(1/2 t) lam-independent)? NO; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1)]
+E_lam == E_empty(t) * P_lam(2 t)? NO; 24/25 failures; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1), ((4,), 1), ((3, 1), 1)]
+    lam=(1,): coefficient of t^1: LHS 1, RHS 3
+    ... with an arbitrary universal factor Phi (ratio E_lam/P_lam(2 t) lam-independent)? NO; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1)]
+E_lam == E_empty(t) * P'_lam(1 t)? NO; 24/25 failures; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1), ((4,), 1), ((3, 1), 1)]
+    lam=(1,): coefficient of t^1: LHS 1, RHS 2
+    ... with an arbitrary universal factor Phi (ratio E_lam/P'_lam(1 t) lam-independent)? NO; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1)]
+E_lam == E_empty(t) * P'_lam(1/2 t)? NO; 24/25 failures; first: [((1,), 1), ((2,), 2), ((3,), 3), ((2, 1), 1), ((4,), 4), ((3, 1), 1)]
+    lam=(1,): coefficient of t^1: LHS 1, RHS 3/2
+    ... with an arbitrary universal factor Phi (ratio E_lam/P'_lam(1/2 t) lam-independent)? NO; first: [((1,), 1), ((2,), 2), ((3,), 3), ((2, 1), 1)]
+E_lam == E_empty(t) * P'_lam(2 t)? NO; 24/25 failures; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1), ((4,), 1), ((3, 1), 1)]
+    lam=(1,): coefficient of t^1: LHS 1, RHS 3
+    ... with an arbitrary universal factor Phi (ratio E_lam/P'_lam(2 t) lam-independent)? NO; first: [((1,), 1), ((2,), 1), ((3,), 1), ((2, 1), 1)]
+E_(1)/E_() = (log E_())' = [1, 0, 1/2, -1/3, 5/24, -19/120, 89/720, -227/2520, 529/8064, -17723/362880] ... (E_(1) = E_()' since () has the single cover (1)).
+  This is not a polynomial (nonzero through t^10), so NO identity E_lam = Phi(t) Q_lam(t) with Q_lam a polynomial
+  of degree <= |lam| (whatever Q_lam is) can hold with a universal Phi: Phi would have to equal E_() (Q_() = 1)
+  and then Q_(1) = E_(1)/E_() is not a polynomial.
+E_empty vs exp(t + t^2/2) (involutions): first differing t-power 2; k! * coefficients: [Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(2, 1), Fraction(3, 1), Fraction(6, 1), Fraction(12, 1), Fraction(27, 1), Fraction(63, 1), Fraction(154, 1), Fraction(398, 1)] vs [Fraction(1, 1), Fraction(1, 1), Fraction(2, 1), Fraction(4, 1), Fraction(10, 1), Fraction(26, 1), Fraction(76, 1), Fraction(232, 1), Fraction(764, 1), Fraction(2620, 1), Fraction(9496, 1)]
+Corrected relation  A_lam' = (1/2) A_{D' lam} + (1 + t/2) A_lam - (1/2) C_lam  (C_lam = EGF of chains up from lam ending at a partition with last part 1), i.e.
+  2 s_{k+1}(lam) = sum_w w s_k(mu) + 2 s_k(lam) + k s_{k-1}(lam) - c_k(lam):  HOLDS for all |lam| <= 8, k < 10
+  without the -c_k(lam) term it fails for 25/25 shapes; first: [((), 1, 2, 3), ((1,), 0, 2, 3), ((2,), 1, 6, 7), ((3,), 1, 8, 9)]
