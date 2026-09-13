@@ -1,0 +1,1852 @@
+G_3 = 1.0*C2 + 2*n**3/3 - 2.5*n**2 + 1.83333333333333*n
+G_4 = 1.0*C1**2 + C2*n - 6.0*C2 + 5*n**4/12 - 3*n**3 + 7.58333333333333*n**2 - 5.0*n
+G_5 = C1**2*n - 6.0*C1**2 + C2*n**2 - 13.0*C2*n + 34.0*C2 + 1.0*C4 + 13*n**5/60 - 8*n**4/3 + 13.4166666666667*n**3 - 29.3333333333333*n**2 + 18.3666666666667*n
+G_6 = C1**2*n**2 - 11*C1**2*n + 42.0*C1**2 + 2.0*C2**2 + 2*C2*n**3/3 - 16.0*C2*n**2 + 109.333333333333*C2*n - 210.0*C2 + C4*n - 15.0*C4 + 19*n**6/180 - 23*n**5/12 + 15.6388888888889*n**4 - 68.5833333333333*n**3 + 140.255555555556*n**2 - 85.5*n
+G_7 = 1.0*C1**2*C2 + 2*C1**2*n**3/3 - 12.5*C1**2*n**2 + 109.833333333333*C1**2*n - 336.0*C1**2 - 16.0*C1*C3 + 2*C2**2*n - 19.5*C2**2 + 5*C2*n**4/12 - 29*C2*n**3/2 + 173.583333333333*C2*n**2 - 889.5*C2*n + 1452.0*C2 + C4*n**2 - 26.0*C4*n + 172.5*C4 + 1.0*C6 + 29*n**7/630 - 47*n**6/40 + 1009*n**5/72 - 98.75*n**4 + 408.213888888889*n**3 - 806.075*n**2 + 483.726190476191*n
+G_8 = 0.5*C1**4 + C1**2*C2*n - 18.0*C1**2*C2 + 5*C1**2*n**4/12 - 11*C1**2*n**3 + 152.583333333333*C1**2*n**2 - 1138.0*C1**2*n + 2964.0*C1**2 - 24.0*C1*C3*n + 284.0*C1*C3 + 2*C2**2*n**2 - 36.5*C2**2*n + 218.5*C2**2 + 1.0*C2*C4 + 13*C2*n**5/60 - 32*C2*n**4/3 + 190.583333333333*C2*n**3 - 1736.33333333333*C2*n**2 + 7628.2*C2*n - 11256.0*C2 + 2.0*C3**2 + 2*C4*n**3/3 - 27.5*C4*n**2 + 409.333333333333*C4*n - 1890.0*C4 + C6*n - 28.0*C6 + 191*n**8/10080 - 23*n**7/36 + 7481*n**6/720 - 105.097222222222*n**5 + 698.400694444445*n**4 - 2811.93055555556*n**3 + 5435.19007936508*n**2 - 3226.33333333333*n
+G_9 = C1**4*n/2 - 6.0*C1**4 + C1**2*C2*n**2 - 29.0*C1**2*C2*n + 304.0*C1**2*C2 + 1.0*C1**2*C4 + 13*C1**2*n**5/60 - 47*C1**2*n**4/6 + 153.416666666667*C1**2*n**3 - 1887.16666666667*C1**2*n**2 + 12337.3666666667*C1**2*n - 28464.0*C1**2 - 24*C1*C3*n**2 + 588.0*C1*C3*n - 4120.0*C1*C3 - 24.0*C1*C5 + 1.66666666666667*C2**3 + 4*C2**2*n**3/3 - 41.0*C2**2*n**2 + 525.166666666667*C2**2*n - 2604.0*C2**2 + C2*C4*n - 51.0*C2*C4 + 19*C2*n**6/180 - 403*C2*n**5/60 + 165.055555555556*C2*n**4 - 2240.58333333333*C2*n**3 + 17719.8388888889*C2*n**2 - 70741.7*C2*n + 97296.0*C2 + 2*C3**2*n - 24.0*C3**2 + 5*C4*n**4/12 - 23*C4*n**3 + 532.583333333333*C4*n**2 - 5655.0*C4*n + 21098.0*C4 + C6*n**2 - 43.0*C6*n + 541.333333333333*C6 + 1.0*C8 + 131*n**9/18144 - 197*n**8/630 + 14329*n**7/2160 - 90.2222222222222*n**6 + 854.782175925926*n**5 - 5572.32222222222*n**4 + 22152.165696649*n**3 - 42145.1428571429*n**2 + 24794.4111111111*n
+G_10 = C1**4*n**2/2 - 21*C1**4*n/2 + 78.0*C1**4 + 2.0*C1**2*C2**2 + 2*C1**2*C2*n**3/3 - 32.0*C1**2*C2*n**2 + 625.333333333333*C1**2*C2*n - 4834.0*C1**2*C2 + C1**2*C4*n - 31.0*C1**2*C4 + 19*C1**2*n**6/180 - 293*C1**2*n**5/60 + 125.138888888889*C1**2*n**4 - 2161.75*C1**2*n**3 + 24036.7555555556*C1**2*n**2 - 140987.366666667*C1**2*n + 296208.0*C1**2 - 40.0*C1*C2*C3 - 56*C1*C3*n**3/3 + 696.0*C1*C3*n**2 - 10733.3333333333*C1*C3*n + 57312.0*C1*C3 - 24*C1*C5*n + 720.0*C1*C5 + 5*C2**3*n/3 - 25.5*C2**3 + 5*C2**2*n**4/6 - 71*C2**2*n**3/2 + 714.416666666667*C2**2*n**2 - 7577.75*C2**2*n + 32946.0*C2**2 + C2*C4*n**2 - 83.0*C2*C4*n + 1096.5*C2*C4 + 1.0*C2*C6 + 29*C2*n**7/630 - 56*C2*n**6/15 + 21511*C2*n**5/180 - 2215.04166666667*C2*n**4 + 26235.9222222222*C2*n**3 - 191007.225*C2*n**2 + 713734.526190476*C2*n - 930960.0*C2 + 2*C3**2*n**2 - 42*C3**2*n + 456.0*C3**2 + 3.0*C4**2 + 13*C4*n**5/60 - 187*C4*n**4/12 + 507.583333333333*C4*n**3 - 8697.66666666667*C4*n**2 + 75923.45*C4*n - 246330.0*C4 + 2*C6*n**3/3 - 44.5*C6*n**2 + 1089.16666666667*C6*n - 9240.0*C6 + C8*n - 45.0*C8 + 1187*n**10/453600 - 473*n**9/3360 + 56863*n**8/15120 - 47281*n**7/720 + 827.246342592593*n**6 - 7683.51597222222*n**5 + 49964.9444664903*n**4 - 197018.175198413*n**3 + 369684.045793651*n**2 - 215712.5*n
+G mismatch (4, 1, 1) 6
+G mismatch (3, 1, 1, 1) 6
+G mismatch (7,) 3
+G mismatch (7,) 5
+G mismatch (7,) 6
+G mismatch (6, 1) 3
+G mismatch (6, 1) 6
+G mismatch (5, 2) 3
+G mismatch (5, 2) 4
+G mismatch (5, 2) 6
+G mismatch (5, 1, 1) 3
+G mismatch (5, 1, 1) 4
+G mismatch (5, 1, 1) 6
+G mismatch (4, 3) 4
+G mismatch (4, 3) 6
+G mismatch (4, 2, 1) 4
+G mismatch (4, 2, 1) 6
+G mismatch (4, 1, 1, 1) 3
+G mismatch (4, 1, 1, 1) 4
+G mismatch (4, 1, 1, 1) 6
+G mismatch (3, 3, 1) 4
+G mismatch (3, 3, 1) 6
+G mismatch (3, 3, 1) 7
+G mismatch (3, 2, 2) 4
+G mismatch (3, 2, 2) 6
+G mismatch (3, 2, 2) 7
+G mismatch (3, 2, 1, 1) 4
+G mismatch (3, 2, 1, 1) 6
+G mismatch (3, 1, 1, 1, 1) 3
+G mismatch (3, 1, 1, 1, 1) 4
+G mismatch (3, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 1) 4
+G mismatch (2, 2, 2, 1) 6
+G mismatch (2, 2, 1, 1, 1) 3
+G mismatch (2, 2, 1, 1, 1) 4
+G mismatch (2, 2, 1, 1, 1) 6
+G mismatch (2, 1, 1, 1, 1, 1) 3
+G mismatch (2, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (1, 1, 1, 1, 1, 1, 1) 5
+G mismatch (1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (8,) 6
+G mismatch (8,) 8
+G mismatch (7, 1) 6
+G mismatch (6, 2) 6
+G mismatch (6, 1, 1) 6
+G mismatch (5, 3) 6
+G mismatch (5, 2, 1) 6
+G mismatch (5, 2, 1) 8
+G mismatch (5, 1, 1, 1) 6
+G mismatch (4, 4) 6
+G mismatch (4, 4) 8
+G mismatch (4, 3, 1) 6
+G mismatch (4, 3, 1) 8
+G mismatch (4, 2, 2) 6
+G mismatch (4, 2, 2) 8
+G mismatch (4, 2, 1, 1) 6
+G mismatch (4, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2) 6
+G mismatch (3, 3, 2) 8
+G mismatch (3, 3, 1, 1) 6
+G mismatch (3, 3, 1, 1) 8
+G mismatch (3, 2, 2, 1) 6
+G mismatch (3, 2, 2, 1) 8
+G mismatch (3, 2, 1, 1, 1) 6
+G mismatch (3, 2, 1, 1, 1) 8
+G mismatch (3, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2) 6
+G mismatch (2, 2, 2, 2) 8
+G mismatch (2, 2, 2, 1, 1) 6
+G mismatch (2, 2, 1, 1, 1, 1) 6
+G mismatch (2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (9,) 6
+G mismatch (9,) 7
+G mismatch (9,) 8
+G mismatch (9,) 9
+G mismatch (8, 1) 6
+G mismatch (7, 2) 6
+G mismatch (7, 2) 8
+G mismatch (7, 1, 1) 6
+G mismatch (6, 3) 6
+G mismatch (6, 3) 8
+G mismatch (6, 2, 1) 6
+G mismatch (6, 2, 1) 8
+G mismatch (6, 2, 1) 9
+G mismatch (6, 1, 1, 1) 6
+G mismatch (6, 1, 1, 1) 8
+G mismatch (6, 1, 1, 1) 9
+G mismatch (5, 4) 6
+G mismatch (5, 4) 8
+G mismatch (5, 3, 1) 6
+G mismatch (5, 3, 1) 9
+G mismatch (5, 2, 2) 6
+G mismatch (5, 2, 2) 8
+G mismatch (5, 2, 1, 1) 6
+G mismatch (5, 2, 1, 1) 9
+G mismatch (5, 1, 1, 1, 1) 6
+G mismatch (4, 4, 1) 6
+G mismatch (4, 4, 1) 8
+G mismatch (4, 4, 1) 9
+G mismatch (4, 3, 2) 6
+G mismatch (4, 3, 2) 9
+G mismatch (4, 3, 1, 1) 6
+G mismatch (4, 3, 1, 1) 9
+G mismatch (4, 2, 2, 1) 6
+G mismatch (4, 2, 2, 1) 9
+G mismatch (4, 2, 1, 1, 1) 6
+G mismatch (4, 2, 1, 1, 1) 9
+G mismatch (4, 1, 1, 1, 1, 1) 6
+G mismatch (4, 1, 1, 1, 1, 1) 8
+G mismatch (4, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 3) 6
+G mismatch (3, 3, 3) 8
+G mismatch (3, 3, 2, 1) 6
+G mismatch (3, 3, 2, 1) 9
+G mismatch (3, 3, 1, 1, 1) 6
+G mismatch (3, 3, 1, 1, 1) 8
+G mismatch (3, 2, 2, 2) 6
+G mismatch (3, 2, 2, 2) 8
+G mismatch (3, 2, 2, 2) 9
+G mismatch (3, 2, 2, 1, 1) 6
+G mismatch (3, 2, 2, 1, 1) 9
+G mismatch (3, 2, 1, 1, 1, 1) 6
+G mismatch (3, 2, 1, 1, 1, 1) 8
+G mismatch (3, 2, 1, 1, 1, 1) 9
+G mismatch (3, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2, 1) 6
+G mismatch (2, 2, 2, 2, 1) 8
+G mismatch (2, 2, 2, 1, 1, 1) 6
+G mismatch (2, 2, 2, 1, 1, 1) 8
+G mismatch (2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 1, 1, 1, 1, 1) 8
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (10,) 5
+G mismatch (9, 1) 5
+G mismatch (8, 2) 8
+G mismatch (7, 3) 8
+G mismatch (7, 1, 1, 1) 8
+G mismatch (6, 2, 1, 1) 8
+G mismatch (6, 2, 1, 1) 9
+G mismatch (6, 2, 1, 1) 10
+G mismatch (6, 1, 1, 1, 1) 6
+G mismatch (6, 1, 1, 1, 1) 10
+G mismatch (5, 3, 2) 8
+G mismatch (5, 3, 2) 10
+G mismatch (5, 2, 2, 1) 10
+G mismatch (5, 1, 1, 1, 1, 1) 6
+G mismatch (5, 1, 1, 1, 1, 1) 10
+G mismatch (4, 4, 2) 9
+G mismatch (4, 4, 2) 10
+G mismatch (4, 4, 1, 1) 10
+G mismatch (4, 3, 3) 8
+G mismatch (4, 3, 3) 9
+G mismatch (4, 3, 2, 1) 10
+G mismatch (4, 3, 1, 1, 1) 10
+G mismatch (4, 2, 2, 2) 10
+G mismatch (4, 2, 1, 1, 1, 1) 8
+G mismatch (4, 2, 1, 1, 1, 1) 9
+G mismatch (4, 2, 1, 1, 1, 1) 10
+G mismatch (4, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 3, 3, 1) 8
+G mismatch (3, 3, 3, 1) 9
+G mismatch (3, 3, 2, 2) 9
+G mismatch (3, 3, 2, 2) 10
+G mismatch (3, 3, 2, 1, 1) 8
+G mismatch (3, 3, 2, 1, 1) 10
+G mismatch (2, 2, 2, 1, 1, 1, 1) 8
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1) 8
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1) 5
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 5
+G mismatch (11,) 10
+G mismatch (10, 1) 6
+G mismatch (9, 2) 6
+G mismatch (9, 1, 1) 6
+G mismatch (8, 3) 6
+G mismatch (8, 2, 1) 6
+G mismatch (8, 1, 1, 1) 9
+G mismatch (7, 4) 8
+G mismatch (7, 3, 1) 6
+G mismatch (7, 3, 1) 7
+G mismatch (7, 3, 1) 8
+G mismatch (7, 3, 1) 9
+G mismatch (7, 3, 1) 10
+G mismatch (7, 2, 2) 6
+G mismatch (7, 2, 2) 7
+G mismatch (7, 2, 2) 9
+G mismatch (7, 2, 2) 10
+G mismatch (7, 2, 1, 1) 6
+G mismatch (7, 2, 1, 1) 7
+G mismatch (7, 2, 1, 1) 9
+G mismatch (7, 1, 1, 1, 1) 6
+G mismatch (7, 1, 1, 1, 1) 9
+G mismatch (7, 1, 1, 1, 1) 10
+G mismatch (6, 5) 6
+G mismatch (6, 5) 8
+G mismatch (6, 4, 1) 6
+G mismatch (6, 4, 1) 9
+G mismatch (6, 3, 2) 6
+G mismatch (6, 3, 1, 1) 6
+G mismatch (6, 3, 1, 1) 8
+G mismatch (6, 2, 2, 1) 6
+G mismatch (6, 2, 2, 1) 8
+G mismatch (6, 2, 1, 1, 1) 6
+G mismatch (6, 2, 1, 1, 1) 10
+G mismatch (6, 1, 1, 1, 1, 1) 6
+G mismatch (6, 1, 1, 1, 1, 1) 8
+G mismatch (5, 5, 1) 6
+G mismatch (5, 5, 1) 9
+G mismatch (5, 4, 2) 6
+G mismatch (5, 4, 2) 8
+G mismatch (5, 4, 1, 1) 6
+G mismatch (5, 4, 1, 1) 9
+G mismatch (5, 4, 1, 1) 10
+G mismatch (5, 3, 3) 6
+G mismatch (5, 3, 3) 8
+G mismatch (5, 3, 3) 9
+G mismatch (5, 3, 2, 1) 8
+G mismatch (5, 3, 2, 1) 10
+G mismatch (5, 3, 1, 1, 1) 6
+G mismatch (5, 3, 1, 1, 1) 8
+G mismatch (5, 2, 2, 2) 6
+G mismatch (5, 2, 2, 2) 9
+G mismatch (5, 2, 2, 1, 1) 6
+G mismatch (5, 2, 2, 1, 1) 8
+G mismatch (5, 2, 1, 1, 1, 1) 6
+G mismatch (5, 2, 1, 1, 1, 1) 10
+G mismatch (5, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 1, 1, 1, 1, 1, 1) 9
+G mismatch (5, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 4, 3) 6
+G mismatch (4, 4, 3) 8
+G mismatch (4, 4, 3) 9
+G mismatch (4, 4, 3) 10
+G mismatch (4, 4, 2, 1) 6
+G mismatch (4, 4, 2, 1) 8
+G mismatch (4, 4, 2, 1) 9
+G mismatch (4, 4, 1, 1, 1) 6
+G mismatch (4, 4, 1, 1, 1) 9
+G mismatch (4, 3, 3, 1) 9
+G mismatch (4, 3, 3, 1) 10
+G mismatch (4, 3, 2, 2) 6
+G mismatch (4, 3, 2, 2) 8
+G mismatch (4, 3, 2, 2) 9
+G mismatch (4, 3, 2, 1, 1) 8
+G mismatch (4, 3, 2, 1, 1) 10
+G mismatch (4, 3, 1, 1, 1, 1) 6
+G mismatch (4, 3, 1, 1, 1, 1) 8
+G mismatch (4, 2, 2, 2, 1) 6
+G mismatch (4, 2, 2, 2, 1) 9
+G mismatch (4, 2, 2, 2, 1) 10
+G mismatch (4, 2, 2, 1, 1, 1) 6
+G mismatch (4, 2, 2, 1, 1, 1) 8
+G mismatch (4, 2, 1, 1, 1, 1, 1) 6
+G mismatch (4, 2, 1, 1, 1, 1, 1) 7
+G mismatch (4, 2, 1, 1, 1, 1, 1) 9
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 3, 2) 6
+G mismatch (3, 3, 3, 2) 8
+G mismatch (3, 3, 3, 2) 9
+G mismatch (3, 3, 3, 2) 10
+G mismatch (3, 3, 3, 1, 1) 6
+G mismatch (3, 3, 3, 1, 1) 8
+G mismatch (3, 3, 3, 1, 1) 9
+G mismatch (3, 3, 2, 2, 1) 6
+G mismatch (3, 3, 2, 2, 1) 8
+G mismatch (3, 3, 2, 1, 1, 1) 6
+G mismatch (3, 3, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 1, 1, 1, 1, 1) 7
+G mismatch (3, 3, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 1, 1, 1, 1, 1) 10
+G mismatch (3, 2, 2, 2, 2) 6
+G mismatch (3, 2, 2, 2, 2) 9
+G mismatch (3, 2, 2, 2, 1, 1) 6
+G mismatch (3, 2, 2, 2, 1, 1) 9
+G mismatch (3, 2, 2, 1, 1, 1, 1) 6
+G mismatch (3, 2, 2, 1, 1, 1, 1) 7
+G mismatch (3, 2, 2, 1, 1, 1, 1) 8
+G mismatch (3, 2, 2, 1, 1, 1, 1) 9
+G mismatch (3, 2, 2, 1, 1, 1, 1) 10
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2, 2, 1) 6
+G mismatch (2, 2, 2, 2, 2, 1) 8
+G mismatch (2, 2, 2, 2, 1, 1, 1) 8
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (12,) 9
+G mismatch (11, 1) 6
+G mismatch (10, 2) 6
+G mismatch (10, 2) 8
+G mismatch (9, 3) 9
+G mismatch (9, 2, 1) 10
+G mismatch (9, 1, 1, 1) 8
+G mismatch (8, 4) 8
+G mismatch (8, 3, 1) 8
+G mismatch (8, 2, 2) 8
+G mismatch (8, 2, 1, 1) 9
+G mismatch (8, 1, 1, 1, 1) 6
+G mismatch (8, 1, 1, 1, 1) 8
+G mismatch (7, 5) 8
+G mismatch (7, 5) 9
+G mismatch (7, 4, 1) 9
+G mismatch (7, 4, 1) 10
+G mismatch (7, 3, 2) 9
+G mismatch (7, 3, 1, 1) 8
+G mismatch (7, 2, 2, 1) 8
+G mismatch (7, 2, 2, 1) 10
+G mismatch (7, 2, 1, 1, 1) 8
+G mismatch (7, 2, 1, 1, 1) 9
+G mismatch (7, 1, 1, 1, 1, 1) 6
+G mismatch (7, 1, 1, 1, 1, 1) 10
+G mismatch (6, 6) 8
+G mismatch (6, 4, 2) 8
+G mismatch (6, 4, 1, 1) 8
+G mismatch (6, 3, 3) 8
+G mismatch (6, 3, 2, 1) 9
+G mismatch (6, 2, 2, 2) 8
+G mismatch (6, 2, 2, 2) 9
+G mismatch (6, 2, 2, 2) 10
+G mismatch (6, 2, 2, 1, 1) 8
+G mismatch (6, 2, 1, 1, 1, 1) 5
+G mismatch (6, 2, 1, 1, 1, 1) 8
+G mismatch (6, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 1, 1, 1, 1, 1, 1) 10
+G mismatch (5, 5, 2) 8
+G mismatch (5, 5, 2) 9
+G mismatch (5, 5, 2) 10
+G mismatch (5, 5, 1, 1) 8
+G mismatch (5, 5, 1, 1) 9
+G mismatch (5, 4, 3) 8
+G mismatch (5, 4, 3) 9
+G mismatch (5, 4, 2, 1) 8
+G mismatch (5, 4, 2, 1) 9
+G mismatch (5, 4, 2, 1) 10
+G mismatch (5, 4, 1, 1, 1) 8
+G mismatch (5, 4, 1, 1, 1) 9
+G mismatch (5, 3, 3, 1) 8
+G mismatch (5, 3, 3, 1) 9
+G mismatch (5, 3, 2, 2) 8
+G mismatch (5, 3, 2, 2) 9
+G mismatch (5, 3, 2, 2) 10
+G mismatch (5, 3, 2, 1, 1) 8
+G mismatch (5, 3, 2, 1, 1) 9
+G mismatch (5, 3, 1, 1, 1, 1) 8
+G mismatch (5, 2, 2, 2, 1) 8
+G mismatch (5, 2, 2, 2, 1) 9
+G mismatch (5, 2, 1, 1, 1, 1, 1) 8
+G mismatch (5, 2, 1, 1, 1, 1, 1) 9
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (4, 4, 4) 9
+G mismatch (4, 4, 4) 10
+G mismatch (4, 4, 3, 1) 8
+G mismatch (4, 4, 3, 1) 9
+G mismatch (4, 4, 3, 1) 10
+G mismatch (4, 4, 2, 2) 9
+G mismatch (4, 4, 2, 2) 10
+G mismatch (4, 4, 2, 1, 1) 8
+G mismatch (4, 4, 2, 1, 1) 9
+G mismatch (4, 4, 2, 1, 1) 10
+G mismatch (4, 4, 1, 1, 1, 1) 8
+G mismatch (4, 4, 1, 1, 1, 1) 9
+G mismatch (4, 4, 1, 1, 1, 1) 10
+G mismatch (4, 3, 3, 2) 8
+G mismatch (4, 3, 3, 2) 9
+G mismatch (4, 3, 3, 2) 10
+G mismatch (4, 3, 3, 1, 1) 8
+G mismatch (4, 3, 3, 1, 1) 9
+G mismatch (4, 3, 2, 2, 1) 8
+G mismatch (4, 3, 2, 2, 1) 9
+G mismatch (4, 3, 2, 2, 1) 10
+G mismatch (4, 3, 2, 1, 1, 1) 9
+G mismatch (4, 3, 1, 1, 1, 1, 1) 8
+G mismatch (4, 3, 1, 1, 1, 1, 1) 10
+G mismatch (4, 2, 2, 2, 2) 8
+G mismatch (4, 2, 2, 2, 2) 9
+G mismatch (4, 2, 2, 2, 1, 1) 8
+G mismatch (4, 2, 2, 1, 1, 1, 1) 8
+G mismatch (4, 2, 1, 1, 1, 1, 1, 1) 9
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 3, 3, 3) 9
+G mismatch (3, 3, 3, 3) 10
+G mismatch (3, 3, 3, 2, 1) 8
+G mismatch (3, 3, 3, 2, 1) 9
+G mismatch (3, 3, 3, 1, 1, 1) 8
+G mismatch (3, 3, 2, 2, 2) 8
+G mismatch (3, 3, 2, 2, 2) 9
+G mismatch (3, 3, 2, 2, 2) 10
+G mismatch (3, 3, 2, 2, 1, 1) 8
+G mismatch (3, 3, 2, 1, 1, 1, 1) 9
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 2, 2, 2, 1, 1, 1) 9
+G mismatch (3, 2, 2, 2, 1, 1, 1) 10
+G mismatch (3, 2, 2, 1, 1, 1, 1, 1) 8
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (2, 2, 2, 2, 2, 2) 8
+G mismatch (2, 2, 2, 2, 2, 1, 1) 8
+G mismatch (2, 2, 2, 2, 2, 1, 1) 9
+G mismatch (2, 2, 2, 2, 1, 1, 1, 1) 8
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1, 1) 9
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (13,) 8
+G mismatch (13,) 10
+G mismatch (12, 1) 7
+G mismatch (12, 1) 8
+G mismatch (10, 3) 9
+G mismatch (10, 2, 1) 10
+G mismatch (10, 1, 1, 1) 9
+G mismatch (9, 4) 7
+G mismatch (9, 3, 1) 7
+G mismatch (9, 2, 2) 7
+G mismatch (9, 2, 1, 1) 6
+G mismatch (9, 1, 1, 1, 1) 7
+G mismatch (8, 5) 5
+G mismatch (8, 5) 6
+G mismatch (8, 5) 7
+G mismatch (8, 4, 1) 7
+G mismatch (8, 3, 2) 4
+G mismatch (8, 3, 2) 7
+G mismatch (8, 3, 2) 9
+G mismatch (8, 3, 1, 1) 4
+G mismatch (8, 3, 1, 1) 6
+G mismatch (8, 3, 1, 1) 9
+G mismatch (8, 2, 2, 1) 4
+G mismatch (8, 2, 2, 1) 6
+G mismatch (8, 2, 2, 1) 7
+G mismatch (8, 2, 1, 1, 1) 4
+G mismatch (8, 2, 1, 1, 1) 6
+G mismatch (8, 2, 1, 1, 1) 7
+G mismatch (8, 1, 1, 1, 1, 1) 4
+G mismatch (8, 1, 1, 1, 1, 1) 7
+G mismatch (7, 6) 5
+G mismatch (7, 6) 6
+G mismatch (7, 5, 1) 4
+G mismatch (7, 5, 1) 5
+G mismatch (7, 5, 1) 6
+G mismatch (7, 5, 1) 9
+G mismatch (7, 4, 2) 4
+G mismatch (7, 4, 2) 5
+G mismatch (7, 4, 2) 7
+G mismatch (7, 4, 2) 8
+G mismatch (7, 4, 2) 9
+G mismatch (7, 4, 1, 1) 4
+G mismatch (7, 4, 1, 1) 5
+G mismatch (7, 4, 1, 1) 6
+G mismatch (7, 4, 1, 1) 10
+G mismatch (7, 3, 3) 4
+G mismatch (7, 3, 3) 5
+G mismatch (7, 3, 3) 6
+G mismatch (7, 3, 2, 1) 4
+G mismatch (7, 3, 2, 1) 5
+G mismatch (7, 3, 2, 1) 6
+G mismatch (7, 3, 1, 1, 1) 4
+G mismatch (7, 3, 1, 1, 1) 5
+G mismatch (7, 3, 1, 1, 1) 6
+G mismatch (7, 2, 2, 2) 4
+G mismatch (7, 2, 2, 2) 5
+G mismatch (7, 2, 2, 2) 6
+G mismatch (7, 2, 2, 2) 8
+G mismatch (7, 2, 2, 1, 1) 4
+G mismatch (7, 2, 2, 1, 1) 5
+G mismatch (7, 2, 2, 1, 1) 6
+G mismatch (7, 2, 2, 1, 1) 9
+G mismatch (7, 2, 1, 1, 1, 1) 4
+G mismatch (7, 2, 1, 1, 1, 1) 6
+G mismatch (7, 2, 1, 1, 1, 1) 10
+G mismatch (7, 1, 1, 1, 1, 1, 1) 4
+G mismatch (7, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 6, 1) 4
+G mismatch (6, 6, 1) 9
+G mismatch (6, 6, 1) 10
+G mismatch (6, 5, 2) 4
+G mismatch (6, 5, 2) 7
+G mismatch (6, 5, 2) 8
+G mismatch (6, 5, 1, 1) 4
+G mismatch (6, 5, 1, 1) 6
+G mismatch (6, 5, 1, 1) 10
+G mismatch (6, 4, 3) 4
+G mismatch (6, 4, 3) 7
+G mismatch (6, 4, 2, 1) 4
+G mismatch (6, 4, 2, 1) 8
+G mismatch (6, 4, 2, 1) 10
+G mismatch (6, 4, 1, 1, 1) 4
+G mismatch (6, 4, 1, 1, 1) 7
+G mismatch (6, 4, 1, 1, 1) 8
+G mismatch (6, 4, 1, 1, 1) 10
+G mismatch (6, 3, 3, 1) 4
+G mismatch (6, 3, 3, 1) 6
+G mismatch (6, 3, 2, 2) 4
+G mismatch (6, 3, 2, 2) 7
+G mismatch (6, 3, 2, 2) 8
+G mismatch (6, 3, 2, 2) 10
+G mismatch (6, 3, 2, 1, 1) 4
+G mismatch (6, 3, 2, 1, 1) 5
+G mismatch (6, 3, 2, 1, 1) 7
+G mismatch (6, 3, 2, 1, 1) 8
+G mismatch (6, 3, 1, 1, 1, 1) 4
+G mismatch (6, 3, 1, 1, 1, 1) 5
+G mismatch (6, 3, 1, 1, 1, 1) 7
+G mismatch (6, 2, 2, 2, 1) 4
+G mismatch (6, 2, 2, 2, 1) 5
+G mismatch (6, 2, 2, 2, 1) 7
+G mismatch (6, 2, 2, 2, 1) 8
+G mismatch (6, 2, 2, 2, 1) 10
+G mismatch (6, 2, 2, 1, 1, 1) 4
+G mismatch (6, 2, 2, 1, 1, 1) 5
+G mismatch (6, 2, 2, 1, 1, 1) 7
+G mismatch (6, 2, 1, 1, 1, 1, 1) 4
+G mismatch (6, 2, 1, 1, 1, 1, 1) 6
+G mismatch (6, 2, 1, 1, 1, 1, 1) 10
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1) 4
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (5, 5, 3) 4
+G mismatch (5, 5, 3) 5
+G mismatch (5, 5, 3) 6
+G mismatch (5, 5, 3) 7
+G mismatch (5, 5, 3) 10
+G mismatch (5, 5, 2, 1) 4
+G mismatch (5, 5, 2, 1) 5
+G mismatch (5, 5, 2, 1) 6
+G mismatch (5, 5, 2, 1) 7
+G mismatch (5, 5, 2, 1) 9
+G mismatch (5, 5, 2, 1) 10
+G mismatch (5, 5, 1, 1, 1) 4
+G mismatch (5, 5, 1, 1, 1) 5
+G mismatch (5, 5, 1, 1, 1) 6
+G mismatch (5, 5, 1, 1, 1) 10
+G mismatch (5, 4, 4) 4
+G mismatch (5, 4, 4) 5
+G mismatch (5, 4, 4) 7
+G mismatch (5, 4, 3, 1) 4
+G mismatch (5, 4, 3, 1) 5
+G mismatch (5, 4, 3, 1) 6
+G mismatch (5, 4, 3, 1) 7
+G mismatch (5, 4, 3, 1) 10
+G mismatch (5, 4, 2, 2) 4
+G mismatch (5, 4, 2, 2) 5
+G mismatch (5, 4, 2, 2) 7
+G mismatch (5, 4, 2, 2) 10
+G mismatch (5, 4, 2, 1, 1) 4
+G mismatch (5, 4, 2, 1, 1) 5
+G mismatch (5, 4, 1, 1, 1, 1) 4
+G mismatch (5, 4, 1, 1, 1, 1) 5
+G mismatch (5, 4, 1, 1, 1, 1) 7
+G mismatch (5, 4, 1, 1, 1, 1) 8
+G mismatch (5, 4, 1, 1, 1, 1) 10
+G mismatch (5, 3, 3, 2) 4
+G mismatch (5, 3, 3, 2) 5
+G mismatch (5, 3, 3, 2) 6
+G mismatch (5, 3, 3, 2) 7
+G mismatch (5, 3, 3, 2) 10
+G mismatch (5, 3, 3, 1, 1) 4
+G mismatch (5, 3, 3, 1, 1) 5
+G mismatch (5, 3, 3, 1, 1) 6
+G mismatch (5, 3, 2, 2, 1) 4
+G mismatch (5, 3, 2, 2, 1) 5
+G mismatch (5, 3, 2, 1, 1, 1) 4
+G mismatch (5, 3, 2, 1, 1, 1) 5
+G mismatch (5, 3, 2, 1, 1, 1) 7
+G mismatch (5, 3, 2, 1, 1, 1) 8
+G mismatch (5, 3, 1, 1, 1, 1, 1) 4
+G mismatch (5, 3, 1, 1, 1, 1, 1) 5
+G mismatch (5, 3, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 1, 1, 1, 1, 1) 9
+G mismatch (5, 2, 2, 2, 2) 4
+G mismatch (5, 2, 2, 2, 2) 5
+G mismatch (5, 2, 2, 2, 2) 6
+G mismatch (5, 2, 2, 2, 2) 10
+G mismatch (5, 2, 2, 2, 1, 1) 4
+G mismatch (5, 2, 2, 2, 1, 1) 7
+G mismatch (5, 2, 2, 2, 1, 1) 8
+G mismatch (5, 2, 2, 2, 1, 1) 10
+G mismatch (5, 2, 2, 1, 1, 1, 1) 4
+G mismatch (5, 2, 2, 1, 1, 1, 1) 5
+G mismatch (5, 2, 2, 1, 1, 1, 1) 6
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1) 4
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1) 7
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (4, 4, 4, 1) 4
+G mismatch (4, 4, 4, 1) 5
+G mismatch (4, 4, 4, 1) 6
+G mismatch (4, 4, 4, 1) 7
+G mismatch (4, 4, 3, 2) 4
+G mismatch (4, 4, 3, 2) 5
+G mismatch (4, 4, 3, 2) 6
+G mismatch (4, 4, 3, 2) 7
+G mismatch (4, 4, 3, 2) 10
+G mismatch (4, 4, 3, 1, 1) 4
+G mismatch (4, 4, 3, 1, 1) 5
+G mismatch (4, 4, 3, 1, 1) 6
+G mismatch (4, 4, 3, 1, 1) 7
+G mismatch (4, 4, 3, 1, 1) 10
+G mismatch (4, 4, 2, 2, 1) 4
+G mismatch (4, 4, 2, 2, 1) 5
+G mismatch (4, 4, 2, 2, 1) 7
+G mismatch (4, 4, 2, 2, 1) 10
+G mismatch (4, 4, 2, 1, 1, 1) 4
+G mismatch (4, 4, 2, 1, 1, 1) 7
+G mismatch (4, 4, 2, 1, 1, 1) 8
+G mismatch (4, 4, 2, 1, 1, 1) 10
+G mismatch (4, 4, 1, 1, 1, 1, 1) 4
+G mismatch (4, 4, 1, 1, 1, 1, 1) 5
+G mismatch (4, 4, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 1, 1, 1, 1, 1) 8
+G mismatch (4, 3, 3, 3) 4
+G mismatch (4, 3, 3, 3) 5
+G mismatch (4, 3, 3, 3) 6
+G mismatch (4, 3, 3, 3) 7
+G mismatch (4, 3, 3, 2, 1) 4
+G mismatch (4, 3, 3, 2, 1) 5
+G mismatch (4, 3, 3, 2, 1) 6
+G mismatch (4, 3, 3, 2, 1) 7
+G mismatch (4, 3, 3, 2, 1) 10
+G mismatch (4, 3, 3, 1, 1, 1) 4
+G mismatch (4, 3, 3, 1, 1, 1) 6
+G mismatch (4, 3, 2, 2, 2) 4
+G mismatch (4, 3, 2, 2, 2) 5
+G mismatch (4, 3, 2, 2, 2) 6
+G mismatch (4, 3, 2, 2, 2) 7
+G mismatch (4, 3, 2, 2, 2) 9
+G mismatch (4, 3, 2, 2, 2) 10
+G mismatch (4, 3, 2, 2, 1, 1) 4
+G mismatch (4, 3, 2, 2, 1, 1) 8
+G mismatch (4, 3, 2, 2, 1, 1) 10
+G mismatch (4, 3, 2, 1, 1, 1, 1) 4
+G mismatch (4, 3, 2, 1, 1, 1, 1) 5
+G mismatch (4, 3, 2, 1, 1, 1, 1) 6
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1) 4
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1) 7
+G mismatch (4, 2, 2, 2, 2, 1) 4
+G mismatch (4, 2, 2, 2, 2, 1) 6
+G mismatch (4, 2, 2, 2, 2, 1) 10
+G mismatch (4, 2, 2, 2, 1, 1, 1) 4
+G mismatch (4, 2, 2, 2, 1, 1, 1) 5
+G mismatch (4, 2, 2, 2, 1, 1, 1) 6
+G mismatch (4, 2, 2, 2, 1, 1, 1) 10
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1) 4
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1) 9
+G mismatch (4, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 3, 3, 1) 4
+G mismatch (3, 3, 3, 3, 1) 5
+G mismatch (3, 3, 3, 3, 1) 7
+G mismatch (3, 3, 3, 2, 2) 4
+G mismatch (3, 3, 3, 2, 2) 5
+G mismatch (3, 3, 3, 2, 2) 6
+G mismatch (3, 3, 3, 2, 2) 7
+G mismatch (3, 3, 3, 2, 2) 10
+G mismatch (3, 3, 3, 2, 1, 1) 4
+G mismatch (3, 3, 3, 2, 1, 1) 7
+G mismatch (3, 3, 3, 1, 1, 1, 1) 4
+G mismatch (3, 3, 3, 1, 1, 1, 1) 5
+G mismatch (3, 3, 3, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2, 2, 2, 1) 4
+G mismatch (3, 3, 2, 2, 2, 1) 7
+G mismatch (3, 3, 2, 2, 2, 1) 8
+G mismatch (3, 3, 2, 2, 1, 1, 1) 4
+G mismatch (3, 3, 2, 2, 1, 1, 1) 5
+G mismatch (3, 3, 2, 2, 1, 1, 1) 7
+G mismatch (3, 3, 2, 2, 1, 1, 1) 8
+G mismatch (3, 3, 2, 2, 1, 1, 1) 9
+G mismatch (3, 3, 2, 1, 1, 1, 1, 1) 4
+G mismatch (3, 3, 2, 1, 1, 1, 1, 1) 7
+G mismatch (3, 3, 2, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (3, 2, 2, 2, 2, 2) 4
+G mismatch (3, 2, 2, 2, 2, 2) 9
+G mismatch (3, 2, 2, 2, 2, 2) 10
+G mismatch (3, 2, 2, 2, 2, 1, 1) 4
+G mismatch (3, 2, 2, 2, 2, 1, 1) 5
+G mismatch (3, 2, 2, 2, 2, 1, 1) 6
+G mismatch (3, 2, 2, 2, 2, 1, 1) 9
+G mismatch (3, 2, 2, 2, 1, 1, 1, 1) 7
+G mismatch (3, 2, 2, 1, 1, 1, 1, 1, 1) 7
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (2, 2, 2, 2, 2, 2, 1) 5
+G mismatch (2, 2, 2, 2, 2, 2, 1) 6
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1) 5
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1) 7
+G mismatch (2, 2, 2, 2, 1, 1, 1, 1, 1) 7
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (14,) 3
+G mismatch (14,) 4
+G mismatch (14,) 8
+G mismatch (13, 1) 3
+G mismatch (13, 1) 4
+G mismatch (13, 1) 6
+G mismatch (13, 1) 8
+G mismatch (12, 2) 3
+G mismatch (12, 2) 6
+G mismatch (12, 2) 8
+G mismatch (12, 1, 1) 3
+G mismatch (12, 1, 1) 6
+G mismatch (12, 1, 1) 8
+G mismatch (12, 1, 1) 10
+G mismatch (11, 3) 3
+G mismatch (11, 3) 6
+G mismatch (11, 2, 1) 3
+G mismatch (11, 2, 1) 6
+G mismatch (11, 1, 1, 1) 3
+G mismatch (11, 1, 1, 1) 6
+G mismatch (11, 1, 1, 1) 8
+G mismatch (10, 4) 3
+G mismatch (10, 4) 6
+G mismatch (10, 3, 1) 3
+G mismatch (10, 3, 1) 6
+G mismatch (10, 2, 2) 3
+G mismatch (10, 2, 2) 6
+G mismatch (10, 2, 1, 1) 3
+G mismatch (10, 2, 1, 1) 6
+G mismatch (10, 1, 1, 1, 1) 3
+G mismatch (10, 1, 1, 1, 1) 6
+G mismatch (9, 5) 3
+G mismatch (9, 5) 6
+G mismatch (9, 5) 8
+G mismatch (9, 4, 1) 6
+G mismatch (9, 4, 1) 7
+G mismatch (9, 3, 2) 6
+G mismatch (9, 3, 2) 8
+G mismatch (9, 3, 1, 1) 3
+G mismatch (9, 3, 1, 1) 6
+G mismatch (9, 3, 1, 1) 8
+G mismatch (9, 3, 1, 1) 10
+G mismatch (9, 2, 2, 1) 3
+G mismatch (9, 2, 2, 1) 6
+G mismatch (9, 2, 2, 1) 8
+G mismatch (9, 2, 1, 1, 1) 3
+G mismatch (9, 2, 1, 1, 1) 6
+G mismatch (9, 2, 1, 1, 1) 8
+G mismatch (9, 1, 1, 1, 1, 1) 3
+G mismatch (9, 1, 1, 1, 1, 1) 6
+G mismatch (9, 1, 1, 1, 1, 1) 8
+G mismatch (9, 1, 1, 1, 1, 1) 9
+G mismatch (8, 6) 6
+G mismatch (8, 6) 7
+G mismatch (8, 6) 8
+G mismatch (8, 5, 1) 6
+G mismatch (8, 5, 1) 7
+G mismatch (8, 5, 1) 8
+G mismatch (8, 5, 1) 9
+G mismatch (8, 4, 2) 6
+G mismatch (8, 4, 2) 7
+G mismatch (8, 4, 1, 1) 6
+G mismatch (8, 4, 1, 1) 8
+G mismatch (8, 4, 1, 1) 9
+G mismatch (8, 3, 3) 6
+G mismatch (8, 3, 3) 8
+G mismatch (8, 3, 3) 9
+G mismatch (8, 3, 2, 1) 6
+G mismatch (8, 3, 2, 1) 8
+G mismatch (8, 3, 2, 1) 9
+G mismatch (8, 3, 1, 1, 1) 6
+G mismatch (8, 3, 1, 1, 1) 7
+G mismatch (8, 3, 1, 1, 1) 8
+G mismatch (8, 2, 2, 2) 6
+G mismatch (8, 2, 2, 2) 7
+G mismatch (8, 2, 2, 2) 8
+G mismatch (8, 2, 2, 1, 1) 6
+G mismatch (8, 2, 2, 1, 1) 7
+G mismatch (8, 2, 2, 1, 1) 8
+G mismatch (8, 2, 1, 1, 1, 1) 6
+G mismatch (8, 2, 1, 1, 1, 1) 8
+G mismatch (8, 2, 1, 1, 1, 1) 9
+G mismatch (8, 1, 1, 1, 1, 1, 1) 3
+G mismatch (8, 1, 1, 1, 1, 1, 1) 6
+G mismatch (8, 1, 1, 1, 1, 1, 1) 8
+G mismatch (8, 1, 1, 1, 1, 1, 1) 9
+G mismatch (7, 7) 6
+G mismatch (7, 7) 7
+G mismatch (7, 7) 8
+G mismatch (7, 6, 1) 6
+G mismatch (7, 6, 1) 7
+G mismatch (7, 6, 1) 8
+G mismatch (7, 5, 2) 6
+G mismatch (7, 5, 2) 7
+G mismatch (7, 5, 2) 8
+G mismatch (7, 5, 1, 1) 6
+G mismatch (7, 5, 1, 1) 7
+G mismatch (7, 4, 3) 6
+G mismatch (7, 4, 3) 7
+G mismatch (7, 4, 3) 8
+G mismatch (7, 4, 3) 10
+G mismatch (7, 4, 2, 1) 6
+G mismatch (7, 4, 2, 1) 7
+G mismatch (7, 4, 2, 1) 8
+G mismatch (7, 4, 1, 1, 1) 6
+G mismatch (7, 4, 1, 1, 1) 7
+G mismatch (7, 4, 1, 1, 1) 8
+G mismatch (7, 3, 3, 1) 6
+G mismatch (7, 3, 2, 2) 6
+G mismatch (7, 3, 2, 2) 7
+G mismatch (7, 3, 2, 2) 8
+G mismatch (7, 3, 2, 1, 1) 6
+G mismatch (7, 3, 1, 1, 1, 1) 6
+G mismatch (7, 3, 1, 1, 1, 1) 8
+G mismatch (7, 2, 2, 2, 1) 6
+G mismatch (7, 2, 2, 2, 1) 8
+G mismatch (7, 2, 2, 2, 1) 10
+G mismatch (7, 2, 2, 1, 1, 1) 6
+G mismatch (7, 2, 2, 1, 1, 1) 8
+G mismatch (7, 2, 1, 1, 1, 1, 1) 6
+G mismatch (7, 2, 1, 1, 1, 1, 1) 7
+G mismatch (7, 2, 1, 1, 1, 1, 1) 9
+G mismatch (7, 2, 1, 1, 1, 1, 1) 10
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (6, 6, 2) 6
+G mismatch (6, 6, 2) 7
+G mismatch (6, 6, 2) 8
+G mismatch (6, 6, 2) 9
+G mismatch (6, 6, 1, 1) 6
+G mismatch (6, 6, 1, 1) 7
+G mismatch (6, 6, 1, 1) 8
+G mismatch (6, 6, 1, 1) 9
+G mismatch (6, 5, 3) 6
+G mismatch (6, 5, 3) 7
+G mismatch (6, 5, 3) 8
+G mismatch (6, 5, 3) 9
+G mismatch (6, 5, 2, 1) 6
+G mismatch (6, 5, 2, 1) 7
+G mismatch (6, 5, 2, 1) 8
+G mismatch (6, 5, 2, 1) 9
+G mismatch (6, 5, 1, 1, 1) 6
+G mismatch (6, 5, 1, 1, 1) 7
+G mismatch (6, 5, 1, 1, 1) 8
+G mismatch (6, 5, 1, 1, 1) 9
+G mismatch (6, 4, 4) 6
+G mismatch (6, 4, 4) 8
+G mismatch (6, 4, 4) 9
+G mismatch (6, 4, 4) 10
+G mismatch (6, 4, 3, 1) 6
+G mismatch (6, 4, 3, 1) 7
+G mismatch (6, 4, 3, 1) 8
+G mismatch (6, 4, 3, 1) 10
+G mismatch (6, 4, 2, 2) 6
+G mismatch (6, 4, 2, 2) 7
+G mismatch (6, 4, 2, 2) 8
+G mismatch (6, 4, 2, 2) 9
+G mismatch (6, 4, 2, 2) 10
+G mismatch (6, 4, 2, 1, 1) 6
+G mismatch (6, 4, 2, 1, 1) 8
+G mismatch (6, 4, 1, 1, 1, 1) 6
+G mismatch (6, 4, 1, 1, 1, 1) 7
+G mismatch (6, 4, 1, 1, 1, 1) 10
+G mismatch (6, 3, 3, 2) 6
+G mismatch (6, 3, 3, 2) 7
+G mismatch (6, 3, 3, 2) 8
+G mismatch (6, 3, 3, 2) 9
+G mismatch (6, 3, 3, 2) 10
+G mismatch (6, 3, 3, 1, 1) 6
+G mismatch (6, 3, 3, 1, 1) 7
+G mismatch (6, 3, 3, 1, 1) 8
+G mismatch (6, 3, 3, 1, 1) 10
+G mismatch (6, 3, 2, 2, 1) 6
+G mismatch (6, 3, 2, 2, 1) 7
+G mismatch (6, 3, 2, 2, 1) 8
+G mismatch (6, 3, 2, 1, 1, 1) 6
+G mismatch (6, 3, 2, 1, 1, 1) 7
+G mismatch (6, 3, 2, 1, 1, 1) 9
+G mismatch (6, 3, 2, 1, 1, 1) 10
+G mismatch (6, 3, 1, 1, 1, 1, 1) 6
+G mismatch (6, 3, 1, 1, 1, 1, 1) 8
+G mismatch (6, 2, 2, 2, 2) 6
+G mismatch (6, 2, 2, 2, 2) 7
+G mismatch (6, 2, 2, 2, 2) 8
+G mismatch (6, 2, 2, 2, 2) 9
+G mismatch (6, 2, 2, 2, 1, 1) 6
+G mismatch (6, 2, 2, 2, 1, 1) 7
+G mismatch (6, 2, 2, 2, 1, 1) 10
+G mismatch (6, 2, 2, 1, 1, 1, 1) 6
+G mismatch (6, 2, 2, 1, 1, 1, 1) 8
+G mismatch (6, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 2, 1, 1, 1, 1, 1, 1) 8
+G mismatch (6, 2, 1, 1, 1, 1, 1, 1) 9
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (5, 5, 4) 6
+G mismatch (5, 5, 4) 7
+G mismatch (5, 5, 4) 8
+G mismatch (5, 5, 3, 1) 6
+G mismatch (5, 5, 3, 1) 7
+G mismatch (5, 5, 3, 1) 8
+G mismatch (5, 5, 3, 1) 10
+G mismatch (5, 5, 2, 2) 6
+G mismatch (5, 5, 2, 2) 7
+G mismatch (5, 5, 2, 2) 8
+G mismatch (5, 5, 2, 2) 10
+G mismatch (5, 5, 2, 1, 1) 6
+G mismatch (5, 5, 2, 1, 1) 7
+G mismatch (5, 5, 2, 1, 1) 8
+G mismatch (5, 5, 2, 1, 1) 9
+G mismatch (5, 5, 2, 1, 1) 10
+G mismatch (5, 5, 1, 1, 1, 1) 6
+G mismatch (5, 5, 1, 1, 1, 1) 7
+G mismatch (5, 5, 1, 1, 1, 1) 8
+G mismatch (5, 5, 1, 1, 1, 1) 9
+G mismatch (5, 4, 4, 1) 6
+G mismatch (5, 4, 4, 1) 7
+G mismatch (5, 4, 4, 1) 8
+G mismatch (5, 4, 3, 2) 6
+G mismatch (5, 4, 3, 2) 7
+G mismatch (5, 4, 3, 2) 8
+G mismatch (5, 4, 3, 2) 9
+G mismatch (5, 4, 3, 2) 10
+G mismatch (5, 4, 3, 1, 1) 6
+G mismatch (5, 4, 3, 1, 1) 7
+G mismatch (5, 4, 3, 1, 1) 8
+G mismatch (5, 4, 2, 2, 1) 6
+G mismatch (5, 4, 2, 2, 1) 7
+G mismatch (5, 4, 2, 2, 1) 8
+G mismatch (5, 4, 2, 2, 1) 9
+G mismatch (5, 4, 2, 1, 1, 1) 6
+G mismatch (5, 4, 2, 1, 1, 1) 7
+G mismatch (5, 4, 2, 1, 1, 1) 8
+G mismatch (5, 4, 1, 1, 1, 1, 1) 6
+G mismatch (5, 4, 1, 1, 1, 1, 1) 8
+G mismatch (5, 4, 1, 1, 1, 1, 1) 10
+G mismatch (5, 3, 3, 3) 6
+G mismatch (5, 3, 3, 3) 7
+G mismatch (5, 3, 3, 3) 8
+G mismatch (5, 3, 3, 2, 1) 6
+G mismatch (5, 3, 3, 2, 1) 7
+G mismatch (5, 3, 3, 2, 1) 8
+G mismatch (5, 3, 3, 1, 1, 1) 6
+G mismatch (5, 3, 3, 1, 1, 1) 7
+G mismatch (5, 3, 3, 1, 1, 1) 8
+G mismatch (5, 3, 3, 1, 1, 1) 10
+G mismatch (5, 3, 2, 2, 2) 6
+G mismatch (5, 3, 2, 2, 2) 7
+G mismatch (5, 3, 2, 2, 2) 8
+G mismatch (5, 3, 2, 2, 2) 9
+G mismatch (5, 3, 2, 2, 2) 10
+G mismatch (5, 3, 2, 2, 1, 1) 6
+G mismatch (5, 3, 2, 2, 1, 1) 8
+G mismatch (5, 3, 2, 1, 1, 1, 1) 6
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1) 7
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1) 8
+G mismatch (5, 2, 2, 2, 2, 1) 6
+G mismatch (5, 2, 2, 2, 2, 1) 7
+G mismatch (5, 2, 2, 2, 2, 1) 8
+G mismatch (5, 2, 2, 2, 2, 1) 9
+G mismatch (5, 2, 2, 2, 1, 1, 1) 6
+G mismatch (5, 2, 2, 2, 1, 1, 1) 7
+G mismatch (5, 2, 2, 2, 1, 1, 1) 8
+G mismatch (5, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (5, 2, 2, 1, 1, 1, 1, 1) 7
+G mismatch (5, 2, 2, 1, 1, 1, 1, 1) 8
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 4, 2) 6
+G mismatch (4, 4, 4, 2) 7
+G mismatch (4, 4, 4, 2) 8
+G mismatch (4, 4, 4, 1, 1) 6
+G mismatch (4, 4, 4, 1, 1) 7
+G mismatch (4, 4, 4, 1, 1) 8
+G mismatch (4, 4, 3, 3) 6
+G mismatch (4, 4, 3, 3) 7
+G mismatch (4, 4, 3, 3) 8
+G mismatch (4, 4, 3, 2, 1) 6
+G mismatch (4, 4, 3, 2, 1) 7
+G mismatch (4, 4, 3, 2, 1) 8
+G mismatch (4, 4, 3, 2, 1) 9
+G mismatch (4, 4, 3, 2, 1) 10
+G mismatch (4, 4, 3, 1, 1, 1) 6
+G mismatch (4, 4, 3, 1, 1, 1) 7
+G mismatch (4, 4, 3, 1, 1, 1) 8
+G mismatch (4, 4, 3, 1, 1, 1) 9
+G mismatch (4, 4, 3, 1, 1, 1) 10
+G mismatch (4, 4, 2, 2, 2) 6
+G mismatch (4, 4, 2, 2, 2) 7
+G mismatch (4, 4, 2, 2, 2) 8
+G mismatch (4, 4, 2, 2, 2) 10
+G mismatch (4, 4, 2, 2, 1, 1) 6
+G mismatch (4, 4, 2, 2, 1, 1) 7
+G mismatch (4, 4, 2, 2, 1, 1) 8
+G mismatch (4, 4, 2, 2, 1, 1) 9
+G mismatch (4, 4, 2, 2, 1, 1) 10
+G mismatch (4, 4, 2, 1, 1, 1, 1) 6
+G mismatch (4, 4, 2, 1, 1, 1, 1) 7
+G mismatch (4, 4, 2, 1, 1, 1, 1) 8
+G mismatch (4, 4, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 1, 1, 1, 1, 1, 1) 7
+G mismatch (4, 4, 1, 1, 1, 1, 1, 1) 8
+G mismatch (4, 3, 3, 3, 1) 6
+G mismatch (4, 3, 3, 3, 1) 7
+G mismatch (4, 3, 3, 3, 1) 8
+G mismatch (4, 3, 3, 2, 2) 6
+G mismatch (4, 3, 3, 2, 2) 7
+G mismatch (4, 3, 3, 2, 2) 8
+G mismatch (4, 3, 3, 2, 2) 10
+G mismatch (4, 3, 3, 2, 1, 1) 6
+G mismatch (4, 3, 3, 2, 1, 1) 7
+G mismatch (4, 3, 3, 2, 1, 1) 8
+G mismatch (4, 3, 3, 2, 1, 1) 10
+G mismatch (4, 3, 3, 1, 1, 1, 1) 6
+G mismatch (4, 3, 2, 2, 2, 1) 6
+G mismatch (4, 3, 2, 2, 2, 1) 7
+G mismatch (4, 3, 2, 2, 2, 1) 8
+G mismatch (4, 3, 2, 2, 2, 1) 9
+G mismatch (4, 3, 2, 2, 1, 1, 1) 6
+G mismatch (4, 3, 2, 2, 1, 1, 1) 7
+G mismatch (4, 3, 2, 2, 1, 1, 1) 8
+G mismatch (4, 3, 2, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 2, 1, 1, 1, 1, 1) 8
+G mismatch (4, 3, 2, 1, 1, 1, 1, 1) 9
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (4, 2, 2, 2, 2, 2) 6
+G mismatch (4, 2, 2, 2, 2, 2) 7
+G mismatch (4, 2, 2, 2, 2, 2) 8
+G mismatch (4, 2, 2, 2, 2, 2) 9
+G mismatch (4, 2, 2, 2, 2, 1, 1) 6
+G mismatch (4, 2, 2, 2, 2, 1, 1) 7
+G mismatch (4, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (4, 2, 2, 2, 1, 1, 1, 1) 8
+G mismatch (4, 2, 2, 2, 1, 1, 1, 1) 9
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1, 1) 3
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1, 1) 8
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 2, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (4, 2, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 3, 3, 3, 2) 6
+G mismatch (3, 3, 3, 3, 2) 7
+G mismatch (3, 3, 3, 3, 2) 8
+G mismatch (3, 3, 3, 3, 1, 1) 6
+G mismatch (3, 3, 3, 3, 1, 1) 8
+G mismatch (3, 3, 3, 3, 1, 1) 9
+G mismatch (3, 3, 3, 3, 1, 1) 10
+G mismatch (3, 3, 3, 2, 2, 1) 6
+G mismatch (3, 3, 3, 2, 2, 1) 7
+G mismatch (3, 3, 3, 2, 2, 1) 8
+G mismatch (3, 3, 3, 2, 2, 1) 9
+G mismatch (3, 3, 3, 2, 1, 1, 1) 6
+G mismatch (3, 3, 3, 2, 1, 1, 1) 7
+G mismatch (3, 3, 3, 2, 1, 1, 1) 8
+G mismatch (3, 3, 3, 2, 1, 1, 1) 10
+G mismatch (3, 3, 3, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 3, 1, 1, 1, 1, 1) 8
+G mismatch (3, 3, 3, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 2, 2, 2, 2) 6
+G mismatch (3, 3, 2, 2, 2, 2) 7
+G mismatch (3, 3, 2, 2, 2, 2) 8
+G mismatch (3, 3, 2, 2, 2, 2) 9
+G mismatch (3, 3, 2, 2, 2, 1, 1) 6
+G mismatch (3, 3, 2, 2, 2, 1, 1) 7
+G mismatch (3, 3, 2, 2, 2, 1, 1) 8
+G mismatch (3, 3, 2, 2, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2, 2, 1, 1, 1, 1) 7
+G mismatch (3, 3, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 2, 2, 2, 2, 2, 1) 6
+G mismatch (3, 2, 2, 2, 2, 2, 1) 7
+G mismatch (3, 2, 2, 2, 2, 2, 1) 8
+G mismatch (3, 2, 2, 2, 2, 1, 1, 1) 6
+G mismatch (3, 2, 2, 2, 2, 1, 1, 1) 7
+G mismatch (3, 2, 2, 2, 2, 1, 1, 1) 8
+G mismatch (3, 2, 2, 2, 2, 1, 1, 1) 9
+G mismatch (3, 2, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (3, 2, 2, 2, 1, 1, 1, 1, 1) 7
+G mismatch (3, 2, 2, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (3, 2, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (2, 2, 2, 2, 2, 2, 2) 6
+G mismatch (2, 2, 2, 2, 2, 2, 2) 7
+G mismatch (2, 2, 2, 2, 2, 2, 2) 8
+G mismatch (2, 2, 2, 2, 2, 2, 1, 1) 6
+G mismatch (2, 2, 2, 2, 2, 2, 1, 1) 7
+G mismatch (2, 2, 2, 2, 2, 2, 1, 1) 8
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1, 1) 3
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1, 1) 8
+G mismatch (2, 2, 2, 2, 1, 1, 1, 1, 1, 1) 3
+G mismatch (2, 2, 2, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 4
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 3
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 4
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (15,) 8
+G mismatch (14, 1) 8
+G mismatch (13, 1, 1) 9
+G mismatch (12, 2, 1) 9
+G mismatch (12, 2, 1) 10
+G mismatch (12, 1, 1, 1) 8
+G mismatch (12, 1, 1, 1) 9
+G mismatch (11, 2, 2) 9
+G mismatch (11, 1, 1, 1, 1) 10
+G mismatch (10, 5) 10
+G mismatch (10, 2, 2, 1) 10
+G mismatch (10, 2, 1, 1, 1) 10
+G mismatch (10, 1, 1, 1, 1, 1) 6
+G mismatch (9, 6) 6
+G mismatch (9, 5, 1) 6
+G mismatch (9, 4, 2) 6
+G mismatch (9, 3, 3) 6
+G mismatch (9, 3, 2, 1) 8
+G mismatch (9, 2, 2, 1, 1) 9
+G mismatch (9, 2, 2, 1, 1) 10
+G mismatch (9, 1, 1, 1, 1, 1, 1) 6
+G mismatch (8, 7) 6
+G mismatch (8, 6, 1) 6
+G mismatch (8, 6, 1) 8
+G mismatch (8, 5, 2) 6
+G mismatch (8, 5, 2) 8
+G mismatch (8, 5, 2) 9
+G mismatch (8, 5, 1, 1) 6
+G mismatch (8, 4, 3) 6
+G mismatch (8, 4, 3) 9
+G mismatch (8, 4, 2, 1) 6
+G mismatch (8, 4, 2, 1) 9
+G mismatch (8, 4, 1, 1, 1) 6
+G mismatch (8, 3, 3, 1) 6
+G mismatch (8, 3, 3, 1) 8
+G mismatch (8, 3, 3, 1) 10
+G mismatch (8, 3, 2, 2) 6
+G mismatch (8, 3, 2, 2) 9
+G mismatch (8, 3, 2, 2) 10
+G mismatch (8, 3, 2, 1, 1) 6
+G mismatch (8, 3, 1, 1, 1, 1) 9
+G mismatch (8, 2, 2, 2, 1) 6
+G mismatch (8, 2, 2, 1, 1, 1) 9
+G mismatch (8, 2, 1, 1, 1, 1, 1) 8
+G mismatch (8, 2, 1, 1, 1, 1, 1) 9
+G mismatch (8, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (7, 7, 1) 6
+G mismatch (7, 6, 2) 6
+G mismatch (7, 6, 1, 1) 6
+G mismatch (7, 5, 3) 6
+G mismatch (7, 5, 3) 8
+G mismatch (7, 5, 3) 10
+G mismatch (7, 5, 2, 1) 6
+G mismatch (7, 5, 2, 1) 8
+G mismatch (7, 5, 1, 1, 1) 6
+G mismatch (7, 5, 1, 1, 1) 8
+G mismatch (7, 5, 1, 1, 1) 10
+G mismatch (7, 4, 3, 1) 6
+G mismatch (7, 4, 3, 1) 8
+G mismatch (7, 4, 2, 2) 6
+G mismatch (7, 4, 2, 2) 9
+G mismatch (7, 4, 2, 2) 10
+G mismatch (7, 4, 2, 1, 1) 6
+G mismatch (7, 4, 2, 1, 1) 9
+G mismatch (7, 4, 1, 1, 1, 1) 6
+G mismatch (7, 4, 1, 1, 1, 1) 9
+G mismatch (7, 3, 3, 2) 6
+G mismatch (7, 3, 3, 2) 8
+G mismatch (7, 3, 3, 1, 1) 6
+G mismatch (7, 3, 2, 2, 1) 6
+G mismatch (7, 3, 2, 2, 1) 9
+G mismatch (7, 3, 2, 1, 1, 1) 6
+G mismatch (7, 3, 2, 1, 1, 1) 9
+G mismatch (7, 3, 1, 1, 1, 1, 1) 6
+G mismatch (7, 3, 1, 1, 1, 1, 1) 9
+G mismatch (7, 2, 2, 2, 2) 6
+G mismatch (7, 2, 2, 2, 2) 8
+G mismatch (7, 2, 2, 2, 1, 1) 6
+G mismatch (7, 2, 2, 2, 1, 1) 9
+G mismatch (7, 2, 2, 2, 1, 1) 10
+G mismatch (7, 2, 2, 1, 1, 1, 1) 6
+G mismatch (7, 2, 2, 1, 1, 1, 1) 9
+G mismatch (7, 2, 1, 1, 1, 1, 1, 1) 8
+G mismatch (7, 2, 1, 1, 1, 1, 1, 1) 9
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 6, 3) 6
+G mismatch (6, 6, 3) 9
+G mismatch (6, 6, 3) 10
+G mismatch (6, 6, 2, 1) 6
+G mismatch (6, 6, 2, 1) 10
+G mismatch (6, 6, 1, 1, 1) 6
+G mismatch (6, 6, 1, 1, 1) 10
+G mismatch (6, 5, 4) 6
+G mismatch (6, 5, 4) 10
+G mismatch (6, 5, 3, 1) 6
+G mismatch (6, 5, 3, 1) 10
+G mismatch (6, 5, 2, 2) 6
+G mismatch (6, 5, 2, 2) 10
+G mismatch (6, 5, 2, 1, 1) 6
+G mismatch (6, 5, 2, 1, 1) 10
+G mismatch (6, 5, 1, 1, 1, 1) 6
+G mismatch (6, 5, 1, 1, 1, 1) 9
+G mismatch (6, 5, 1, 1, 1, 1) 10
+G mismatch (6, 4, 4, 1) 6
+G mismatch (6, 4, 4, 1) 10
+G mismatch (6, 4, 3, 2) 6
+G mismatch (6, 4, 3, 2) 8
+G mismatch (6, 4, 3, 2) 9
+G mismatch (6, 4, 3, 2) 10
+G mismatch (6, 4, 3, 1, 1) 6
+G mismatch (6, 4, 3, 1, 1) 9
+G mismatch (6, 4, 2, 2, 1) 6
+G mismatch (6, 4, 2, 1, 1, 1) 6
+G mismatch (6, 4, 2, 1, 1, 1) 10
+G mismatch (6, 4, 1, 1, 1, 1, 1) 6
+G mismatch (6, 4, 1, 1, 1, 1, 1) 9
+G mismatch (6, 4, 1, 1, 1, 1, 1) 10
+G mismatch (6, 3, 3, 3) 6
+G mismatch (6, 3, 3, 3) 10
+G mismatch (6, 3, 3, 2, 1) 6
+G mismatch (6, 3, 3, 2, 1) 9
+G mismatch (6, 3, 3, 1, 1, 1) 6
+G mismatch (6, 3, 3, 1, 1, 1) 9
+G mismatch (6, 3, 3, 1, 1, 1) 10
+G mismatch (6, 3, 2, 2, 2) 6
+G mismatch (6, 3, 2, 2, 2) 10
+G mismatch (6, 3, 2, 2, 1, 1) 6
+G mismatch (6, 3, 2, 2, 1, 1) 10
+G mismatch (6, 3, 2, 1, 1, 1, 1) 6
+G mismatch (6, 3, 2, 1, 1, 1, 1) 9
+G mismatch (6, 3, 1, 1, 1, 1, 1, 1) 9
+G mismatch (6, 2, 2, 2, 2, 1) 6
+G mismatch (6, 2, 2, 2, 2, 1) 9
+G mismatch (6, 2, 2, 2, 2, 1) 10
+G mismatch (6, 2, 2, 2, 1, 1, 1) 6
+G mismatch (6, 2, 2, 2, 1, 1, 1) 9
+G mismatch (6, 2, 2, 1, 1, 1, 1, 1) 9
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 5, 5) 6
+G mismatch (5, 5, 5) 10
+G mismatch (5, 5, 4, 1) 6
+G mismatch (5, 5, 4, 1) 10
+G mismatch (5, 5, 3, 2) 6
+G mismatch (5, 5, 3, 2) 10
+G mismatch (5, 5, 3, 1, 1) 6
+G mismatch (5, 5, 3, 1, 1) 10
+G mismatch (5, 5, 2, 2, 1) 6
+G mismatch (5, 5, 2, 2, 1) 8
+G mismatch (5, 5, 2, 2, 1) 9
+G mismatch (5, 5, 2, 2, 1) 10
+G mismatch (5, 5, 2, 1, 1, 1) 6
+G mismatch (5, 5, 2, 1, 1, 1) 10
+G mismatch (5, 5, 1, 1, 1, 1, 1) 6
+G mismatch (5, 5, 1, 1, 1, 1, 1) 8
+G mismatch (5, 4, 4, 2) 6
+G mismatch (5, 4, 4, 2) 10
+G mismatch (5, 4, 4, 1, 1) 6
+G mismatch (5, 4, 4, 1, 1) 9
+G mismatch (5, 4, 4, 1, 1) 10
+G mismatch (5, 4, 3, 3) 6
+G mismatch (5, 4, 3, 2, 1) 6
+G mismatch (5, 4, 3, 2, 1) 9
+G mismatch (5, 4, 3, 1, 1, 1) 6
+G mismatch (5, 4, 3, 1, 1, 1) 9
+G mismatch (5, 4, 2, 2, 2) 6
+G mismatch (5, 4, 2, 2, 2) 8
+G mismatch (5, 4, 2, 2, 2) 9
+G mismatch (5, 4, 2, 2, 2) 10
+G mismatch (5, 4, 2, 2, 1, 1) 6
+G mismatch (5, 4, 2, 1, 1, 1, 1) 6
+G mismatch (5, 4, 2, 1, 1, 1, 1) 9
+G mismatch (5, 4, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 3, 3, 1) 6
+G mismatch (5, 3, 3, 3, 1) 9
+G mismatch (5, 3, 3, 3, 1) 10
+G mismatch (5, 3, 3, 2, 2) 6
+G mismatch (5, 3, 3, 2, 2) 10
+G mismatch (5, 3, 3, 2, 1, 1) 6
+G mismatch (5, 3, 3, 2, 1, 1) 9
+G mismatch (5, 3, 3, 1, 1, 1, 1) 6
+G mismatch (5, 3, 2, 2, 2, 1) 6
+G mismatch (5, 3, 2, 2, 2, 1) 10
+G mismatch (5, 3, 2, 2, 1, 1, 1) 6
+G mismatch (5, 3, 2, 2, 1, 1, 1) 9
+G mismatch (5, 3, 2, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (5, 2, 2, 2, 2, 2) 6
+G mismatch (5, 2, 2, 2, 2, 2) 10
+G mismatch (5, 2, 2, 2, 2, 1, 1) 6
+G mismatch (5, 2, 2, 2, 2, 1, 1) 8
+G mismatch (5, 2, 2, 2, 2, 1, 1) 10
+G mismatch (5, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 4, 4, 3) 6
+G mismatch (4, 4, 4, 3) 10
+G mismatch (4, 4, 4, 2, 1) 6
+G mismatch (4, 4, 4, 1, 1, 1) 6
+G mismatch (4, 4, 4, 1, 1, 1) 10
+G mismatch (4, 4, 3, 3, 1) 6
+G mismatch (4, 4, 3, 3, 1) 10
+G mismatch (4, 4, 3, 2, 2) 6
+G mismatch (4, 4, 3, 2, 2) 10
+G mismatch (4, 4, 3, 2, 1, 1) 6
+G mismatch (4, 4, 3, 2, 1, 1) 8
+G mismatch (4, 4, 3, 2, 1, 1) 9
+G mismatch (4, 4, 3, 2, 1, 1) 10
+G mismatch (4, 4, 3, 1, 1, 1, 1) 6
+G mismatch (4, 4, 3, 1, 1, 1, 1) 8
+G mismatch (4, 4, 2, 2, 2, 1) 6
+G mismatch (4, 4, 2, 2, 2, 1) 10
+G mismatch (4, 4, 2, 2, 1, 1, 1) 6
+G mismatch (4, 4, 2, 2, 1, 1, 1) 9
+G mismatch (4, 4, 2, 2, 1, 1, 1) 10
+G mismatch (4, 4, 2, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 2, 1, 1, 1, 1, 1) 9
+G mismatch (4, 4, 2, 1, 1, 1, 1, 1) 10
+G mismatch (4, 3, 3, 3, 2) 6
+G mismatch (4, 3, 3, 3, 2) 10
+G mismatch (4, 3, 3, 3, 1, 1) 6
+G mismatch (4, 3, 3, 3, 1, 1) 10
+G mismatch (4, 3, 3, 2, 2, 1) 6
+G mismatch (4, 3, 3, 2, 2, 1) 10
+G mismatch (4, 3, 3, 2, 1, 1, 1) 6
+G mismatch (4, 3, 3, 2, 1, 1, 1) 8
+G mismatch (4, 3, 3, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 3, 1, 1, 1, 1, 1) 8
+G mismatch (4, 3, 3, 1, 1, 1, 1, 1) 10
+G mismatch (4, 3, 2, 2, 2, 2) 6
+G mismatch (4, 3, 2, 2, 2, 2) 10
+G mismatch (4, 3, 2, 2, 2, 1, 1) 6
+G mismatch (4, 3, 2, 2, 2, 1, 1) 8
+G mismatch (4, 3, 2, 2, 1, 1, 1, 1) 6
+G mismatch (4, 3, 2, 2, 1, 1, 1, 1) 9
+G mismatch (4, 3, 2, 1, 1, 1, 1, 1, 1) 8
+G mismatch (4, 3, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 2, 2, 2, 2, 2, 1) 6
+G mismatch (4, 2, 2, 2, 2, 1, 1, 1) 6
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 3, 3, 3) 6
+G mismatch (3, 3, 3, 3, 3) 10
+G mismatch (3, 3, 3, 3, 2, 1) 6
+G mismatch (3, 3, 3, 3, 2, 1) 10
+G mismatch (3, 3, 3, 2, 2, 2) 6
+G mismatch (3, 3, 3, 2, 2, 2) 9
+G mismatch (3, 3, 3, 2, 2, 2) 10
+G mismatch (3, 3, 3, 2, 2, 1, 1) 6
+G mismatch (3, 3, 3, 2, 2, 1, 1) 8
+G mismatch (3, 3, 3, 2, 2, 1, 1) 10
+G mismatch (3, 3, 3, 2, 1, 1, 1, 1) 6
+G mismatch (3, 3, 3, 2, 1, 1, 1, 1) 9
+G mismatch (3, 3, 3, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2, 2, 2, 2, 1) 6
+G mismatch (3, 3, 2, 2, 2, 1, 1, 1) 6
+G mismatch (3, 3, 2, 2, 2, 1, 1, 1) 8
+G mismatch (3, 3, 2, 2, 2, 1, 1, 1) 9
+G mismatch (3, 3, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (3, 2, 2, 2, 2, 2, 2) 6
+G mismatch (3, 2, 2, 2, 2, 2, 1, 1) 6
+G mismatch (3, 2, 2, 2, 2, 2, 1, 1) 8
+G mismatch (3, 2, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (2, 2, 2, 2, 2, 2, 2, 1) 6
+G mismatch (2, 2, 2, 2, 2, 2, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2, 2, 1, 1, 1, 1, 1) 10
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (16,) 6
+G mismatch (16,) 8
+G mismatch (15, 1) 6
+G mismatch (15, 1) 8
+G mismatch (14, 2) 8
+G mismatch (13, 3) 8
+G mismatch (13, 3) 9
+G mismatch (13, 2, 1) 9
+G mismatch (13, 1, 1, 1) 9
+G mismatch (12, 4) 6
+G mismatch (12, 3, 1) 6
+G mismatch (12, 3, 1) 10
+G mismatch (12, 2, 2) 6
+G mismatch (12, 2, 2) 10
+G mismatch (12, 1, 1, 1, 1) 6
+G mismatch (12, 1, 1, 1, 1) 9
+G mismatch (12, 1, 1, 1, 1) 10
+G mismatch (11, 4, 1) 6
+G mismatch (11, 3, 2) 6
+G mismatch (11, 3, 1, 1) 10
+G mismatch (11, 2, 1, 1, 1) 10
+G mismatch (11, 1, 1, 1, 1, 1) 6
+G mismatch (10, 6) 6
+G mismatch (10, 5, 1) 6
+G mismatch (10, 4, 2) 6
+G mismatch (10, 4, 1, 1) 6
+G mismatch (10, 3, 3) 6
+G mismatch (10, 3, 3) 8
+G mismatch (10, 3, 2, 1) 6
+G mismatch (10, 3, 2, 1) 10
+G mismatch (10, 3, 1, 1, 1) 6
+G mismatch (10, 3, 1, 1, 1) 7
+G mismatch (10, 2, 2, 2) 6
+G mismatch (10, 2, 2, 2) 10
+G mismatch (10, 2, 2, 1, 1) 6
+G mismatch (10, 2, 2, 1, 1) 7
+G mismatch (10, 2, 1, 1, 1, 1) 6
+G mismatch (10, 2, 1, 1, 1, 1) 7
+G mismatch (10, 1, 1, 1, 1, 1, 1) 6
+G mismatch (10, 1, 1, 1, 1, 1, 1) 9
+G mismatch (9, 7) 6
+G mismatch (9, 7) 9
+G mismatch (9, 6, 1) 6
+G mismatch (9, 6, 1) 9
+G mismatch (9, 5, 2) 6
+G mismatch (9, 5, 1, 1) 6
+G mismatch (9, 5, 1, 1) 9
+G mismatch (9, 5, 1, 1) 10
+G mismatch (9, 4, 3) 6
+G mismatch (9, 4, 2, 1) 6
+G mismatch (9, 4, 1, 1, 1) 6
+G mismatch (9, 4, 1, 1, 1) 9
+G mismatch (9, 3, 3, 1) 6
+G mismatch (9, 3, 2, 2) 6
+G mismatch (9, 3, 2, 1, 1) 6
+G mismatch (9, 3, 2, 1, 1) 10
+G mismatch (9, 2, 2, 2, 1) 9
+G mismatch (9, 2, 2, 2, 1) 10
+G mismatch (9, 2, 2, 1, 1, 1) 9
+G mismatch (9, 2, 1, 1, 1, 1, 1) 6
+G mismatch (9, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (9, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (8, 8) 6
+G mismatch (8, 8) 9
+G mismatch (8, 7, 1) 6
+G mismatch (8, 7, 1) 8
+G mismatch (8, 6, 2) 6
+G mismatch (8, 6, 1, 1) 6
+G mismatch (8, 6, 1, 1) 10
+G mismatch (8, 5, 3) 6
+G mismatch (8, 5, 3) 9
+G mismatch (8, 5, 2, 1) 6
+G mismatch (8, 5, 1, 1, 1) 6
+G mismatch (8, 5, 1, 1, 1) 10
+G mismatch (8, 4, 4) 6
+G mismatch (8, 4, 3, 1) 6
+G mismatch (8, 4, 2, 2) 6
+G mismatch (8, 4, 2, 2) 9
+G mismatch (8, 4, 2, 1, 1) 6
+G mismatch (8, 4, 2, 1, 1) 9
+G mismatch (8, 4, 1, 1, 1, 1) 6
+G mismatch (8, 3, 3, 2) 6
+G mismatch (8, 3, 3, 2) 9
+G mismatch (8, 3, 3, 1, 1) 6
+G mismatch (8, 3, 2, 2, 1) 6
+G mismatch (8, 3, 2, 1, 1, 1) 6
+G mismatch (8, 3, 1, 1, 1, 1, 1) 6
+G mismatch (8, 2, 2, 2, 2) 6
+G mismatch (8, 2, 2, 2, 1, 1) 6
+G mismatch (8, 2, 2, 2, 1, 1) 10
+G mismatch (8, 2, 2, 1, 1, 1, 1) 6
+G mismatch (8, 2, 2, 1, 1, 1, 1) 9
+G mismatch (8, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (8, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (8, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (7, 7, 2) 6
+G mismatch (7, 7, 1, 1) 6
+G mismatch (7, 7, 1, 1) 9
+G mismatch (7, 6, 3) 6
+G mismatch (7, 6, 2, 1) 6
+G mismatch (7, 6, 2, 1) 8
+G mismatch (7, 6, 2, 1) 9
+G mismatch (7, 6, 2, 1) 10
+G mismatch (7, 6, 1, 1, 1) 6
+G mismatch (7, 6, 1, 1, 1) 9
+G mismatch (7, 6, 1, 1, 1) 10
+G mismatch (7, 5, 4) 6
+G mismatch (7, 5, 4) 9
+G mismatch (7, 5, 4) 10
+G mismatch (7, 5, 3, 1) 6
+G mismatch (7, 5, 3, 1) 9
+G mismatch (7, 5, 2, 2) 6
+G mismatch (7, 5, 2, 2) 9
+G mismatch (7, 5, 2, 2) 10
+G mismatch (7, 5, 2, 1, 1) 6
+G mismatch (7, 5, 2, 1, 1) 7
+G mismatch (7, 5, 2, 1, 1) 9
+G mismatch (7, 5, 1, 1, 1, 1) 6
+G mismatch (7, 4, 4, 1) 6
+G mismatch (7, 4, 4, 1) 8
+G mismatch (7, 4, 4, 1) 9
+G mismatch (7, 4, 4, 1) 10
+G mismatch (7, 4, 3, 2) 6
+G mismatch (7, 4, 3, 2) 9
+G mismatch (7, 4, 3, 1, 1) 6
+G mismatch (7, 4, 3, 1, 1) 7
+G mismatch (7, 4, 3, 1, 1) 8
+G mismatch (7, 4, 3, 1, 1) 9
+G mismatch (7, 4, 2, 2, 1) 6
+G mismatch (7, 4, 2, 2, 1) 8
+G mismatch (7, 4, 2, 1, 1, 1) 6
+G mismatch (7, 4, 1, 1, 1, 1, 1) 6
+G mismatch (7, 4, 1, 1, 1, 1, 1) 9
+G mismatch (7, 4, 1, 1, 1, 1, 1) 10
+G mismatch (7, 3, 3, 3) 6
+G mismatch (7, 3, 3, 3) 8
+G mismatch (7, 3, 3, 3) 9
+G mismatch (7, 3, 3, 3) 10
+G mismatch (7, 3, 3, 2, 1) 6
+G mismatch (7, 3, 3, 2, 1) 8
+G mismatch (7, 3, 3, 2, 1) 9
+G mismatch (7, 3, 3, 2, 1) 10
+G mismatch (7, 3, 3, 1, 1, 1) 6
+G mismatch (7, 3, 3, 1, 1, 1) 7
+G mismatch (7, 3, 3, 1, 1, 1) 9
+G mismatch (7, 3, 3, 1, 1, 1) 10
+G mismatch (7, 3, 2, 2, 2) 6
+G mismatch (7, 3, 2, 2, 1, 1) 6
+G mismatch (7, 3, 2, 2, 1, 1) 10
+G mismatch (7, 3, 2, 1, 1, 1, 1) 6
+G mismatch (7, 3, 1, 1, 1, 1, 1, 1) 6
+G mismatch (7, 3, 1, 1, 1, 1, 1, 1) 9
+G mismatch (7, 2, 2, 2, 2, 1) 6
+G mismatch (7, 2, 2, 2, 2, 1) 9
+G mismatch (7, 2, 2, 2, 1, 1, 1) 6
+G mismatch (7, 2, 2, 2, 1, 1, 1) 9
+G mismatch (7, 2, 2, 2, 1, 1, 1) 10
+G mismatch (7, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (7, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (7, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (6, 6, 4) 6
+G mismatch (6, 6, 4) 9
+G mismatch (6, 6, 3, 1) 6
+G mismatch (6, 6, 3, 1) 10
+G mismatch (6, 6, 2, 2) 6
+G mismatch (6, 6, 2, 2) 9
+G mismatch (6, 6, 2, 1, 1) 6
+G mismatch (6, 6, 2, 1, 1) 8
+G mismatch (6, 6, 2, 1, 1) 10
+G mismatch (6, 6, 1, 1, 1, 1) 6
+G mismatch (6, 5, 5) 6
+G mismatch (6, 5, 5) 8
+G mismatch (6, 5, 5) 9
+G mismatch (6, 5, 5) 10
+G mismatch (6, 5, 4, 1) 6
+G mismatch (6, 5, 3, 2) 6
+G mismatch (6, 5, 3, 2) 9
+G mismatch (6, 5, 3, 2) 10
+G mismatch (6, 5, 3, 1, 1) 6
+G mismatch (6, 5, 3, 1, 1) 7
+G mismatch (6, 5, 3, 1, 1) 10
+G mismatch (6, 5, 2, 2, 1) 6
+G mismatch (6, 5, 2, 1, 1, 1) 6
+G mismatch (6, 5, 2, 1, 1, 1) 9
+G mismatch (6, 5, 1, 1, 1, 1, 1) 6
+G mismatch (6, 5, 1, 1, 1, 1, 1) 9
+G mismatch (6, 4, 4, 2) 6
+G mismatch (6, 4, 4, 2) 8
+G mismatch (6, 4, 4, 2) 9
+G mismatch (6, 4, 4, 1, 1) 6
+G mismatch (6, 4, 4, 1, 1) 9
+G mismatch (6, 4, 3, 3) 6
+G mismatch (6, 4, 3, 3) 8
+G mismatch (6, 4, 3, 3) 9
+G mismatch (6, 4, 3, 2, 1) 6
+G mismatch (6, 4, 3, 2, 1) 9
+G mismatch (6, 4, 3, 2, 1) 10
+G mismatch (6, 4, 3, 1, 1, 1) 6
+G mismatch (6, 4, 3, 1, 1, 1) 8
+G mismatch (6, 4, 3, 1, 1, 1) 9
+G mismatch (6, 4, 3, 1, 1, 1) 10
+G mismatch (6, 4, 2, 2, 2) 6
+G mismatch (6, 4, 2, 2, 1, 1) 6
+G mismatch (6, 4, 2, 1, 1, 1, 1) 6
+G mismatch (6, 4, 2, 1, 1, 1, 1) 10
+G mismatch (6, 4, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 4, 1, 1, 1, 1, 1, 1) 10
+G mismatch (6, 3, 3, 3, 1) 6
+G mismatch (6, 3, 3, 3, 1) 9
+G mismatch (6, 3, 3, 2, 2) 6
+G mismatch (6, 3, 3, 2, 2) 10
+G mismatch (6, 3, 3, 2, 1, 1) 6
+G mismatch (6, 3, 3, 2, 1, 1) 8
+G mismatch (6, 3, 3, 2, 1, 1) 9
+G mismatch (6, 3, 3, 2, 1, 1) 10
+G mismatch (6, 3, 3, 1, 1, 1, 1) 6
+G mismatch (6, 3, 3, 1, 1, 1, 1) 7
+G mismatch (6, 3, 3, 1, 1, 1, 1) 9
+G mismatch (6, 3, 3, 1, 1, 1, 1) 10
+G mismatch (6, 3, 2, 2, 2, 1) 6
+G mismatch (6, 3, 2, 2, 2, 1) 9
+G mismatch (6, 3, 2, 2, 1, 1, 1) 6
+G mismatch (6, 3, 2, 1, 1, 1, 1, 1) 6
+G mismatch (6, 3, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (6, 2, 2, 2, 2, 2) 6
+G mismatch (6, 2, 2, 2, 2, 1, 1) 6
+G mismatch (6, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (6, 2, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (6, 2, 1, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 5, 5, 1) 6
+G mismatch (5, 5, 5, 1) 10
+G mismatch (5, 5, 4, 2) 6
+G mismatch (5, 5, 4, 2) 8
+G mismatch (5, 5, 4, 1, 1) 6
+G mismatch (5, 5, 4, 1, 1) 9
+G mismatch (5, 5, 4, 1, 1) 10
+G mismatch (5, 5, 3, 3) 6
+G mismatch (5, 5, 3, 2, 1) 6
+G mismatch (5, 5, 3, 2, 1) 7
+G mismatch (5, 5, 3, 2, 1) 9
+G mismatch (5, 5, 3, 2, 1) 10
+G mismatch (5, 5, 3, 1, 1, 1) 6
+G mismatch (5, 5, 3, 1, 1, 1) 10
+G mismatch (5, 5, 2, 2, 2) 6
+G mismatch (5, 5, 2, 2, 2) 9
+G mismatch (5, 5, 2, 2, 2) 10
+G mismatch (5, 5, 2, 2, 1, 1) 6
+G mismatch (5, 5, 2, 1, 1, 1, 1) 6
+G mismatch (5, 5, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 4, 4, 3) 6
+G mismatch (5, 4, 4, 3) 8
+G mismatch (5, 4, 4, 3) 9
+G mismatch (5, 4, 4, 3) 10
+G mismatch (5, 4, 4, 2, 1) 6
+G mismatch (5, 4, 4, 2, 1) 8
+G mismatch (5, 4, 4, 2, 1) 9
+G mismatch (5, 4, 4, 2, 1) 10
+G mismatch (5, 4, 4, 1, 1, 1) 6
+G mismatch (5, 4, 4, 1, 1, 1) 9
+G mismatch (5, 4, 3, 3, 1) 6
+G mismatch (5, 4, 3, 3, 1) 8
+G mismatch (5, 4, 3, 3, 1) 9
+G mismatch (5, 4, 3, 3, 1) 10
+G mismatch (5, 4, 3, 2, 2) 6
+G mismatch (5, 4, 3, 2, 2) 7
+G mismatch (5, 4, 3, 2, 2) 9
+G mismatch (5, 4, 3, 2, 2) 10
+G mismatch (5, 4, 3, 2, 1, 1) 6
+G mismatch (5, 4, 3, 2, 1, 1) 9
+G mismatch (5, 4, 3, 2, 1, 1) 10
+G mismatch (5, 4, 3, 1, 1, 1, 1) 6
+G mismatch (5, 4, 3, 1, 1, 1, 1) 8
+G mismatch (5, 4, 3, 1, 1, 1, 1) 9
+G mismatch (5, 4, 3, 1, 1, 1, 1) 10
+G mismatch (5, 4, 2, 2, 2, 1) 6
+G mismatch (5, 4, 2, 2, 1, 1, 1) 6
+G mismatch (5, 4, 2, 2, 1, 1, 1) 8
+G mismatch (5, 4, 2, 1, 1, 1, 1, 1) 6
+G mismatch (5, 4, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (5, 4, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (5, 3, 3, 3, 2) 6
+G mismatch (5, 3, 3, 3, 2) 9
+G mismatch (5, 3, 3, 3, 2) 10
+G mismatch (5, 3, 3, 3, 1, 1) 6
+G mismatch (5, 3, 3, 3, 1, 1) 9
+G mismatch (5, 3, 3, 2, 2, 1) 6
+G mismatch (5, 3, 3, 2, 2, 1) 7
+G mismatch (5, 3, 3, 2, 2, 1) 10
+G mismatch (5, 3, 3, 2, 1, 1, 1) 6
+G mismatch (5, 3, 3, 2, 1, 1, 1) 7
+G mismatch (5, 3, 3, 2, 1, 1, 1) 8
+G mismatch (5, 3, 3, 2, 1, 1, 1) 9
+G mismatch (5, 3, 3, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 2, 2, 2, 2) 6
+G mismatch (5, 3, 2, 2, 2, 2) 8
+G mismatch (5, 3, 2, 2, 2, 2) 10
+G mismatch (5, 3, 2, 2, 2, 1, 1) 6
+G mismatch (5, 3, 2, 2, 2, 1, 1) 7
+G mismatch (5, 3, 2, 2, 2, 1, 1) 9
+G mismatch (5, 3, 2, 2, 1, 1, 1, 1) 6
+G mismatch (5, 3, 2, 2, 1, 1, 1, 1) 9
+G mismatch (5, 3, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 2, 1, 1, 1, 1, 1, 1) 10
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 3, 1, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (5, 2, 2, 2, 2, 2, 1) 6
+G mismatch (5, 2, 2, 2, 2, 2, 1) 9
+G mismatch (5, 2, 2, 2, 2, 2, 1) 10
+G mismatch (5, 2, 2, 2, 2, 1, 1, 1) 6
+G mismatch (5, 2, 2, 2, 2, 1, 1, 1) 10
+G mismatch (5, 2, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (5, 2, 2, 2, 1, 1, 1, 1, 1) 9
+G mismatch (5, 2, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 2, 2, 1, 1, 1, 1, 1, 1, 1) 7
+G mismatch (5, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 4, 4, 4) 6
+G mismatch (4, 4, 4, 4) 9
+G mismatch (4, 4, 4, 3, 1) 6
+G mismatch (4, 4, 4, 3, 1) 8
+G mismatch (4, 4, 4, 3, 1) 9
+G mismatch (4, 4, 4, 3, 1) 10
+G mismatch (4, 4, 4, 2, 2) 6
+G mismatch (4, 4, 4, 2, 1, 1) 6
+G mismatch (4, 4, 4, 2, 1, 1) 8
+G mismatch (4, 4, 4, 2, 1, 1) 9
+G mismatch (4, 4, 4, 1, 1, 1, 1) 6
+G mismatch (4, 4, 4, 1, 1, 1, 1) 8
+G mismatch (4, 4, 4, 1, 1, 1, 1) 9
+G mismatch (4, 4, 4, 1, 1, 1, 1) 10
+G mismatch (4, 4, 3, 3, 2) 6
+G mismatch (4, 4, 3, 3, 2) 8
+G mismatch (4, 4, 3, 3, 1, 1) 6
+G mismatch (4, 4, 3, 3, 1, 1) 8
+G mismatch (4, 4, 3, 3, 1, 1) 9
+G mismatch (4, 4, 3, 2, 2, 1) 6
+G mismatch (4, 4, 3, 2, 2, 1) 9
+G mismatch (4, 4, 3, 2, 2, 1) 10
+G mismatch (4, 4, 3, 2, 1, 1, 1) 6
+G mismatch (4, 4, 3, 2, 1, 1, 1) 9
+G mismatch (4, 4, 3, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 3, 1, 1, 1, 1, 1) 9
+G mismatch (4, 4, 2, 2, 2, 2) 6
+G mismatch (4, 4, 2, 2, 2, 2) 9
+G mismatch (4, 4, 2, 2, 2, 1, 1) 6
+G mismatch (4, 4, 2, 2, 2, 1, 1) 9
+G mismatch (4, 4, 2, 2, 2, 1, 1) 10
+G mismatch (4, 4, 2, 2, 1, 1, 1, 1) 6
+G mismatch (4, 4, 2, 2, 1, 1, 1, 1) 9
+G mismatch (4, 4, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 4, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 3, 3, 3, 3) 6
+G mismatch (4, 3, 3, 3, 3) 10
+G mismatch (4, 3, 3, 3, 2, 1) 6
+G mismatch (4, 3, 3, 3, 1, 1, 1) 6
+G mismatch (4, 3, 3, 3, 1, 1, 1) 8
+G mismatch (4, 3, 3, 3, 1, 1, 1) 9
+G mismatch (4, 3, 3, 3, 1, 1, 1) 10
+G mismatch (4, 3, 3, 2, 2, 2) 6
+G mismatch (4, 3, 3, 2, 2, 2) 10
+G mismatch (4, 3, 3, 2, 2, 1, 1) 6
+G mismatch (4, 3, 3, 2, 2, 1, 1) 9
+G mismatch (4, 3, 3, 2, 1, 1, 1, 1) 6
+G mismatch (4, 3, 3, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 2, 2, 2, 2, 1) 6
+G mismatch (4, 3, 2, 2, 2, 2, 1) 8
+G mismatch (4, 3, 2, 2, 2, 2, 1) 9
+G mismatch (4, 3, 2, 2, 2, 2, 1) 10
+G mismatch (4, 3, 2, 2, 2, 1, 1, 1) 6
+G mismatch (4, 3, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 3, 2, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 2, 2, 2, 2, 2, 2) 6
+G mismatch (4, 2, 2, 2, 2, 2, 2) 9
+G mismatch (4, 2, 2, 2, 2, 2, 1, 1) 6
+G mismatch (4, 2, 2, 2, 2, 2, 1, 1) 10
+G mismatch (4, 2, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (4, 2, 2, 2, 2, 1, 1, 1, 1) 9
+G mismatch (4, 2, 2, 2, 2, 1, 1, 1, 1) 10
+G mismatch (4, 2, 2, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (4, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (3, 3, 3, 3, 3, 1) 6
+G mismatch (3, 3, 3, 3, 3, 1) 8
+G mismatch (3, 3, 3, 3, 3, 1) 9
+G mismatch (3, 3, 3, 3, 3, 1) 10
+G mismatch (3, 3, 3, 3, 2, 2) 6
+G mismatch (3, 3, 3, 3, 2, 2) 9
+G mismatch (3, 3, 3, 3, 2, 1, 1) 6
+G mismatch (3, 3, 3, 3, 2, 1, 1) 9
+G mismatch (3, 3, 3, 3, 2, 1, 1) 10
+G mismatch (3, 3, 3, 3, 1, 1, 1, 1) 6
+G mismatch (3, 3, 3, 2, 2, 2, 1) 6
+G mismatch (3, 3, 3, 2, 2, 1, 1, 1) 6
+G mismatch (3, 3, 3, 2, 2, 1, 1, 1) 9
+G mismatch (3, 3, 3, 2, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 3, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 3, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (3, 3, 2, 2, 2, 2, 2) 6
+G mismatch (3, 3, 2, 2, 2, 2, 1, 1) 6
+G mismatch (3, 3, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2, 2, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (3, 2, 2, 2, 2, 2, 2, 1) 6
+G mismatch (3, 2, 2, 2, 2, 2, 2, 1) 8
+G mismatch (3, 2, 2, 2, 2, 2, 1, 1, 1) 6
+G mismatch (3, 2, 2, 2, 2, 2, 1, 1, 1) 9
+G mismatch (3, 2, 2, 2, 2, 1, 1, 1, 1, 1) 6
+G mismatch (3, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1) 10
+G mismatch (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (2, 2, 2, 2, 2, 2, 2, 2) 6
+G mismatch (2, 2, 2, 2, 2, 2, 2, 2) 9
+G mismatch (2, 2, 2, 2, 2, 2, 2, 1, 1) 6
+G mismatch (2, 2, 2, 2, 2, 2, 2, 1, 1) 9
+G mismatch (2, 2, 2, 2, 2, 2, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 9
+G mismatch (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 6
+G mismatch (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) 8
+G_i(lam) == (n)_i u_i / f^lam for all lam |- n <= 16, i <= 10: 9781 checks, 1828 FAIL
+
+=== new invariant at each level (shifted weights: wt n=1, wt C_k=k+1) ===
+level 3: NEW. leading form of the residual (weight 3): 1.0*(1.0*C2 + 0.666666666666667*n**3)
+          full residual G_3 - (element of Q[n,G_3..G_2]) = 1.0*C2 + 2*n**3/3 - 2.5*n**2 + 1.83333333333333*n
+level 4: NEW. leading form of the residual (weight 4): 1.0*(1.0*C1**2 + 1.0*C2*n + 0.416666666666667*n**4)
+          full residual G_4 - (element of Q[n,G_3..G_3]) = 1.0*C1**2 + C2*n - 6.0*C2 + 5*n**4/12 - 3*n**3 + 7.58333333333333*n**2 - 5.0*n
+level 5: NEW. leading form of the residual (weight 5): 1.0*(1.0*C1**2*n + 1.0*C2*n**2 + 1.0*C4 + 0.216666666666667*n**5)
+          full residual G_5 - (element of Q[n,G_3..G_4]) = C1**2*n - 6.0*C1**2 + C2*n**2 - 13.0*C2*n + 34.0*C2 + 1.0*C4 + 13*n**5/60 - 8*n**4/3 + 13.4166666666667*n**3 - 29.3333333333333*n**2 + 18.3666666666667*n
+level 6: G_6 lies in Q[n, G_3..G_5]  (NO new information)
+level 7: NEW. leading form of the residual (weight 7): 2.0*(0.5*C1**2*C2 + 0.333333333333333*C1**2*n**3 + 1.0*C2**2*n + 0.208333333333333*C2*n**4 + 0.5*C4*n**2 + 0.5*C6 + 0.023015873015873*n**7)
+          full residual G_7 - (element of Q[n,G_3..G_6]) = 1.0*C1**2*C2 + 2*C1**2*n**3/3 - 12.5*C1**2*n**2 + 109.833333333333*C1**2*n - 336.0*C1**2 - 16.0*C1*C3 + 2*C2**2*n - 19.5*C2**2 + 5*C2*n**4/12 - 29*C2*n**3/2 + 173.583333333333*C2*n**2 - 889.5*C2*n + 1452.0*C2 + C4*n**2 - 26.0*C4*n + 172.5*C4 + 1.0*C6 + 29*n**7/630 - 47*n**6/40 + 1009*n**5/72 - 98.75*n**4 + 408.213888888889*n**3 - 806.075*n**2 + 483.726190476191*n
+level 8: NEW. leading form of the residual (weight 8): 2.0*(0.25*C1**4 + 0.5*C1**2*C2*n + 0.208333333333333*C1**2*n**4 + 1.0*C2**2*n**2 + 0.5*C2*C4 + 0.108333333333333*C2*n**5 + 1.0*C3**2 + 0.333333333333333*C4*n**3 + 0.5*C6*n + 0.00947420634920635*n**8)
+          full residual G_8 - (element of Q[n,G_3..G_7]) = 0.5*C1**4 + C1**2*C2*n - 18.0*C1**2*C2 + 5*C1**2*n**4/12 - 11*C1**2*n**3 + 152.583333333333*C1**2*n**2 - 1138.0*C1**2*n + 2964.0*C1**2 - 24.0*C1*C3*n + 284.0*C1*C3 + 2*C2**2*n**2 - 36.5*C2**2*n + 218.5*C2**2 + 1.0*C2*C4 + 13*C2*n**5/60 - 32*C2*n**4/3 + 190.583333333333*C2*n**3 - 1736.33333333333*C2*n**2 + 7628.2*C2*n - 11256.0*C2 + 2.0*C3**2 + 2*C4*n**3/3 - 27.5*C4*n**2 + 409.333333333333*C4*n - 1890.0*C4 + C6*n - 28.0*C6 + 191*n**8/10080 - 23*n**7/36 + 7481*n**6/720 - 105.097222222222*n**5 + 698.400694444445*n**4 - 2811.93055555556*n**3 + 5435.19007936508*n**2 - 3226.33333333333*n
+level 9: NEW. leading form of the residual (weight 9): 2.0*(0.25*C1**4*n + 0.5*C1**2*C2*n**2 + 0.5*C1**2*C4 + 0.108333333333333*C1**2*n**5 + 0.833333333333333*C2**3 + 0.666666666666667*C2**2*n**3 + 0.5*C2*C4*n + 0.0527777777777778*C2*n**6 + 1.0*C3**2*n + 0.208333333333333*C4*n**4 + 0.5*C6*n**2 + 0.5*C8 + 0.00361000881834215*n**9)
+          full residual G_9 - (element of Q[n,G_3..G_8]) = C1**4*n/2 - 6.0*C1**4 + C1**2*C2*n**2 - 29.0*C1**2*C2*n + 304.0*C1**2*C2 + 1.0*C1**2*C4 + 13*C1**2*n**5/60 - 47*C1**2*n**4/6 + 153.416666666667*C1**2*n**3 - 1887.16666666667*C1**2*n**2 + 12337.3666666667*C1**2*n - 28464.0*C1**2 - 24*C1*C3*n**2 + 588.0*C1*C3*n - 4120.0*C1*C3 - 24.0*C1*C5 + 1.66666666666667*C2**3 + 4*C2**2*n**3/3 - 41.0*C2**2*n**2 + 525.166666666667*C2**2*n - 2604.0*C2**2 + C2*C4*n - 51.0*C2*C4 + 19*C2*n**6/180 - 403*C2*n**5/60 + 165.055555555556*C2*n**4 - 2240.58333333333*C2*n**3 + 17719.8388888889*C2*n**2 - 70741.7*C2*n + 97296.0*C2 + 2*C3**2*n - 24.0*C3**2 + 5*C4*n**4/12 - 23*C4*n**3 + 532.583333333333*C4*n**2 - 5655.0*C4*n + 21098.0*C4 + C6*n**2 - 43.0*C6*n + 541.333333333333*C6 + 1.0*C8 + 131*n**9/18144 - 197*n**8/630 + 14329*n**7/2160 - 90.2222222222222*n**6 + 854.782175925926*n**5 - 5572.32222222222*n**4 + 22152.165696649*n**3 - 42145.1428571429*n**2 + 24794.4111111111*n

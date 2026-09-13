@@ -49,3 +49,5 @@
 - Section 5 of results.md written accordingly.
 - Sibling test (src/explore_siblings.py): f alone, (f,r), (r,d2,f), (f,C2) all fail to separate some non-mirror siblings (n ≤ 34); the full d-vector separates all 719,562 pairs. So B'' cannot be reduced to a hook-length inequality.
 - K_n (separating depth of the d-vector) = n−3 for all 6 ≤ n ≤ 45 (src/separating_depth.py).
+- Independent reimplementation (src/independent_check.py, no shared code): counts/collisions/digests identical to the main scan for n ≤ 40; up-chain route + identity agrees for n ≤ 24.
+- Background workflow status: classC angle completed (independent proof, agrees with Theorem 4.9); fathooks/topend/structure/skeptic angles and all referees hit a session limit twice; relaunched at 21:34 UTC.
