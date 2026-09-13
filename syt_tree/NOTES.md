@@ -42,3 +42,8 @@
 - tests/test_tree.py added (tau/theta edge-preservation, parity invariants, tau = prod theta * diagonal tau).
 - Dead end noted: the pair (f^λ, C_2) and other small tuples of invariants do not separate; the shifted-symmetric-function algebra viewpoint shows the g_i cannot generate the transpose-invariant subalgebra (one function per degree vs. ≥2 generators needed from degree 8), so no "generic" proof of B along those lines.
 - Theorem 4.9 (class C: two-row/two-column/hooks) PROVED by case analysis; all case formulas verified by src/check_classC_cases.py (n ≤ 34) and src/explore_classC.py (n ≤ 40). Proposition 4.6.1: the family (λ1,m) vs (λ1,1^m) agrees on d_0..d_{n−2m} — a PROVED infinite family of near-collisions.
+
+## Phase 5 — shifted tree (background agent + independent reviewer, both PASS)
+- No universal-factor identity exists (E_(1) = E_∅' and (log E_∅)' is not a polynomial); corrected recursion has an extra term C_λ (chains ending at partitions with last part 1). DU−UD = I−Π (unweighted), D'U−UD' = I (weighted 2/1).
+- Truncated census separates all strict partitions of each n ≤ 60 (K=21); sibling rigidity to depth 59; every automorphism fixes depth ≤ 60. K_n ~ n/3.
+- Section 5 of results.md written accordingly.

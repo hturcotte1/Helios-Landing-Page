@@ -296,3 +296,14 @@ Nothing in the stated goal remains open. Remarks:
 * Beyond C: the natural next class is r = 2 in general (families F1, F2, F4 and all other 2-corner
   shapes); Lemma 1(c) and the d_3 computation of Lemma 3 extend verbatim to any 2-corner shape, but the
   small-j analysis of Lemma 5 would need the general 2-run local structure (briefing fact 3).
+
+## 10. Run record
+
+* `python3 -u src/agents/classC_verify.py 30` — all lemma checks and the brute-force theorem check passed
+  (7.4 s; output lines "Lemma 1 … OK", …, "THEOREM … OK for all n<=30"). An earlier version of the script
+  let the F1/F2/F4 loops reach n ≈ 700 and was killed by memory; the loops are now capped at n ≤ 40. No
+  mathematical assertion ever failed.
+* `python3 -u src/agents/classC_extra.py` — direct enumeration check (n ≤ 12, 1740 shapes in part (2),
+  n ≤ 60) passed.
+* Side remark: the exceptional pair of Step 2, (3,3,2) vs (5,1^3)/(4,1^4), has d = (1,2,4,8,16,26,…) vs
+  (1,2,4,8,15,25,…), so d_4 would separate it as well; the proof uses d_n = f^λ (42 vs 35).
