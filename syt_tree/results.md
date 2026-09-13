@@ -27,7 +27,7 @@ Notation is fixed in Section 1. Throughout, $\lambda^t$ is the conjugate partiti
    $$\overline{\langle \theta_{T,p}\rangle}=\mathrm{Aut}(\mathrm{SYT}) \iff \text{B}''\;\text{(siblings with isomorphic subtrees are mirror images; Def. 3.1)},$$
    and B $\Rightarrow$ B$'$ $\Rightarrow$ B$''$. Under B$''$ every automorphism is a *unique* convergent product $\eta_0\eta_1\eta_2\cdots$ with $\eta_d$ a product of commuting pair transposes at depth $d$ (Theorem 3.7). **Unconditionally** (using item 2): every automorphism of $\mathrm{SYT}$ agrees on levels $\le 75$ with a finite product of pair transposes (Corollary 3.8).
 
-5. **(PROVED.) Partial results on Conjecture B.** The $d$-vector determines: $n$, the number of corners $r$, $f^\lambda$, the quantity $m=\min_i\min(a_i,b_i)$ of the corner-run parametrisation, $A_m+B_m$ (number of corner boxes with a side of length $m$), the product $\prod_i P_{a_i^{b_i}}(t)$ modulo $t^{2m+1}$ (the "local product theorem", Theorem 4.2), and the sum of squared contents $C_2(\lambda)=\sum_{(i,j)\in\lambda}(j-i)^2$ (Theorem 4.6, via Jucys–Murphy elements). Consequently Conjecture B holds for all rectangles (Theorem 4.4). A Pfaffian formula for $P_\lambda(t)$ (Theorem 4.7) gives an explicit formula for two-row shapes (Corollary 4.8). Additional results proved by the referee-checked background work are collected in Section 4.9.
+5. **(PROVED.) Partial results on Conjecture B.** The $d$-vector determines: $n$, the number of corners $r$, $f^\lambda$, the quantity $m=\min_i\min(a_i,b_i)$ of the corner-run parametrisation, $A_m+B_m$ (number of corner boxes with a side of length $m$), the product $\prod_i P_{a_i^{b_i}}(t)$ modulo $t^{2m+1}$ (the "local product theorem", Theorem 4.2), and the sum of squared contents $C_2(\lambda)=\sum_{(i,j)\in\lambda}(j-i)^2$ (Theorem 4.6, via Jucys–Murphy elements). Consequently Conjecture B holds for all rectangles (Theorem 4.4) and — by a case analysis using explicit formulas — for all two-row shapes, two-column shapes and hooks, i.e. all shapes not containing $(3,2,1)$ (Theorem 4.9). A Pfaffian formula for $P_\lambda(t)$ (Theorem 4.7) gives an explicit formula for two-row shapes (Corollary 4.8). Additional results from the referee-checked background work are collected in Section 4.10.
 
 6. **(CONJECTURAL.)** Conjecture B (equivalently, injectivity of $\lambda\mapsto(d_j(\lambda))_j$ up to transpose) and Conjecture B$''$ remain open in general. Section 6 lists what would suffice.
 
@@ -258,7 +258,13 @@ In particular $d_j=2^j$ for $j\le\min(\delta,\lambda_2)$, and $d_j\le2^j$ always
 
 ### 4.6 The hard pairs
 
-`src/explore_separation.py` computes, for each $n\le22$, the largest index $j_0$ at which two non-conjugate partitions of $n$ first differ. For $n\ge8$ the maximum is $j_0=n-3$, attained by $(2,2,1^{n-4})$ vs $(3,1^{n-3})$: **these two shapes have identical $d_j$ for all $j\le n-4$** and differ only in $d_{n-3},\dots,d_n$ ($f^{(3,1^{n-3})}=\binom{n-1}2$, $f^{(2,2,1^{n-4})}=\frac{n(n-3)}2$). So a proof of Conjecture B cannot rely on any bounded initial segment of the vector, nor (by Section 4.2) on the local corner data alone; the top entries $u_0=f^\lambda$, $u_3$ (i.e. $C_2$) are essential. Conversely (Remark 4.6(iii)) the top entries alone are not enough either.
+`src/explore_separation.py` computes, for each $n\le22$, the largest index $j_0$ at which two non-conjugate partitions of $n$ first differ. For $7\le n\le22$ the maximum is $j_0=n-3$, attained by $(2,2,1^{n-4})$ vs $(3,1^{n-3})$. This is an instance of a family:
+
+**Proposition 4.6.1 (PROVED).** Let $m\ge2$ and $\lambda_1>m$, $n=\lambda_1+m$. The two-row shape $(\lambda_1,m)$ and the hook $(\lambda_1,1^m)$ satisfy $d_j(\lambda_1,m)=d_j(\lambda_1,1^m)$ for all $0\le j\le n-2m$, and $d_{n-2m+1}(\lambda_1,1^m)-d_{n-2m+1}(\lambda_1,m)=1$.
+
+*Proof.* For $j\le\delta=\lambda_1-m$, Corollary 4.8 gives $d_j(\lambda_1,m)=\sum_{b\le\min(j,m)}\binom jb$ (all signs are $+$ since $\delta+1-j+2b\ge1$, and $j-b\le\lambda_1+1$), and (4.9.1) gives $d_j(\lambda_1,1^m)=\sum_{i}\binom ji[i\le\lambda_1-1][j-i\le m]=\sum_{b\le\min(j,m)}\binom jb$ because $j\le\lambda_1-1$. At $j=\delta+1$ the two-row sum loses its $b=0$ term (sign $0$) while the hook sum keeps it (as $j\le\lambda_1-1$ since $m\ge2$). $\square$
+
+For $m=2$ this is $(n-2,2)$ vs $(3,1^{n-3})$, i.e. (transposing the first) $(2,2,1^{n-4})$ vs $(3,1^{n-3})$: **identical $d_j$ for all $j\le n-4$**, different only in $d_{n-3},\dots,d_n$ ($f^{(3,1^{n-3})}=\binom{n-1}2$, $f^{(2,2,1^{n-4})}=\frac{n(n-3)}2$). So a proof of Conjecture B cannot rely on any bounded initial segment of the vector, nor (by Section 4.2) on the local corner data alone; the top entries $u_0=f^\lambda$, $u_3$ (i.e. $C_2$) are essential. Conversely (Remark 4.6(iii)) the top entries alone are not enough either.
 
 ### 4.7 Reformulation via shifted Schur functions (for orientation)
 
@@ -268,11 +274,57 @@ and Conjecture B says that $f^\lambda$ together with the values $g_1(\lambda),\d
 
 ### 4.8 What is recoverable — summary
 
-From $(d_j(\lambda))_{j=0}^n$ one recovers (PROVED): $n$; $r$ (Thm 4.2); $f^\lambda$; $m$, $A_m+B_m$, and $\prod_iG_{a_i,b_i}\bmod t^{2m+1}$ (Thm 4.2); $C_2(\lambda)$ (Thm 4.6), $\chi^\lambda$ at $(2,2,1^{n-4})$ and $(5,1^{n-5})$ (Lemma 4.5). Conjecture B is PROVED for rectangles (Thm 4.4) and for the classes in Section 4.9, and COMPUTATIONALLY VERIFIED for all $n\le75$.
+From $(d_j(\lambda))_{j=0}^n$ one recovers (PROVED): $n$; $r$ (Thm 4.2); $f^\lambda$; $m$, $A_m+B_m$, and $\prod_iG_{a_i,b_i}\bmod t^{2m+1}$ (Thm 4.2); $C_2(\lambda)$ (Thm 4.6), $\chi^\lambda$ at $(2,2,1^{n-4})$ and $(5,1^{n-5})$ (Lemma 4.5). Conjecture B is PROVED for rectangles (Thm 4.4), for two-row/two-column/hook shapes (Thm 4.9) and for the classes in Section 4.10, and COMPUTATIONALLY VERIFIED for all $n\le75$.
 
-### 4.9 Further classes (from the referee-checked background work)
+### 4.9 Shapes with no three-corner subshape: two-row, two-column and hook shapes
 
-*(This section is filled in from `agent_notes/` after independent verification; see the end of the document.)*
+Let $\mathcal C=\{\lambda:(3,2,1)\not\subseteq\lambda\}=\{\lambda:\ell(\lambda)\le2\}\cup\{\lambda:\lambda_1\le2\}\cup\{\lambda:\lambda_2\le1\}$ — the two-row shapes, the two-column shapes and the hooks. (A shape with three removable corners has three distinct part sizes $\alpha_1>\alpha_2>\alpha_3\ge1$, hence rows of lengths $\ge3,\ge2,\ge1$, hence contains $(3,2,1)$; so every subshape of a member of $\mathcal C$ has at most two corners, and conversely.)
+
+**Theorem 4.9 (PROVED).** Conjecture B holds for every $\lambda\in\mathcal C$: if $\mu\vdash n=|\lambda|$ and $d(\mu)=d(\lambda)$, then $\mu\in\{\lambda,\lambda^t\}$.
+
+Throughout, "the formulas" refers to Corollary 4.8 for two-row shapes and to
+$$d_j(a,1^b)=\sum_{i=0}^{j}\binom ji\,[i\le a-1]\,[j-i\le b]\quad(j<n),\qquad d_n(a,1^b)=\binom{n-1}{b}\qquad(n=a+b) \tag{4.9.1}$$
+for hooks (a removal sequence from $(a,1^b)$ that does not remove the box $(1,1)$ is an arbitrary word in {arm, leg} with at most $a-1$ arm letters and at most $b$ leg letters; the box $(1,1)$ can only be removed last, and $d_n=f^{(a,1^b)}=\binom{n-1}b$ by the hook length formula). Both formulas were checked against the recursion for all such shapes with $n\le40$ (`src/explore_classC.py`); every numbered identity below was checked for all parameters with $n\le34$ (`src/check_classC_cases.py`).
+
+*Proof.* By Theorem 4.1 we may assume $n\ge9$ (this is only used to dispose of three small exceptional shapes). Since $d(\lambda)=d(\lambda^t)$ and the conclusion is symmetric, we may replace $\lambda$ by $\lambda^t$ and $\mu$ by $\mu^t$ at will.
+
+*Step 1 (one corner).* $r(\mu)=d_1(\mu)=d_1(\lambda)=r(\lambda)\le2$. If $r=1$ both are rectangles and Theorem 4.4 applies. So let $r=2$; then $\lambda$ is a two-row shape $(\lambda_1,\lambda_2)$ with $\lambda_1>\lambda_2\ge1$, or a two-column shape, or a hook $(a,1^b)$ with $a\ge2,b\ge1$.
+
+*Step 2 ($d_2$ forces $\mu$ into six families).* By Theorem 4.2(4), for $r=2$, $d_2=6-A_1-B_1$ with $A_1=\#\{i:a_i=1\}$, $B_1=\#\{i:b_i=1\}$. A two-row $\lambda$ has runs $((\delta,1),(\lambda_2,1))$ ($\delta=\lambda_1-\lambda_2$), a hook $(a,1^b)$ has runs $((a-1,1),(1,b))$, so $A_1+B_1\ge2$ and $d_2(\lambda)\le4$ for $\lambda\in\mathcal C$. Hence $A_1(\mu)+B_1(\mu)\ge2$, and writing the runs of $\mu$ as $((a_1,b_1),(a_2,b_2))$, one of the six coincidences $b_1=b_2=1$, $a_1=a_2=1$, $a_2=b_1=1$, $a_1=b_1=1$, $a_1=b_2=1$, $a_2=b_2=1$ holds, i.e. $\mu$ is respectively a two-row shape, a two-column shape, a hook $(a_1+1,1^{b_2})$, or one of
+$$F_1(c,d)=(c+1,c^{d}),\qquad F_2(b,c)=((c+1)^{b},c),\qquad F_4(a,b)=((a+1)^{b},1)=F_1(b,a)^t .$$
+$F_1(c,d)$ with $d=1$ or $c=1$, $F_2(b,c)$ with $b=1$ or $c=1$, and $F_4(a,b)$ with $b=1$ or $a=1$ lie in $\mathcal C$; so either $\mu\in\mathcal C$ or $\mu$ is $F_1(c,d)$, $F_2(b,c)$ or $F_4(a,b)$ with both parameters $\ge2$.
+
+*Step 3 ($d_3$ excludes the $F$-families).* For $\lambda\in\mathcal C$, $d_3(\lambda)\le8$ (both formulas are sums of at most $2^3$ terms of absolute value $\binom3i$ with signs, and in fact $d_j\le2^j$). Compute $d_3(\mu)=\sum_c d_2(\mu-c)$ for the $F$-shapes with parameters $\ge2$, using $d_2(\nu)=r(r-1)+\#\{i:a_i\ge2\}+\#\{i:b_i\ge2\}$ (Theorem 4.2(4), valid for all $\nu$):
+* $F_1(c,d)-c_1=(c^{d+1})$, runs $((c,d+1))$: $d_2=2$; $F_1(c,d)-c_2=(c+1,c^{d-1},c-1)$, runs $((1,1),(1,d-1),(c-1,1))$, $r=3$: $d_2=6+[c\ge3]+[d\ge3]$. So $d_3(F_1(c,d))=8+[c\ge3]+[d\ge3]$.
+* $F_2(b,c)-c_1=((c+1)^{b-1},c,c)$, runs $((1,b-1),(c,2))$: $d_2=4+[b\ge3]$; $F_2(b,c)-c_2=((c+1)^b,c-1)$, runs $((2,b),(c-1,1))$: $d_2=4+[c\ge3]$. So $d_3(F_2(b,c))=8+[b\ge3]+[c\ge3]$.
+* $d_3(F_4(a,b))=d_3(F_1(b,a))=8+[a\ge3]+[b\ge3]$.
+
+Thus $d_3(\mu)\ge9>d_3(\lambda)$ unless $\mu\in\{F_1(2,2),F_2(2,2),F_4(2,2)\}=\{(3,2,2),(3,3,2),(3,3,1)\}$, which have $n\le8$. Hence $\mu\in\mathcal C$.
+
+*Step 4.* Now $\lambda,\mu\in\mathcal C$ with $r=2$; transposing, we may assume each of $\lambda,\mu$ is a two-row shape with $\lambda_2\ge1$ or a hook $(a,1^b)$ with $a\ge2$, $b\ge1$. For a two-row shape put $m_\lambda=\min(\delta,\lambda_2)$; for a hook put $m_\mu=\min(a-1,b)$. From the formulas:
+$$d_j=2^j\ (j\le m),\qquad d_{m+1}=2^{m+1}-1-\varepsilon,\qquad \varepsilon=[\delta=\lambda_2]\ \text{resp.}\ [a-1=b], \tag{4.9.2}$$
+(for the two-row shape at $j\le m$ all $b\le j\le\lambda_2$ occur with positive sign since $\delta+1-j+2b>0$; at $j=m+1$ exactly the term $b=m+1$ is missing if $\lambda_2=m$, and exactly the term $b=0$ has sign $0$ if $\delta=m$; for the hook at $j\le m$ no constraint is active, and at $j=m+1$ exactly the term $i=m+1$ is lost if $a-1=m$ and exactly $i=0$ if $b=m$; in both cases $m+1<n$). So $m:=m_\lambda=m_\mu$ and $\varepsilon_\lambda=\varepsilon_\mu$ are determined by the $d$-vector. Next, the value $d_{m+2}$ ($m+2\le n$ in all cases below):
+$$\begin{array}{ll}
+\text{T1: }\lambda_2=m<\delta: & d_{m+2}=2^{m+2}-m-3-[\delta=m+1],\\
+\text{T2: }\delta=m<\lambda_2: & d_{m+2}=2^{m+2}-2-[\lambda_2=m+1],\\
+\text{T3: }\delta=\lambda_2=m: & d_{m+2}=2^{m+2}-m-5,\\
+\text{H1: }a-1=m<b: & d_{m+2}=2^{m+2}-m-3-[b=m+1],\\
+\text{H2: }b=m<a-1: & d_{m+2}=2^{m+2}-m-3-[a-1=m+1],\\
+\text{H3: }a-1=b=m: & d_{m+2}=2^{m+2}-2m-6 .
+\end{array}\tag{4.9.3}$$
+(T1: $b\le m$, and $\mathrm{sgn}(\delta-m-1+2b)=+1$ except $0$ when $b=0$, $\delta=m+1$; the missing terms are $b=m+1,m+2$. T2: all $b\le\min(m+2,\lambda_2)$ occur, sign $-1$ for $b=0$ and $+1$ otherwise, and $b=m+2$ is missing iff $\lambda_2=m+1$. T3: $b\le m$, signs as in T2. H1: lost $i=m+1,m+2$, and $i=0$ iff $b=m+1$. H2: lost $i=0,1$, and $i=m+2$ iff $a-1=m+1$. H3: lost $i=0,1,m+1,m+2$.)
+
+*(4a) Two two-row shapes.* $\varepsilon$ tells whether $\delta=\lambda_2$. If so, $\lambda=(2m,m)$ is determined by $m$ (and $n=3m$). Otherwise $\lambda$ is $(n-m,m)$ (case T1) or $\big(\tfrac{n+m}2,\tfrac{n-m}2\big)$ (case T2), and by (4.9.3) these two have different $d_{m+2}$: equality would need $m+1+[n=3m+1]=[n=3m+2]$, impossible for $m\ge1$. So $\mu=\lambda$.
+
+*(4b) Two hooks.* $f^\lambda=\binom{n-1}{b}=\binom{n-1}{b'}=f^\mu$, and $k\mapsto\binom{n-1}k$ is strictly increasing on $0\le k\le\frac{n-1}2$ and symmetric about $\frac{n-1}2$; so $b'\in\{b,n-1-b\}$, i.e. $\mu\in\{\lambda,\lambda^t\}$ (the transpose of $(a,1^b)$ is $(b+1,1^{a-1})$, with leg $n-1-b$).
+
+*(4c) A two-row shape $\lambda=(\lambda_1,\lambda_2)$ and a hook $\mu=(a,1^b)$.* If $\lambda_2=1$ then $\lambda$ is a hook and (4b) applies; if $b=1$ then $\mu$ is two-row and (4a) applies. So let $\lambda_2\ge2$, $b\ge2$; we derive a contradiction from $d(\lambda)=d(\mu)$. By (4.9.2), $m_\lambda=m_\mu=m$ and $[\delta=\lambda_2]=[a-1=b]$, so the case of $\lambda$ in \{T1,T2,T3\} and of $\mu$ in \{H1,H2,H3\} match as T3$\leftrightarrow$H3 and \{T1,T2\}$\leftrightarrow$\{H1,H2\}. By (4.9.3): T3 vs H3 would need $m+5=2m+6$; T2 vs H2 would need $m+1+[a-1=m+1]=[\lambda_2=m+1]$; T2 vs H1 would need $m+1+[b=m+1]=[\lambda_2=m+1]$ — all impossible for $m\ge1$. There remain T1 vs H1 and T1 vs H2, where $\lambda=(\lambda_1,m)$ with $m=\lambda_2\ge2$. In case H2, $\mu=(a,1^m)$ with $a=\lambda_1$ (same $n$); in case H1, $\mu=(m+1,1^{b})$ with $b=\lambda_1-1$, and $\mu^t=(\lambda_1,1^m)$. Either way $d(\lambda)=d\big((\lambda_1,1^m)\big)$, and we compare at $j=\delta+1=\lambda_1-m+1$ (note $2\le m$ gives $j\le\lambda_1-1<n$): by Corollary 4.8, $d_j(\lambda_1,m)=\sum_{1\le b'\le m}\binom j{b'}$ (the term $b'=0$ has sign $\mathrm{sgn}(\delta+1-j)=0$, all others sign $+1$, and $j-b'\le\lambda_1+1$ holds), while by (4.9.1), with $i\le\lambda_1-1$ automatic and $j-i\le m$, $d_j(\lambda_1,1^m)=\sum_{i\ge j-m}\binom ji=\sum_{0\le b'\le m}\binom j{b'}$. The two differ by $\binom j0=1$. Contradiction. $\square$
+
+*Remark.* The proof only uses $d_1,d_2,d_3$, the entries $d_j$ for $j\le m+2$ and $j=\delta+1$, and $f^\lambda$; it is a case analysis rather than a structural argument, and does not obviously extend to general two-corner shapes $((a+c)^b,c^d)$, for which no closed form of the $d$-vector is available.
+
+### 4.10 Further classes (from the referee-checked background work)
+
+*(Filled in from `agent_notes/` after independent verification; see the end of the document.)*
 
 ---
 

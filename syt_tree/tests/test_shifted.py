@@ -174,6 +174,16 @@ def test_series_helpers():
     assert Pw_series((2,), K) == [1, 2, 1, 0, 0, 0, 0]
 
 
+def test_truncated_census_dp_matches_brute_force():
+    from shifted_scan import truncated_census, c_up
+    cen = truncated_census(7, 6)
+    for n in range(8):
+        for lam in strict_partitions(n):
+            assert cen[lam] == s_vector(lam, 6)
+    assert c_up((), 3) == 1                      # shapes of size 3 ending in 1: (2,1) only, g=1
+    assert c_up((2,), 1) == 1 and c_up((3, 1), 1) == 1
+
+
 if __name__ == "__main__":
     import pytest
     sys.exit(pytest.main([__file__, "-q"]))

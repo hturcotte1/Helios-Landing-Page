@@ -34,3 +34,11 @@
 - Hard pairs: (2,2,1^{n−4}) vs (3,1^{n−3}) agree on d_0..d_{n−4}.
 - (f, C_2) alone does not separate (collisions from n=14).
 - Background workflow (5 angles + referees) launched on: class C = two-row/two-column/hooks; fat hooks; top-end statistics; structure; skeptic. First launch failed on a session limit; relaunched.
+
+## Checkpoint (day 2)
+- results.md drafted: identity (Thm 2.3, two proofs, citing Stanley 2003 / Macdonald I.5 Ex 27(a)), automorphism theory (Lemma 3.4 siblings, Thm 3.5 parity obstruction => literal A false, Thm 3.7 A_theta <=> B'', Cor 3.8 unconditional to depth 75), local product theorem 4.2, rectangles 4.4, C_2 via Jucys–Murphy 4.6, Pfaffian formula 4.7, two-row formula 4.8, hard pairs 4.6.
+- Character formulas for u_3,u_4,u_5 (Lemma 4.5) verified independently with a Murnaghan–Nakayama implementation, n ≤ 14 (src/check_characters.py). Corrected sigma(3,1,1)=2 (two square roots of a 3-cycle in S_5).
+- Second prime (2^62−57) scan to n=75: zero collisions (data/scan_modp_p1_n75.txt).
+- tests/test_tree.py added (tau/theta edge-preservation, parity invariants, tau = prod theta * diagonal tau).
+- Dead end noted: the pair (f^λ, C_2) and other small tuples of invariants do not separate; the shifted-symmetric-function algebra viewpoint shows the g_i cannot generate the transpose-invariant subalgebra (one function per degree vs. ≥2 generators needed from degree 8), so no "generic" proof of B along those lines.
+- Theorem 4.9 (class C: two-row/two-column/hooks) PROVED by case analysis; all case formulas verified by src/check_classC_cases.py (n ≤ 34) and src/explore_classC.py (n ≤ 40). Proposition 4.6.1: the family (λ1,m) vs (λ1,1^m) agrees on d_0..d_{n−2m} — a PROVED infinite family of near-collisions.
