@@ -42,19 +42,23 @@ def chi_lam(lam, rho):
     i = sum(rho)
     return sum(chi(nu, rho) * f_skew(lam, nu) for nu in partitions(i))
 
-# sanity: character table of S_3, S_4
-assert chi((2,1),(3,)) == -1 and chi((2,1),(2,1)) == 0 and chi((2,1),(1,1,1)) == 2
-assert chi((2,2),(2,2)) == 2 and chi((3,1),(4,)) == -1 and chi((2,2),(4,)) == 0 and chi((3,1),(2,2)) == -1
-from census import d_vector
-bad = 0
-for n in range(5, 15):
-    for lam in partitions(n):
-        dv = d_vector(lam); f = dv[n]
-        u3, u4, u5 = dv[n-3], dv[n-4], dv[n-5]
-        c3 = chi_lam(lam, (3,)); c22 = chi_lam(lam, (2,2)); c5 = chi_lam(lam, (5,))
-        ok3 = Fraction(u3) == Fraction(2,3)*f + Fraction(1,3)*c3
-        ok4 = Fraction(u4) == Fraction(5,12)*f + Fraction(1,4)*c22 + Fraction(1,3)*c3
-        ok5 = Fraction(u5) == Fraction(13,60)*f + Fraction(1,4)*c22 + Fraction(1,3)*c3 + Fraction(1,5)*c5
-        if not (ok3 and ok4 and ok5):
-            bad += 1; print("FAIL", lam, ok3, ok4, ok5)
-print("u_3,u_4,u_5 character formulas checked for all 5<=n<=14:", "OK" if bad == 0 else f"{bad} failures")
+def main():
+    # sanity: character table of S_3, S_4
+    assert chi((2,1),(3,)) == -1 and chi((2,1),(2,1)) == 0 and chi((2,1),(1,1,1)) == 2
+    assert chi((2,2),(2,2)) == 2 and chi((3,1),(4,)) == -1 and chi((2,2),(4,)) == 0 and chi((3,1),(2,2)) == -1
+    from census import d_vector
+    bad = 0
+    for n in range(5, 15):
+        for lam in partitions(n):
+            dv = d_vector(lam); f = dv[n]
+            u3, u4, u5 = dv[n-3], dv[n-4], dv[n-5]
+            c3 = chi_lam(lam, (3,)); c22 = chi_lam(lam, (2,2)); c5 = chi_lam(lam, (5,))
+            ok3 = Fraction(u3) == Fraction(2,3)*f + Fraction(1,3)*c3
+            ok4 = Fraction(u4) == Fraction(5,12)*f + Fraction(1,4)*c22 + Fraction(1,3)*c3
+            ok5 = Fraction(u5) == Fraction(13,60)*f + Fraction(1,4)*c22 + Fraction(1,3)*c3 + Fraction(1,5)*c5
+            if not (ok3 and ok4 and ok5):
+                bad += 1; print("FAIL", lam, ok3, ok4, ok5)
+    print("u_3,u_4,u_5 character formulas checked for all 5<=n<=14:", "OK" if bad == 0 else f"{bad} failures")
+
+if __name__ == '__main__':
+    main()

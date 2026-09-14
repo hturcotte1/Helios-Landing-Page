@@ -1,0 +1,17 @@
+u_3,u_4,u_5 character formulas checked for all 5<=n<=14: OK
+(A) MN beta-numbers vs two other MN codes, orthogonality, transpose rule, n <= 10: OK
+  n=2: (I1)-(I6) hold in Z[S_2]; JM trace identity for p_1..p_4 on every V^lam OK
+  n=3: (I1)-(I6) hold in Z[S_3]; JM trace identity for p_1..p_4 on every V^lam OK
+  n=4: (I1)-(I6) hold in Z[S_4]; JM trace identity for p_1..p_4 on every V^lam OK
+  n=5: (I1)-(I6) hold in Z[S_5]; JM trace identity for p_1..p_4 on every V^lam OK
+  n=6: (I1)-(I6) hold in Z[S_6]; JM trace identity for p_1..p_4 on every V^lam OK
+  n=7: (I1)-(I6) hold in Z[S_7]; JM trace identity for p_1..p_4 on every V^lam OK
+  n=8: (I1)-(I6) hold in Z[S_8]; JM trace identity for p_1..p_4 on every V^lam OK
+(B),(C) group-algebra identities and JM traces, 2 <= n <= 8: OK
+(D) fixed-point-cost lemma m >= m'' + f: 813616 sequences (m <= 5, 6 points), OK
+(E) Theorem A: omega(3), omega(2,2), omega(5), omega(3,3) via MN for all lam |- n <= 16: 3660 checks, OK
+(F) d-vector-only identities for chi(3), chi(2,2), chi(5) and the level-6 identity, all lam |- n <= 20: 10856 checks, OK
+
+real	0m5.138s
+user	0m5.089s
+sys	0m0.048s

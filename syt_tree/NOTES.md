@@ -51,3 +51,5 @@
 - K_n (separating depth of the d-vector) = n−3 for all 6 ≤ n ≤ 45 (src/separating_depth.py).
 - Independent reimplementation (src/independent_check.py, no shared code): counts/collisions/digests identical to the main scan for n ≤ 40; up-chain route + identity agrees for n ≤ 24.
 - Background workflow status: classC angle completed (independent proof, agrees with Theorem 4.9); fathooks/topend/structure/skeptic angles and all referees hit a session limit twice; relaunched at 21:34 UTC.
+- Top-end angle completed (agent_notes/topend.md): Theorem A (omega formulas), Cor B' (d-vector gives C_2, C_1^2, C_4), level-6 redundancy, polynomiality theorem, separation data (fails at n=49), mirror box moves (n=50), Lemma U / F_a. Re-verified key items with src/check_topend.py (own MN code). The printed G_6 lacked a pure-n term: recovered n(n−1)(19n^4−326n^3+2489n^2−9856n+15390)/180 and verified n ≤ 22.
+- Workflow relaunched at 02:36 UTC for fathooks/structure/skeptic + trimmed referees.
