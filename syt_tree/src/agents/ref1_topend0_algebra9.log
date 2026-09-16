@@ -1,0 +1,11 @@
+  n=1: (I1)-(I6) OK;  K_3^2 support types/coeffs: {}
+  n=2: (I1)-(I6) OK;  K_3^2 support types/coeffs: {}
+  n=3: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {1}, (): {2}}
+  n=4: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {4}, (): {8}, (2, 2): {8}}
+  n=5: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {7}, (): {20}, (2, 2): {8}, (5,): {5}}
+  n=6: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {10}, (): {40}, (2, 2): {8}, (5,): {5}, (3, 3): {2}}
+  n=7: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {13}, (): {70}, (2, 2): {8}, (5,): {5}, (3, 3): {2}}
+  n=8: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {16}, (): {112}, (2, 2): {8}, (5,): {5}, (3, 3): {2}}
+  n=9: (I1)-(I6) OK;  K_3^2 support types/coeffs: {(3,): {19}, (): {168}, (2, 2): {8}, (5,): {5}, (3, 3): {2}}
+sign of a (4,2)-permutation: 1  (so (4,2) is EVEN )
+ALL OK

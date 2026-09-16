@@ -1,0 +1,7 @@
+m=0 done, sequences so far 1, equality cases 1, bad 0
+m=1 done, sequences so far 16, equality cases 16, bad 0
+m=2 done, sequences so far 241, equality cases 226, bad 0
+m=3 done, sequences so far 3616, equality cases 2836, bad 0
+m=4 done, sequences so far 54241, equality cases 28756, bad 0
+m=5 done, sequences so far 813616, equality cases 184276, bad 0
+N 6 MMAX 5 total 813616 equality 184276 bad 0

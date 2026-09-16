@@ -1,0 +1,45 @@
+parsed 16 polynomials: [(), (3,), (2, 2), (5,), (3, 3), (7,), (3, 2, 2), (5, 3), (4, 4), (2, 2, 2, 2), (9,), (5, 2, 2), (3, 3, 3), (7, 3), (5, 5), (3, 3, 2, 2)]
+rho=() m=0 max weight=0 terms=1
+rho=(3,) m=2 max weight=2 terms=3
+rho=(2, 2) m=2 max weight=2 terms=4
+rho=(5,) m=4 max weight=4 terms=7
+rho=(3, 3) m=4 max weight=4 terms=10
+rho=(7,) m=6 max weight=6 terms=14
+rho=(3, 2, 2) m=4 max weight=4 terms=14
+rho=(5, 3) m=6 max weight=6 terms=21
+rho=(4, 4) m=6 max weight=6 terms=17
+rho=(2, 2, 2, 2) m=4 max weight=4 terms=15
+rho=(9,) m=8 max weight=8 terms=26
+rho=(5, 2, 2) m=6 max weight=6 terms=27
+rho=(3, 3, 3) m=6 max weight=6 terms=25
+rho=(7, 3) m=8 max weight=8 terms=38
+rho=(5, 5) m=8 max weight=8 terms=36
+rho=(3, 3, 2, 2) m=6 max weight=6 terms=37
+n=0: cumulative checks=16 bad=0
+n=1: cumulative checks=32 bad=0
+n=2: cumulative checks=64 bad=0
+n=3: cumulative checks=112 bad=0
+n=4: cumulative checks=192 bad=0
+n=5: cumulative checks=304 bad=0
+n=6: cumulative checks=480 bad=0
+n=7: cumulative checks=720 bad=0
+n=8: cumulative checks=1072 bad=0
+n=9: cumulative checks=1552 bad=0
+n=10: cumulative checks=2224 bad=0
+n=11: cumulative checks=3120 bad=0
+n=12: cumulative checks=4352 bad=0
+n=13: cumulative checks=5968 bad=0
+n=14: cumulative checks=8128 bad=0
+n=15: cumulative checks=10944 bad=0
+n=16: cumulative checks=14640 bad=0
+n=17: cumulative checks=19392 bad=0
+n=18: cumulative checks=25552 bad=0
+TOTAL mismatches: 0
+m=2: dim V_m=7, N=15, rows=684, rank mod (2^61-1, 1e9+7) = [7, 7]
+m=2: dim V_m=7, N=16, rows=915, rank mod (2^61-1, 1e9+7) = [7, 7]
+m=4: dim V_m=26, N=15, rows=684, rank mod (2^61-1, 1e9+7) = [26, 26]
+m=4: dim V_m=26, N=16, rows=915, rank mod (2^61-1, 1e9+7) = [26, 26]
+m=6: dim V_m=75, N=15, rows=684, rank mod (2^61-1, 1e9+7) = [75, 75]
+m=6: dim V_m=75, N=16, rows=915, rank mod (2^61-1, 1e9+7) = [75, 75]
+m=8: dim V_m=187, N=15, rows=684, rank mod (2^61-1, 1e9+7) = [186, 186]
+m=8: dim V_m=187, N=16, rows=915, rank mod (2^61-1, 1e9+7) = [187, 187]

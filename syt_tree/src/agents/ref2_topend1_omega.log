@@ -1,0 +1,11 @@
+parsed 16 polynomials: [(), (3,), (2, 2), (5,), (3, 3), (7,), (3, 2, 2), (5, 3), (4, 4), (2, 2, 2, 2), (9,), (5, 2, 2), (3, 3, 3), (7, 3), (5, 5), (3, 3, 2, 2)]
+weighted degree <= m and parity OK for all 16
+Omega table verified on all lam |- n<=16: 14640 checks, 0 failures [2s] []
+m=2 dim=7 N=15 |T|=684 rank mod 2^61-1 = 7, mod 1e9+7 = 7, exact = 7
+m=2 dim=7 N=16 |T|=915 rank mod 2^61-1 = 7, mod 1e9+7 = 7, exact = 7
+m=4 dim=26 N=15 |T|=684 rank mod 2^61-1 = 26, mod 1e9+7 = 26, exact = 26
+m=4 dim=26 N=16 |T|=915 rank mod 2^61-1 = 26, mod 1e9+7 = 26, exact = 26
+m=6 dim=75 N=15 |T|=684 rank mod 2^61-1 = 75, mod 1e9+7 = 75, exact = 75
+m=6 dim=75 N=16 |T|=915 rank mod 2^61-1 = 75, mod 1e9+7 = 75, exact = 75
+m=8 dim=187 N=15 |T|=684 rank mod 2^61-1 = 186, mod 1e9+7 = 186, exact = None
+m=8 dim=187 N=16 |T|=915 rank mod 2^61-1 = 187, mod 1e9+7 = 187, exact = None

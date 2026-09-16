@@ -1,0 +1,10 @@
+n=1: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=2: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=3: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=4: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=5: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=6: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=7: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+n=8: 16 identities K_rho = Omega_rho(n;p(J)) in Q[S_n]: 16 ok, 0 bad
+Theorem P checks: 29 mu, 22 rho; (iii) cases tested 118; degree-bound tests 247; violations 0
+GRAND OK

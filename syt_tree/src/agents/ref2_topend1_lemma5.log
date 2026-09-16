@@ -1,0 +1,4 @@
+N=4 m<=6: 55987 sequences, Lemma5.1 violations=0, Lemma5.2 violations=0
+N=5 m<=5: 111111 sequences, Lemma5.1 violations=0, Lemma5.2 violations=0
+N=6 m<=5: 813616 sequences, Lemma5.1 violations=0, Lemma5.2 violations=0
+N=7 m<=4: 204205 sequences, Lemma5.1 violations=0, Lemma5.2 violations=0
