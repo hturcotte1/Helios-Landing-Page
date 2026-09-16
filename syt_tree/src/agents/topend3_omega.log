@@ -1,0 +1,34 @@
+  n=1 ok [0s]
+  n=2 ok [0s]
+  n=3 ok [0s]
+  n=4 ok [0s]
+  n=5 ok [0s]
+  n=6 ok [0s]
+  n=7 ok [0s]
+  n=8 ok [0s]
+  n=9 ok [1s]
+  n=10 ok [1s]
+  n=11 ok [1s]
+  n=12 ok [1s]
+  n=13 ok [2s]
+  n=14 ok [3s]
+  n=15 ok [4s]
+  n=16 ok [5s]
+(1) all 16 Omega_rho verified by MN for all lam |- n <= 16: 13710 checks OK
+(2) m=2: dim V_m = 7, rank of evaluation matrix on all lam |- n<=12 (mod 2^61-1) = 7  FULL RANK
+(2) m=2: dim V_m = 7, rank of evaluation matrix on all lam |- n<=14 (mod 2^61-1) = 7  FULL RANK
+(2) m=2: dim V_m = 7, rank of evaluation matrix on all lam |- n<=15 (mod 2^61-1) = 7  FULL RANK
+(2) m=2: dim V_m = 7, rank of evaluation matrix on all lam |- n<=16 (mod 2^61-1) = 7  FULL RANK
+(2) m=4: dim V_m = 26, rank of evaluation matrix on all lam |- n<=12 (mod 2^61-1) = 26  FULL RANK
+(2) m=4: dim V_m = 26, rank of evaluation matrix on all lam |- n<=14 (mod 2^61-1) = 26  FULL RANK
+(2) m=4: dim V_m = 26, rank of evaluation matrix on all lam |- n<=15 (mod 2^61-1) = 26  FULL RANK
+(2) m=4: dim V_m = 26, rank of evaluation matrix on all lam |- n<=16 (mod 2^61-1) = 26  FULL RANK
+(2) m=6: dim V_m = 75, rank of evaluation matrix on all lam |- n<=12 (mod 2^61-1) = 75  FULL RANK
+(2) m=6: dim V_m = 75, rank of evaluation matrix on all lam |- n<=14 (mod 2^61-1) = 75  FULL RANK
+(2) m=6: dim V_m = 75, rank of evaluation matrix on all lam |- n<=15 (mod 2^61-1) = 75  FULL RANK
+(2) m=6: dim V_m = 75, rank of evaluation matrix on all lam |- n<=16 (mod 2^61-1) = 75  FULL RANK
+(2) m=8: dim V_m = 187, rank of evaluation matrix on all lam |- n<=12 (mod 2^61-1) = 170
+(2) m=8: dim V_m = 187, rank of evaluation matrix on all lam |- n<=14 (mod 2^61-1) = 184
+(2) m=8: dim V_m = 187, rank of evaluation matrix on all lam |- n<=15 (mod 2^61-1) = 186
+(2) m=8: dim V_m = 187, rank of evaluation matrix on all lam |- n<=16 (mod 2^61-1) = 187  FULL RANK
+done [18s]

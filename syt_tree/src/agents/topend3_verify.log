@@ -1,0 +1,6 @@
+(a) MN: orthogonality+transpose n<=8, chi(1^n)=f n<=10: OK [0s]
+(b) sigma formula == brute force == sum_nu chi^nu, |rho|<=8: OK [1s]
+(c) Theorem B u_i (chars) == d_{n-i}, i<=10, n<=13: 3818 checks OK [1s]
+(d) Theorem A (A1)-(A4) via MN, all lam |- n<=16: 914 shapes OK [2s]
+(e) Corollary B' (C_2, C_1^2, C_4 from d-vector), all lam |- 6<=n<=20: 2695 shapes OK [2s]
+(f) Aitken determinant == f_skew, all lam |- n<=9, all nu: 5613 checks OK [2s]

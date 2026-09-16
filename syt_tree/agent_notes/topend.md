@@ -538,3 +538,263 @@ explained (and proved infinite) by Theorem F_a; more generally F_a agrees up to 
    d_j for j ≤ 2m only; the pairs F_a suggest studying "upper interval isomorphisms" systematically.
 4. Levels 9 and 10 have no function-level witness for n ≤ 40 although they are new as polynomials; find the first
    witnesses (probably n > 40, as at level 8 the first is n = 40).
+
+
+=========================================================================================================
+=========================================================================================================
+# THIRD PASS (angle `topend`, scripts `src/agents/topend3_*.py`, logs alongside)
+
+This pass (i) re-verifies every PROVED/VERIFIED claim of the second pass with code written from scratch
+(own Murnaghan–Nakayama, own square-root counts, own Aitken determinants, own group-algebra
+multiplication, own rank certificate), (ii) corrects one typo found by that re-verification, and
+(iii) adds new results: closed-form d-vectors of hooks and two-row shapes with a second, formula-based
+proof of Theorem F_a *including its sharpness* (§T3), an elementary proof of Kerov's transition formula
+and the exact criterion for f-equality under a mirror box move together with the refutation of a
+tempting conjecture (§T4), a proved statement about "C_1 = 0 mirror pairs" (§T5), and a scan of all
+partitions of n ≤ 84 which finds the first pair agreeing on the top eight values d_{n-7},…,d_n
+(n = 84, fully verified by exact skew-tableau counts) (§T6). The hard-pair classification of §8.3 is
+recomputed independently for n ≤ 34 (§T7). Everything is exact (Python int / Fraction; C++ only as a
+floating-point *sieve* whose every candidate is re-checked exactly).
+
+Notation as in §0–§8 above. In addition, for a partition ν: X(ν) = multiset of contents of the addable
+corners, Y(ν) = contents of the removable corners; P_X(z) = Π_{x∈X}(z − x), P_Y(z) = Π_{y∈Y}(z − y).
+Unless said otherwise rows/columns are 1-indexed in proofs, the content of box (i,j) is j − i.
+
+## T1. Results of this pass at a glance
+
+| # | statement | status |
+|---|-----------|--------|
+| R | All of A, B, P(Lemma 5.1), Ω (16 polynomials), C, L (h_7…h_10) re-verified with independent code; Corollary B′ contains a typo (see T2) | VERIFIED (ranges in T2) |
+| H,T | Closed forms: d_j(a,1^b) and d_j(p,q) as binomial sums (Lemma H, Lemma T) | PROVED (§T3.1–T3.2); VERIFIED all hooks/two-row shapes n ≤ 30 |
+| F′ | For a ≥ 3, n ≥ 2a−1: d_j(a,1^{n−a}) = d_j(2^{a−1},1^{n−2a+2}) for j ≤ n−2a+2 and **d_{n−2a+3}(a,1^{n−a}) − d_{n−2a+3}(2^{a−1},1^{n−2a+2}) = 1** (sharpness of Theorem F_a) | PROVED (§T3.3); VERIFIED a ≤ 12, n ≤ 150 |
+| K | Kerov's transition formula f^{ν+x}/f^ν = (m+1) Π_{y∈Y}\|x−y\| / Π_{x′∈X∖x}\|x−x′\| with an elementary hook-length proof | PROVED (§T4.1); VERIFIED all ν ⊢ m ≤ 26, all addable x (53 122 checks) |
+| MM | Mirror move λ ↦ μ = λ − (box of content −c) + (box of content c): f^μ = f^λ ⟺ the two Kerov transition probabilities of λ′ = λ − (−c) to λ′+(c) and λ′+(−c) coincide; explicit rational criterion | PROVED (§T4.2) |
+| ¬ | The natural conjecture "f^μ = f^λ ⟺ C_1(λ) = −c" is FALSE in both directions (first counterexamples n = 20 and n = 33) | VERIFIED (§T4.3) |
+| M0 | If λ, μ ⊢ n have the same multiset of \|content\|, C_1(λ) = C_1(μ) = 0 and f^λ = f^μ, then u_i(λ) = u_i(μ) for i ≤ 7; if moreover C_3(λ)² = C_3(μ)², for i ≤ 10 | PROVED (§T5) |
+| S84 | Depth-5 collisions ((n, f, C_2, C_1², C_4) equal, transpose classes distinct) counted for all n ≤ 84; **first depth-7 collision at n = 84**: (19,17,7,4^6,3,2^6,1,1) ~ (19,16,8,8,3^6,2^7,1) with C_1 = 0, r = 7 vs 6, equal d_{n−7..n}, different d_{n−8}; no depth-8 collision for n ≤ 84, hence no function-level witness for levels 9, 10 below n = 85 | VERIFIED (§T6) |
+| FR | In the frame (12, 10, x_3..x_{10}, 2, 1, 1) exactly 64 of the 12 870 inner shapes give an f-preserving mirror move (n up to 98); the resulting pairs are depth-6 collisions with equal r | VERIFIED (§T4.4) |
+| H34 | Classification of §8.3 (only F_3 at depth n−4 for n ≥ 8, etc.) recomputed for n ≤ 34 | VERIFIED (§T7) |
+
+## T2. Independent re-verification (script `topend3_verify.py` → `topend3_verify.log`, `topend3_omega.py` → `topend3_omega.log`, `topend3_levels.py` → `topend3_levels.log`, `topend3_algebra.py`)
+
+Library `topend3_lib.py` (written from scratch, no import from `topend_*`): MN characters by explicit
+border-strip enumeration on the diagram (a border strip = connected skew shape without 2×2 square),
+content moments, σ(ρ) by the closed formula of Lemma 4.1 and by brute force in S_i, Aitken determinants
+(Fractions), u_i from characters and from `census.d_vector`.
+
+* (a) MN sanity: row orthogonality Σ_ρ χ^λ(ρ)χ^μ(ρ)/z_ρ = δ, transpose rule, χ(1^n) = f^λ: all n ≤ 8 (f for n ≤ 10). OK.
+* (b) σ(ρ) formula = brute-force count of square roots in S_i = Σ_{ν⊢i} χ^ν(ρ): all ρ ⊢ i ≤ 8. OK.
+* (c) Theorem B, u_i = Σ_ρ (σ(ρ)/z_ρ) χ^λ(ρ∪1^{n−i}) with χ computed directly by MN on the padded type (not via branching): all λ ⊢ n ≤ 13, i ≤ 10 (3 818 checks). OK.
+* (d) Theorem A (A1)–(A4) via ω_λ(K_ρ) = |K_ρ|χ^λ(ρ)/f^λ from my MN: all λ ⊢ n ≤ 16 (914 shapes). OK.
+* (e) Corollary B′ from the d-vector only, all λ ⊢ n, 6 ≤ n ≤ 20 (2 695 shapes). OK **after correcting a typo in §4**: the
+  printed formula "C_2 = C(n,2) + (n)_3(3u_3 − 2f)/(6f)" must read
+  **C_2 = C(n,2) + (n)_3 (3u_3 − 2f)/(3f)**  (from (A1): C_2 − C(n,2) = ω(K_3) = 2C(n,3)χ(3)/f = (n)_3 χ(3)/(3f)).
+  With 6f the check fails already for λ = (6) (it gives 35 instead of 55). The formulas for C_1² and C_4 are correct as printed;
+  the verification (F) of the second pass checked the identities in the form (3u_3−2f)·2C(n,3) = f·(A1), which is right — only
+  the displayed inversion had the slip.
+* (f) Aitken determinant f^{λ/ν} = m! det[1/(λ_i − ν_j − i + j)!] = `f_skew`: all λ ⊢ n ≤ 9, all ν (5 613 checks). OK.
+* Ω: the 16 polynomials Ω_ρ exactly as printed in §5.4 (parsed from this file into `topend3_omega_from_report.json`)
+  agree with ω_λ(K_ρ) from my MN for all λ ⊢ n ≤ 16 (13 710 checks). Rank certificate recomputed: the evaluation matrix of
+  V_m on all λ ⊢ n ≤ 16 has full rank 7, 26, 75, 187 for m = 2, 4, 6, 8 (mod 2^61−1; full rank mod p implies full rank over Q);
+  for m = 8 the rank on n ≤ 15 is 186, so N = 16 is needed, as stated.
+* Levels: G_i := Σ_ρ̄ σ(ρ̄) I_{i−|ρ̄|} C(n−|ρ̄|, i−|ρ̄|) Ω_ρ̄ rebuilt symbolically for i ≤ 10 (stored in `topend3_G.json`) and checked
+  against (n)_i d_{n−i}/f^λ for all λ ⊢ n ≤ 20, i ≤ 10 (29 569 checks, only `census.d_vector` and contents used). OK.
+  G_3..G_6 ∈ Q[n, C_1², C_2, C_4] (Theorem C) re-confirmed. My own elimination (C_6 → h_7 + 16C_1C_3, C_3² → (h_8 + (8n+164)C_1C_3)/2,
+  C_8 → h_9 + …) reproduces exactly the new parts h_7, h_8, h_9, h_10 of §6.3, and confirms
+  G_i − h_i ∈ Q[n, C_1², C_2, C_4, h_7, …, h_{i−1}] for i = 7, 8, 9, 10 (no monomial with an odd power of C_1 or any C_3, C_5, C_6, C_8 remains).
+* Group algebra: (I1)–(I6) verified in Z[S_n] for 2 ≤ n ≤ 7 by explicit permutation multiplication; Lemma 5.1 on all 11 111
+  sequences of ≤ 4 transpositions on 5 points (`topend3_algebra.py`).
+* Kerov's formula (Lemma K below): exact for all addable corners of all ν ⊢ m ≤ 26 (`topend3_transition.py`).
+
+Conclusion: every claim of §2–§6 stands (with the one typo fixed).
+
+## T3. Closed forms for hooks and two-row shapes; Theorem F_a with sharpness (PROVED)
+
+Convention: C(j,k) = 0 unless 0 ≤ k ≤ j; 1/k! := 0 for k < 0.
+
+**Classical input (stated precisely).**
+(JT) Jacobi–Trudi for skew Schur functions: for partitions ν ⊆ λ with ℓ(λ) ≤ ℓ, s_{λ/ν} = det( h_{λ_i − ν_j − i + j} )_{1≤i,j≤ℓ},
+with h_0 = 1, h_k = 0 for k < 0 (Macdonald, *Symmetric functions and Hall polynomials*, I.(5.4)).
+(EX) The ring homomorphism ex: Λ_Q → Q[t] with ex(p_1) = t, ex(p_k) = 0 (k ≥ 2) (well defined since the p_k are algebraically
+independent generators) satisfies ex(h_k) = t^k/k! (from h_k = Σ_{ρ⊢k} p_ρ/z_ρ, only ρ = 1^k survives, z_{1^k} = k!) and
+ex(s_{λ/ν}) = f^{λ/ν} t^m/m!, m = |λ/ν| (from s_{λ/ν} = Σ_{ρ⊢m} z_ρ^{-1}⟨s_{λ/ν}, p_ρ⟩ p_ρ and ⟨s_{λ/ν}, p_1^m⟩ = ⟨s_λ, s_ν p_1^m⟩ =
+f^{λ/ν} by m applications of Pieri's rule).
+Applying ex to (JT) gives **Aitken's formula**  f^{λ/ν} = m! · det( 1/(λ_i − ν_j − i + j)! )_{1≤i,j≤ℓ}.   (T3.0)
+(Verified against `f_skew` for all λ ⊢ n ≤ 9 and all ν, `topend3_verify.py` (f).)
+
+### T3.1 Lemma H (hooks). Let λ = (a, 1^b), n = a + b, a ≥ 1, b ≥ 0. Then d_n(λ) = f^λ = C(n−1, a−1) and for 0 ≤ j < n
+  d_j(λ) = Σ_{c=1}^{a} [0 ≤ n − j − c ≤ b] · C(j, a − c) = Σ_{e = max(0, a+j−n)}^{min(a−1, j)} C(j, e).
+*Proof.* d_j(λ) = Σ_{ν ⊆ λ, |ν| = n−j} f^{λ/ν}. For j < n, ν ≠ ∅ and the subshapes of a hook are hooks ν = (c, 1^k), 1 ≤ c ≤ a,
+0 ≤ k ≤ b, with c + k = n − j. The skew shape λ/ν consists of the boxes (1, c+1), …, (1, a) (a horizontal segment in row 1,
+columns ≥ 2 since c ≥ 1) and (k+2, 1), …, (b+1, 1) (a vertical segment in column 1, rows ≥ 2). No box of the first segment
+shares a row or a column with a box of the second, so the standard fillings of λ/ν are the interleavings of two chains of
+lengths a − c and b − k: f^{λ/ν} = C(j, a − c). Substituting e = a − c, the condition 0 ≤ n − j − (a − e) ≤ b = n − a becomes
+a + j − n ≤ e ≤ j. For j = n the only ν is ∅ and f^λ = C(n−1, a−1) by the hook length formula (hooks of (a,1^b): n in the corner,
+a−1, …, 1 along the row, b, …, 1 down the column). ∎
+
+### T3.2 Lemma T (two rows). Let λ = (p, q), p ≥ q ≥ 0, n = p + q. For 0 ≤ j ≤ n
+  d_j(λ) = Σ_{q′} [ C(j, p − p′) − C(j, p − q′ + 1) ],   the sum over integers q′ with p′ := n − j − q′, 0 ≤ q′ ≤ q, q′ ≤ p′ ≤ p.
+*Proof.* The subshapes of (p,q) of size n − j are exactly the ν = (p′, q′) with these constraints. By (T3.0) with ℓ = 2,
+f^{λ/ν} = j! [ 1/((p−p′)!(q−q′)!) − 1/((p−q′+1)!(q−p′−1)!) ] = C(j, p−p′) − C(j, p−q′+1), because (p−p′)+(q−q′) = j =
+(p−q′+1)+(q−p′−1) and the convention 1/k! = 0 for k < 0 matches C(j,k) = 0 for k ∉ [0,j]. ∎
+(Both lemmas verified against `census.d_vector` for every hook and every two-row shape with n ≤ 30: `topend3_classC_formulas.log`.)
+
+### T3.3 Theorem F′ (Theorem F_a with sharpness). Let a ≥ 3, n ≥ 2a − 1, λ = (a, 1^{n−a}), μ = (2^{a−1}, 1^{n−2a+2}). Then
+  d_j(λ) = d_j(μ) for 0 ≤ j ≤ n − 2a + 2,   and   d_{n−2a+3}(λ) − d_{n−2a+3}(μ) = 1.
+*Proof.* Since transposition is an automorphism of Young's lattice, d(μ) = d(μ^t) with μ^t = (p, q), p = n − a + 1, q = a − 1
+(p ≥ q as n ≥ 2a − 2). Fix j ≤ n − 2a + 3; note j < n (as a ≥ 2).
+*The shape μ.* In Lemma T the second binomial C(j, p − q′ + 1) is nonzero only if p − q′ + 1 ≤ j, i.e. q′ ≥ n − a + 2 − j; together
+with q′ ≤ a − 1 this needs j ≥ n − 2a + 3, and for j = n − 2a + 3 it forces q′ = a − 1, p′ = n − j − q′ = a − 2 < q′, which violates
+q′ ≤ p′. So for all j ≤ n − 2a + 3 the second binomial vanishes. In the first, p − p′ = j − a + 1 + q′ = j − e with e := a − 1 − q′,
+and C(j, j − e) = C(j, e). The constraints translate to: 0 ≤ q′ ≤ a−1 ⟺ 0 ≤ e ≤ a−1; q′ ≤ p′ ⟺ 2q′ ≤ n − j ⟺ e ≥ a − 1 − (n−j)/2;
+p′ ≤ p ⟺ q′ ≥ a − 1 − j ⟺ e ≤ j. Hence
+  d_j(μ) = Σ_{e = max(0, ⌈a−1−(n−j)/2⌉)}^{min(a−1, j)} C(j, e).                                   (T3.1)
+*The shape λ.* By Lemma H, d_j(λ) = Σ_{e = max(0, a+j−n)}^{min(a−1, j)} C(j, e).                (T3.2)
+*Comparison.* If j ≤ n − 2a + 2 then (n − j)/2 ≥ a − 1, so the lower limit in (T3.1) is 0, and a + j − n ≤ 2 − a ≤ 0, so the lower
+limit in (T3.2) is 0; the upper limits coincide; hence d_j(λ) = d_j(μ). If j = n − 2a + 3 then (n−j)/2 = a − 3/2, so
+⌈a − 1 − (n−j)/2⌉ = ⌈1/2⌉ = 1 in (T3.1), while a + j − n = 3 − a ≤ 0 gives lower limit 0 in (T3.2); the upper limits coincide
+and are ≥ 1 (j ≥ 2, a − 1 ≥ 2). Therefore d_j(λ) − d_j(μ) = C(j, 0) = 1. ∎
+Verified: closed forms for a ≤ 12, n ≤ 150 (1 370 cases), and directly by `census.d_vector` for a ≤ 7, n ≤ 40 (`topend3_classC_formulas.log`).
+For a = 3 this is the hard pair of §8: (3,1^{n−3}) and (2,2,1^{n−4}) agree on d_0..d_{n−4} and differ by exactly 1 in each of
+d_{n−3}, d_{n−2}, d_{n−1}, d_n (the last three by f: C(n−1,2) − n(n−3)/2 = 1). Remark: the second pass proved the agreement by an
+explicit isomorphism of upper intervals (Lemma U); Theorem F′ gives an independent proof and settles the sharpness for all a, n.
+
+## T4. Mirror box moves: Kerov's formula, the exact f-criterion, and a refuted conjecture
+
+### T4.1 Lemma K (Kerov's transition formula; elementary proof). Let ν ⊢ m, X = X(ν), Y = Y(ν), and let x ∈ X be the content
+of an addable corner. Then
+  f^{ν+x} / f^ν = (m+1) · Π_{y∈Y} |x − y| / Π_{x′∈X, x′≠x} |x − x′|.
+*Proof.* Write λ = ν, let the addable corner be the box (i, λ_i + 1), so x = λ_i + 1 − i, and let H(·) denote the product of all
+hook lengths. By the hook length formula f^{ν+x}/f^ν = (m+1)·H(ν)/H(ν+x). Adding the box changes hook lengths only in row i
+(each increases by 1) and in column λ_i + 1 (rows i′ < i; each increases by 1); the new box has hook length 1. So
+  H(ν+x)/H(ν) = [Π_{j=1}^{λ_i} (h_{ij}+1)/h_{ij}] · [Π_{i′<i} (h_{i′, λ_i+1} + 1)/h_{i′, λ_i+1}]  =: R · Cc.
+*Row product R.* For 1 ≤ j ≤ λ_i, h_{ij} = (λ_i − j) + (λ′_j − i) + 1, and λ′_j ≥ i. Let L_1 > … > L_s be the distinct values of
+λ′_j on 1 ≤ j ≤ λ_i, taken on consecutive intervals [j_1^{(t)}, j_2^{(t)}] (j_1^{(1)} = 1, j_2^{(s)} = λ_i). On an interval with
+λ′_j = L, h_{ij} decreases by exactly 1 per step, so the product of (h+1)/h over the interval telescopes to
+(h_{i j_1} + 1)/h_{i j_2} = (λ_i − j_1 + L − i + 2)/(λ_i − j_2 + L − i + 1).
+(a) The box (L, j_2) is a removable corner of ν of content j_2 − L: λ′_{j_2} = L gives λ_L ≥ j_2 > λ_{L+1}; and λ′_{j_2+1} < L
+(for j_2 < λ_i by construction of the intervals; for j_2 = λ_i because (i, λ_i+1) addable means λ′_{λ_i+1} = i − 1 < L), so λ_L < j_2 + 1,
+i.e. λ_L = j_2. Hence h_{i j_2} = (λ_i + 1 − i) − (j_2 − L) = x − y with y = j_2 − L ∈ Y.
+(b) The box (L+1, j_1) is an addable corner of ν of content j_1 − L − 1: λ′_{j_1} = L gives λ_{L+1} ≤ j_1 − 1; if j_1 = 1 then
+L = λ′_1 = ℓ(ν) and (ℓ+1, 1) is addable; if j_1 > 1 then λ′_{j_1−1} = L_{t−1} ≥ L + 1 gives λ_{L+1} ≥ j_1 − 1, so λ_{L+1} = j_1 − 1
+while λ_L ≥ j_1, and (L+1, j_1) is addable. Hence h_{i j_1} + 1 = (λ_i + 1 − i) − (j_1 − L − 1) = x − x′ with x′ = j_1 − L − 1 ∈ X.
+(c) The corners obtained in (a) are exactly the removable corners of ν lying in rows ≥ i: a removable corner (R, λ_R) with R ≥ i has
+λ_R ≤ λ_i and λ′_{λ_R} = R, so R is one of the L_t and (R, λ_R) is the end of its interval; conversely (a). Their contents are
+exactly the y ∈ Y with y < x: for R ≥ i, λ_R − R ≤ λ_i − i < x; for R < i, λ_R − R ≥ λ_i − R > λ_i − i, so λ_R − R ≥ x, and
+λ_R − R = x would force λ_R = λ_i and R = i − 1, contradicting λ_{i−1} > λ_i (x addable). Likewise the corners in (b) are exactly
+the addable corners in rows > i, i.e. the x′ ∈ X with x′ < x (same argument with (L+1, j_1), L + 1 > i; an addable corner in a row
+R′ > i has content ≤ λ_{R′} + 1 − R′ ≤ λ_i + 1 − R′ < x, and those in rows ≤ i other than x have content > x).
+Therefore R = Π_{x′∈X, x′<x} (x − x′) / Π_{y∈Y, y<x} (x − y), all factors positive.
+*Column product Cc.* Transposition maps ν to ν^t, addable/removable corners to addable/removable corners, negates contents and
+preserves hook lengths; the column product for (ν, x) is the row product for (ν^t, −x). Applying the row result to (ν^t, −x)
+and negating back: Cc = Π_{x′∈X, x′>x} (x′ − x) / Π_{y∈Y, y>x} (y − x).
+Multiplying, H(ν+x)/H(ν) = Π_{x′≠x}|x − x′| / Π_{y}|x − y|, which gives the claim. ∎
+(VERIFIED exactly for every addable corner of every ν ⊢ m ≤ 26: 53 122 checks, `topend3_transition.py`.)
+
+### T4.2 Corollary MM (exact criterion for an f-preserving mirror move). Let λ ⊢ n, c ≠ 0, let y_0 be a removable corner of λ
+of content −c and x_0 an addable corner of λ of content c, λ′ := λ − y_0 (n − 1 boxes) and μ := λ′ + x_0. Then x_0 and −c are both
+addable corners of λ′, and with X′ = X(λ′), Y′ = Y(λ′):
+  f^μ / f^λ = [ Π_{y∈Y′}|c − y| · Π_{x∈X′, x≠−c}|−c − x| ] / [ Π_{y∈Y′}|−c − y| · Π_{x∈X′, x≠c}|c − x| ].
+In particular f^μ = f^λ iff the Kerov transition probabilities f^{λ′+(c)}/(n f^{λ′}) and f^{λ′+(−c)}/(n f^{λ′}) coincide.
+*Proof.* Removing y_0 changes the corner structure of λ only at contents −c, −c ± 1 (the box y_0 becomes addable; the addable corners
+at contents −c ± 1, if present, disappear; otherwise removable corners at −c ± 1 appear); since c ∉ {−c, −c ± 1} (c ≠ 0, c ≠ ±1/2),
+x_0 stays addable in λ′. Now λ = λ′ + (−c) and μ = λ′ + (c); apply Lemma K to both and divide. ∎
+Note that the (unequal) sizes of the products are consistent: X′ and Y′ interlace, |X′| = |Y′| + 1.
+
+### T4.3 A tempting conjecture, and why it is false (VERIFIED, `topend3_mirror_test.py`, `topend3_transition.py`)
+All 22 f-preserving mirror pairs found by the second pass (n ≤ 62) and all 64 pairs of the frame of §T4.4 have C_1(λ) = −c, i.e.
+C_1(λ′) = 0 — the exact condition for C_1(λ)² = C_1(μ)². One might conjecture that f^μ = f^λ forces C_1(λ) = −c, or even that the two
+are equivalent. Both directions FAIL:
+* for n ≤ 30, among 20 680 single mirror moves, 676 have f^μ = f^λ and all of these have C_1(λ) = −c; but 52 moves have C_1(λ) = −c and
+  f^μ ≠ f^λ (first: (7,4,3,3,2,1) → (7,3,3,3,3,1), c = −2, n = 20);
+* for n ≤ 40 (178 948 moves) there are 2 192 with f^μ = f^λ, of which 20 have C_1(λ) ≠ −c: the first are
+  (11,7,3,3,2,2,1,1,1,1) → (11,6,3,3,2,2,2,1,1,1) (c = −5, n = 33) and (10,7,4,2,2,2,1,1,1,1,1) → (10,6,4,2,2,2,2,1,1,1,1) (c = −5, n = 34);
+  these are depth-4 collisions (equal n, f, C_2 and all even moments) that are separated by C_1².
+* Equivalently, for ν ⊢ m ≤ 26 with ±c both addable, the sign of f^{ν+(c)} − f^{ν+(−c)} is not correlated with the sign of C_1(ν)
+  (joint counts (±,±): 1395, 1017, 1017, 1395), although for m ≤ 26 every ν with f^{ν+(c)} = f^{ν+(−c)} has C_1(ν) = 0 (228 cases).
+* In the general multi-box setting (`topend3_mirror_test2.py`, n ≤ 36): pairs of distinct transpose classes with the same multiset of
+  |content| and the same f but different C_1² exist from n = 34 on, e.g. (7,5,4,3,3,2,2,2,2,2,1,1) (C_1² = 5929) ~ (9,4,4,3,3,3,2,2,1,1,1,1) (C_1² = 2809).
+So the f-coincidences behind the depth-5 collisions are genuinely Diophantine (Corollary MM is the exact criterion), not a consequence
+of a moment identity.
+
+### T4.4 The frame family (VERIFIED, `topend3_frame.py`)
+For λ = (12, 10, x_3, …, x_{10}, 2, 1, 1) with 2 ≤ x_{10} ≤ … ≤ x_3 ≤ 10 (12 870 inner shapes) and μ = λ − (11,2) + (2,11) (content −9 → +9),
+exactly 64 inner shapes give f^λ = f^μ; they all have C_1(λ) = −9 (of the 244 inner shapes with C_1 = −9), and their sizes run from n = 50 to n = 98.
+They come in quadruples (a,a), (a+1,a), (a+2,a+1), (a+2,a+2) on two consecutive inner rows, i.e. a 2×a block plus one of the four
+self-conjugate partitions ∅, (1), (2,1), (2,2) — a pattern I could not turn into a proof. Since inner shapes are bounded (≤ 8 × 10 boxes)
+this frame yields only finitely many pairs; whether f-preserving mirror moves exist for infinitely many n remains open (see T8).
+Each of these 64 pairs is a pair of non-transpose partitions with equal (n, r, f, C_1², C_2, C_4, all even C_k) and hence equal
+d_n, …, d_{n−6} (Theorems B, C), separated by C_1C_3 (level 7).
+
+## T5. Proposition M0 (C_1 = 0 mirror pairs) — PROVED
+Let λ, μ ⊢ n have the same multiset of absolute contents {|c| : boxes} (so C_k(λ) = C_k(μ) for all even k), C_1(λ) = C_1(μ) = 0 and
+f^λ = f^μ. Then d_{n−i}(λ) = d_{n−i}(μ) for 0 ≤ i ≤ 7. If in addition C_3(λ)² = C_3(μ)², then d_{n−i}(λ) = d_{n−i}(μ) for 0 ≤ i ≤ 10.
+*Proof.* d_{n−i} = f · G_i/(n)_i, where G_i is the polynomial of §6 (PROVED for all n by Theorem P and the rank certificate, both
+re-verified in T2). G_3, …, G_6 ∈ Q[n, C_1², C_2, C_4] take equal values on λ and μ. By the reductions of §6.3 (re-derived in T2),
+G_7 = h_7 + P_7 with P_7 ∈ Q[n, C_1², C_2, C_4] and h_7 = C_6 − 16 C_1 C_3 = C_6 when C_1 = 0; so G_7 agrees. Next
+G_8 − h_8 ∈ Q[n, C_1², C_2, C_4, h_7], h_8 = 2C_3² − (8n+164)C_1C_3 = 2C_3²; G_9 − h_9 ∈ Q[n, C_1², C_2, C_4, h_7, h_8],
+h_9 = C_8 − 24C_1C_5 − (32n − 7720/3)C_1C_3 = C_8; G_10 − h_10 ∈ Q[n, C_1², C_2, C_4, h_7, h_8, h_9], h_10 = C_1·(…) = 0.
+With C_3² equal all of h_8, h_9, h_10 agree, hence G_8, G_9, G_10 agree. ∎
+The pair of §T6 (n = 84) realises the first statement exactly: C_1 = 0 on both sides, u_0..u_7 equal, and C_3 = 8298 vs 1998, so u_8 differs.
+Remark. By transpose symmetry every monomial of every G_i has an even number of odd-index factors C_1, C_3, C_5, … (§5.4); so for
+any pair as in the proposition, u_i(λ) = u_i(μ) for all i up to the first level whose new invariant involves an odd-index moment
+other than through a factor C_1 — the proposition makes this explicit for i ≤ 10.
+
+## T6. Scan of all partitions of n ≤ 84 (C++ sieve `topend3_scan.cpp` → `topend3_scan.log`; exact confirmation `topend3_confirm.py` → `topend3_confirm.log`)
+Method. For every partition of n (26.5 million at n = 84) the sieve computes exactly (int64) C_2, |C_1|, C_4 and a canonical form under
+transposition (boundary word vs. its reverse-complement), and log f in double precision; it prints every pair of distinct classes with
+equal (C_2, C_1², C_4) and |Δ log f| < 10^{−7}. All 745 printed candidates were re-checked exactly (hook length formula, integer
+contents, h_7..h_10 as Fractions); none was a false positive. A depth-5 collision = equal (n, f, u_3, u_4, u_5) ⟺ equal (n, f, C_2, C_1², C_4)
+(Corollary B′); depth 7 adds h_7 (⟺ u_7), depth 8 adds h_8, etc. (§6.3).
+Number of depth-5 collisions (pairs of distinct transpose classes), n = 49..84:
+  49:1, 50:3, 51:3, 52:0, 53:4, 54:3, 55:3, 56:3, 57:3, 58:4, 59:4, 60:10, 61:9, 62:10, 63:12, 64:10, 65:7, 66:12, 67:10, 68:12, 69:14, 70:12,
+  71:15, 72:26, 73:22, 74:26, 75:35, 76:29, 77:38, 78:37, 79:44, 80:37, 81:60, 82:67, 83:48, 84:76   (0 for all n ≤ 48, in agreement with §7.1).
+  Of these, the numbers with equal r: 0,1,1,0,2,1,1,1,1,1,2,4,4,3,4,5,3,5,4,5,5,4,7,9,7,12,12,13,14,14,18,14,23,27,16,28; and all but a
+  handful are "mirror type" (same multiset of |content|): e.g. 72 of the 76 at n = 84.
+**First depth-7 collision: n = 84**,
+  λ = (19,17,7,4,4,4,4,4,4,3,2,2,2,2,2,2,1,1),  μ = (19,16,8,8,3,3,3,3,3,3,2,2,2,2,2,2,2,1),
+  f = 86384602918051307504081758516708367380190599433308800000 (both), r = 7 vs 6, C_1 = 0 (both), C_2 = 6374, C_4 = 1071722,
+  C_6 = 226593074, C_8 = 53672891402 (all equal), C_3 = 8298 vs 1998, C_5 = 2616810 vs 1106910;
+  μ is obtained from λ by removing the boxes of contents 15, −1, −2, −3, −4, −5 and adding boxes of contents −15, 1, 2, 3, 4, 5.
+  Exact, polynomial-free confirmation (`topend3_n84.log`): u_i = Σ_{ν⊢i} f^{λ/ν} by Aitken determinants gives u_0..u_7 equal and
+  u_8 = 1726136931499768128465047611020359558982513947700600000 vs 1726130555962856810446571666506737308888370913944600000.
+  So d_{n−7}, …, d_n agree (eight values) and d_{n−8} differs; as r differs, the key (n, r, f, u_3, u_4, u_5, u_7) still separates.
+Consequences. (i) The top separating depth (§7.1) is ≥ 8 from n = 84 on (3 for n ≤ 13, 4 for n ≤ 27, 5 for n ≤ 48, 7 for n ≤ 83).
+(ii) No depth-8 collision exists for n ≤ 84, so levels 9 and 10 have no function-level witness for n ≤ 84 (a level-i witness is a pair
+agreeing on u_3/f..u_{i−1}/f with equal f, hence a depth-(i−1) collision; extending §6.3: level 7 first at n = 18, level 8 at n = 40,
+levels 9, 10 beyond 84). (iii) The n = 84 pair is exactly of the type of Proposition M0 (C_1 = 0 mirror pair), which predicts agreement
+through u_7 and separation at u_8 because C_3² differs — as observed.
+
+## T7. Hard pairs, recomputed (`topend3_hardpairs.py` → `topend3_hardpairs.log`, n ≤ 34)
+Using only `census.d_vector`: for every n ≤ 34 the pairs of transpose classes agreeing on d_0..d_{n−k}, k = 4, 5, 6, are exactly as
+stated in §8.3: for n ≥ 8 only F_3 = {(3,1^{n−3}), (2,2,1^{n−4})} at depth n−4 (top values (C(n−1,2)−1, C(n−1,2), C(n−1,2), C(n−1,2)) vs
+(…) + 1, as in Theorem F′); at depth n−5 only F_3 for n ≥ 9 (extra at n = 8: (4,1^4) ~ (3,3,2) and (2,2,2,1,1)); at depth n−6 exactly
+F_3 and F_4 = {(4,1^{n−4}), (2,2,2,1^{n−6})} for n ≥ 11, with the sporadic (3,3,2,1,1) ~ (5,2,1,1,1) at n = 10 and (4,1,1,1) ~ (3,2,2) at n = 7.
+(The log lists every group with its differing top values.)
+
+## T8. What this pass adds to the picture, and what stays open
+* A proof of Conjecture B cannot rely on the top alone at any fixed depth: the depth needed is 3, 4, 5, 7, ≥ 8 at n = 14, 28, 49, 84
+  (the last is new), and the mirror mechanism (Prop. 7.2, M0) shows that the even data (n, f, C_1², C_2, C_4, C_6, …) can never suffice;
+  by M0 even the first odd invariant C_1C_3 is blind to C_1 = 0 mirror pairs, which exist (n = 84).
+* Conversely the bottom alone fails on F_a, sharply: Theorem F′ shows d_{n−2a+3} is the first value that sees the difference, and it
+  sees it by exactly 1.
+* Open: (1) infinitude of f-preserving mirror moves (the exact criterion is Corollary MM: equal Kerov transition probabilities of λ′ at ±c;
+  the frame of T4.4 gives 64 pairs up to n = 98 but is finite); (2) infinitude of depth-7 collisions (one example, n = 84); (3) a proof of the
+  classification of T7/§8.3 beyond computation; (4) first witnesses of levels 9, 10 (n > 84).
+
+## T9. Scripts of this pass (all in `src/agents/`)
+| script | content | range |
+|---|---|---|
+| `topend3_lib.py` | own MN (border strips on the diagram), contents, σ (formula + brute force), Aitken determinants, u_i from characters | library |
+| `topend3_verify.py` → `.log` | (a) MN orthogonality/transpose n ≤ 8; (b) σ vs brute force i ≤ 8; (c) Theorem B by direct MN n ≤ 13; (d) Theorem A n ≤ 16; (e) Corollary B′ (corrected) n ≤ 20; (f) Aitken vs f_skew n ≤ 9 | |
+| `topend3_omega.py` → `.log`, `topend3_omega_from_report.json` | the 16 Ω_ρ of §5.4 vs MN, n ≤ 16; rank certificate m = 2,4,6,8 on n ≤ 12,14,15,16 | |
+| `topend3_levels.py` → `.log`, `topend3_G.json` | G_i (i ≤ 10) rebuilt from the Ω's, checked vs d-vectors n ≤ 20; reductions h_7..h_10 re-derived | |
+| `topend3_algebra.py` | (I1)–(I6) in Z[S_n], n ≤ 7; Lemma 5.1 on 5 points, m ≤ 4 | |
+| `topend3_classC_formulas.py` → `.log` | Lemmas H, T vs d_vector (n ≤ 30); Theorem F′ (a ≤ 12, n ≤ 150; and by d_vector a ≤ 7, n ≤ 40) | |
+| `topend3_transition.py` | Lemma K exact for all ν ⊢ m ≤ 26; sign statistics of f^{ν+c} − f^{ν−c} vs C_1(ν) | |
+| `topend3_mirror_test.py` (→ `topend3_mirror_test40.log`), `topend3_mirror_test2.py` (→ `.log`) | single mirror moves n ≤ 40: f-equality vs C_1 = −c; multi-box mirror pairs with equal f but different C_1² (n ≤ 36) | |
+| `topend3_frame.py` | the 64 f-preserving inner shapes of the frame (12,10,·,2,1,1) | |
+| `topend3_scan.cpp` (→ `topend3_scan`, `topend3_scan.log`) | floating sieve for depth-5 collision candidates, all partitions of n ≤ 84 | |
+| `topend3_confirm.py` → `.log` | exact confirmation and depth classification of all candidates; Aitken check of u_6, u_7, u_8 for depth ≥ 7 | |
+| `topend3_n84.log` | full exact data of the n = 84 pair (u_0..u_8 by Aitken) | |
+| `topend3_hardpairs.py` → `.log` | pairs agreeing on d_0..d_{n−k}, k = 4,5,6, n ≤ 34 | |
