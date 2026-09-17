@@ -1,0 +1,4 @@
+n=2: 324 (a,b) pairs tested (a_1<=8, b_1<=8), 0 failures
+n=3: 6600 (a,b) pairs tested (a_1<=9, b_1<=9), 0 failures
+n=4: 5880 (a,b) pairs tested (a_1<=7, b_1<=6), 0 failures
+n=5: 1470 (a,b) pairs tested (a_1<=6, b_1<=4), 0 failures

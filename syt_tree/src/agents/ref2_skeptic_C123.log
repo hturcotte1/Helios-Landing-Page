@@ -1,0 +1,51 @@
+== C1: #const(V_lam x W) vs #const(V_lam x W^*), GL_3, direct decomposition ==
+C1 direct: 3136 (lam,mu) pairs with parts <= 5, failures = 0
+C1 with W = V^{(x)j}, j<=6, lam parts<=5: 336 cases, failures = 0
+C1 with W = V_mu x V_nu (parts<=3), 20 lam: 8000 cases, failures = 0
+== C2: N_j(nu) = N_j(nu*) ==
+C2: nu_1 <= 12, j <= 25: 11830 cases, failures = 0
+N_j(nu) = #const(V_nu x V^j): 100 cases, failures = 0
+== C3 ==
+K= 1 R_K=True reduction(j<=K)=True first_diff=3 reduction breaks at K+1: True
+K= 2 R_K=True reduction(j<=K)=True first_diff=4 reduction breaks at K+1: True
+K= 3 R_K=True reduction(j<=K)=True first_diff=5 reduction breaks at K+1: True
+K= 4 R_K=True reduction(j<=K)=True first_diff=6 reduction breaks at K+1: True
+K= 5 R_K=True reduction(j<=K)=True first_diff=7 reduction breaks at K+1: True
+K= 6 R_K=True reduction(j<=K)=True first_diff=8 reduction breaks at K+1: True
+K= 7 R_K=True reduction(j<=K)=True first_diff=9 reduction breaks at K+1: True
+K= 8 R_K=True reduction(j<=K)=True first_diff=10 reduction breaks at K+1: True
+K= 9 R_K=True reduction(j<=K)=True first_diff=11 reduction breaks at K+1: True
+K=10 R_K=True reduction(j<=K)=True first_diff=12 reduction breaks at K+1: True
+K=11 R_K=True reduction(j<=K)=True first_diff=13 reduction breaks at K+1: True
+K=12 R_K=True reduction(j<=K)=True first_diff=14 reduction breaks at K+1: True
+K=13 R_K=True reduction(j<=K)=True first_diff=15 reduction breaks at K+1: True
+K=14 R_K=True reduction(j<=K)=True first_diff=16 reduction breaks at K+1: True
+K=15 R_K=True reduction(j<=K)=True first_diff=17 reduction breaks at K+1: True
+K=16 R_K=True reduction(j<=K)=True first_diff=18 reduction breaks at K+1: True
+K=17 R_K=True reduction(j<=K)=True first_diff=19 reduction breaks at K+1: True
+K=18 R_K=True reduction(j<=K)=True first_diff=20 reduction breaks at K+1: True
+K=19 R_K=True reduction(j<=K)=True first_diff=21 reduction breaks at K+1: True
+K=20 R_K=True reduction(j<=K)=True first_diff=22 reduction breaks at K+1: True
+K=21 R_K=True reduction(j<=K)=True first_diff=23 reduction breaks at K+1: True
+K=22 R_K=True reduction(j<=K)=True first_diff=24 reduction breaks at K+1: True
+K=23 R_K=True reduction(j<=K)=True first_diff=25 reduction breaks at K+1: True
+K=24 R_K=True reduction(j<=K)=True first_diff=26 reduction breaks at K+1: True
+K=25 R_K=True reduction(j<=K)=True first_diff=27 reduction breaks at K+1: True
+K=26 R_K=True reduction(j<=K)=True first_diff=28 reduction breaks at K+1: True
+K=27 R_K=True reduction(j<=K)=True first_diff=29 reduction breaks at K+1: True
+K=28 R_K=True reduction(j<=K)=True first_diff=30 reduction breaks at K+1: True
+K=29 R_K=True reduction(j<=K)=True first_diff=31 reduction breaks at K+1: True
+K=30 R_K=True reduction(j<=K)=True first_diff=32 reduction breaks at K+1: True
+C3 failures (K<=30): 0
+== H_k ==
+k= 1 n=14 hooks_eq=True f_eq=True C2_eq=True C1: -5,-7  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 2 n=17 hooks_eq=True f_eq=True C2_eq=True C1: -14,-16  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 3 n=20 hooks_eq=True f_eq=True C2_eq=True C1: -26,-28  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 4 n=23 hooks_eq=True f_eq=True C2_eq=True C1: -41,-43  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 5 n=26 hooks_eq=True f_eq=True C2_eq=True C1: -59,-61  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 6 n=29 hooks_eq=True f_eq=True C2_eq=True C1: -80,-82  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 7 n=32 hooks_eq=True f_eq=True C2_eq=True C1: -104,-106  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 8 n=35 hooks_eq=True f_eq=True C2_eq=True C1: -131,-133  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k= 9 n=38 hooks_eq=True f_eq=True C2_eq=True C1: -161,-163  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k=10 n=41 hooks_eq=True f_eq=True C2_eq=True C1: -194,-196  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)
+k=11 n=44 hooks_eq=True f_eq=True C2_eq=True C1: -230,-232  LemmaB(diff)=True LemmaB(full)=True diff idx == {k+4..n-4}: True  (mu != lam^t: True)

@@ -1,0 +1,48 @@
+own chi passes orthogonality n=5,8
+(A) brute force over S_n, n<=8: mismatches=0
+(C) derangement value, n<=20: mismatches=0
+(E) item (iv) Hermite-type expansion, n<=12: mismatches=0
+  (D) n=0 done
+  (D) n=1 done
+  (D) n=2 done
+  (D) n=3 done
+  (D) n=4 done
+  (D) n=5 done
+  (D) n=6 done
+  (D) n=7 done
+  (D) n=8 done
+  (D) n=9 done
+  (D) n=10 done
+  (D) n=11 done
+  (D) n=12 done
+  (D) n=13 done
+  (D) n=14 done
+  (D) n=15 done
+  (D) n=16 done
+  (D) n=17 done
+  (D) n=18 done
+  (D) n=19 done
+  (D) n=20 done
+(D) derangement transform, n<=20: mismatches=0
+  (B) n=0 done (1 shapes so far)
+  (B) n=1 done (2 shapes so far)
+  (B) n=2 done (4 shapes so far)
+  (B) n=3 done (7 shapes so far)
+  (B) n=4 done (12 shapes so far)
+  (B) n=5 done (19 shapes so far)
+  (B) n=6 done (30 shapes so far)
+  (B) n=7 done (45 shapes so far)
+  (B) n=8 done (67 shapes so far)
+  (B) n=9 done (97 shapes so far)
+  (B) n=10 done (139 shapes so far)
+  (B) n=11 done (195 shapes so far)
+  (B) n=12 done (272 shapes so far)
+  (B) n=13 done (373 shapes so far)
+  (B) n=14 done (508 shapes so far)
+  (B) n=15 done (684 shapes so far)
+  (B) n=16 done (915 shapes so far)
+  (B) n=17 done (1212 shapes so far)
+  (B) n=18 done (1597 shapes so far)
+  (B) n=19 done (2087 shapes so far)
+  (B) n=20 done (2714 shapes so far)
+(B) class-sum Theorem S3, all lam |- n<=20: mismatches=0, shapes=2714

@@ -1,0 +1,23 @@
+n=8: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=9: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=10: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=11: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=12: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=13: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=14: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=15: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=16: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=17: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=18: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=19: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=20: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=21: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=22: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=23: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=24: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=25: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=26: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=27: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+n=28: (a),(b),(c) hold; d_{n-7} function of level-5 data: True; d_{n-8} function of level-7 data: True
+first n where d_{n-7} is not a function of (n,f,C2,C1^2,C4): None
+first n where d_{n-8} is not a function of level-7 data: None

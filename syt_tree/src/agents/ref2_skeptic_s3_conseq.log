@@ -1,0 +1,17 @@
+C1 via explicit Schur-polynomial decomposition (W irreducible, lam_1<=5, mu_1<=4): 1960 cases, 0 failures
+C1 for W = V^(x)j, lam_1<=6, j<=5: 504 cases, 0 failures
+C2 chain symmetry nu_1<=10, j<=25: 7436 cases, 0 failures
+N_j((3,0,0)) j<=8: [1, 2, 5, 13, 34, 90, 240, 645, 1745]
+N_j((3,3,0)) j<=8: [1, 2, 5, 13, 34, 90, 240, 645, 1745]
+R_1: d_j equal for j<=K: True; first differing index 3; reduction to N_j: True
+R_2: d_j equal for j<=K: True; first differing index 4; reduction to N_j: True
+R_3: d_j equal for j<=K: True; first differing index 5; reduction to N_j: True
+R_4: d_j equal for j<=K: True; first differing index 6; reduction to N_j: True
+R_5: d_j equal for j<=K: True; first differing index 7; reduction to N_j: True
+R_6: d_j equal for j<=K: True; first differing index 8; reduction to N_j: True
+R_7: d_j equal for j<=K: True; first differing index 9; reduction to N_j: True
+R_8: d_j equal for j<=K: True; first differing index 10; reduction to N_j: True
+R_9: d_j equal for j<=K: True; first differing index 11; reduction to N_j: True
+R_10: d_j equal for j<=K: True; first differing index 12; reduction to N_j: True
+R_11: d_j equal for j<=K: True; first differing index 13; reduction to N_j: True
+K=4, j=4: sum_nu f^{lam/nu} = 34  N_4((3,0,0)) = 34  d_4 = 34

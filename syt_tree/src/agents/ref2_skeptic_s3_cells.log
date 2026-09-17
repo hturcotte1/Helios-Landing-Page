@@ -1,0 +1,16 @@
+|H| = 24 all coefficients in {0,+-1}: True
+max |det| over all 3^9 {0,+-1} 3x3 matrices: 4
+candidate primitive rays (both signs): 300  max |coordinate|: 3 (proof needs <= 4)
+rays in closed region {A,B>=0, p>=q>=0}: 17 [(0, 0, 1, 0), (0, 0, 1, 1), (0, 1, 0, 0), (0, 1, 1, 0), (0, 1, 1, 1), (0, 1, 2, 1), (1, 0, 0, 0), (1, 0, 1, 0), (1, 0, 1, 1), (1, 0, 2, 1), (1, 1, 1, 0), (1, 1, 1, 1), (1, 1, 2, 1), (1, 1, 3, 1), (1, 1, 3, 2), (1, 2, 2, 1), (2, 1, 2, 1)]
+distinct sign vectors from ray sums (superset of cells in region): 162  max |coord| of reps: 10
+box 16: distinct sign vectors: 162  S3 failures: 0  sign-vector/value inconsistencies: 0
+ray-sum cells missing from box: 0  box cells not among ray sums: 0
+S3 on ray-sum representatives: failures 0
+  box 2 realises 19 of 162 cells
+  box 3 realises 48 of 162 cells
+  box 4 realises 84 of 162 cells
+  box 5 realises 120 of 162 cells
+  box 6 realises 144 of 162 cells
+  box 7 realises 156 of 162 cells
+  box 8 realises 162 of 162 cells
+random far points with sign vector not realised in box 16: 0

@@ -1,0 +1,9 @@
+S3 unreduced random test: 200000 samples, failures = 0
+S3 reduced box 16: 39168 points, failures = 0
+S3 reduced box 30: 446400 points, failures = 0
+number of distinct forms in H: 24 all coefficients in {0,+-1}: True
+rank-3 triples -> 300 primitive ray directions, max |entry| = 3 (claim: <= 4)
+distinct cells (sign vectors) met by box-16 points: 162
+cells from sums of <=4 ray directions in region: 162  subset of box16 cells: True
+cells from 300000 random far points: 161  subset of box16 cells: True
+both sides constant on cells over box 24: violations = 0  cells seen: 162

@@ -1,0 +1,6 @@
+box 16: 39168 points, 0 failures
+box 24: 187200 points, 0 failures
+general exhaustive a dec in [-5,5]^3, b in [-5,5]^3: 219615 cases, cumulative failures 0
+random large: cumulative failures 0
+a with ties / unsorted: failures 0 (informational; hypothesis needed if > 0)
+TOTAL failures within hypotheses: 0

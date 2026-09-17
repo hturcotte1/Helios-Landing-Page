@@ -1,0 +1,55 @@
+A: C1 direct (lam in [-3,5]^3 dom, W=V_mu, mu in [-2,4]^3 dom): 13860 cases, 0 failures
+A: C1 with W = mixed tensor products of V, V^*: 63 cases, 0 failures
+B: chain symmetry nu_1 <= 14, j <= 30: 21080 cases, 0 failures
+B: N_j(nu) == #const(V_nu (x) V^j): 64 cases, 0 failures
+C: R_1 holds=True reduction=True first_diff=3 (K+2=3)
+C: R_2 holds=True reduction=True first_diff=4 (K+2=4)
+C: R_3 holds=True reduction=True first_diff=5 (K+2=5)
+C: R_4 holds=True reduction=True first_diff=6 (K+2=6)
+C: R_5 holds=True reduction=True first_diff=7 (K+2=7)
+C: R_6 holds=True reduction=True first_diff=8 (K+2=8)
+C: R_7 holds=True reduction=True first_diff=9 (K+2=9)
+C: R_8 holds=True reduction=True first_diff=10 (K+2=10)
+C: R_9 holds=True reduction=True first_diff=11 (K+2=11)
+C: R_10 holds=True reduction=True first_diff=12 (K+2=12)
+C: R_11 holds=True reduction=True first_diff=13 (K+2=13)
+C: R_12 holds=True reduction=True first_diff=14 (K+2=14)
+C: R_13 holds=True reduction=True first_diff=15 (K+2=15)
+C: R_14 holds=True reduction=True first_diff=16 (K+2=16)
+C: R_15 holds=True reduction=True first_diff=17 (K+2=17)
+C: R_16 holds=True reduction=True first_diff=18 (K+2=18)
+C: R_17 holds=True reduction=True first_diff=19 (K+2=19)
+C: R_18 holds=True reduction=True first_diff=20 (K+2=20)
+C: R_19 holds=True reduction=True first_diff=21 (K+2=21)
+C: R_20 holds=True reduction=True first_diff=22 (K+2=22)
+C: R_21 holds=True reduction=True first_diff=23 (K+2=23)
+C: R_22 holds=True reduction=True first_diff=24 (K+2=24)
+C: R_23 holds=True reduction=True first_diff=25 (K+2=25)
+C: R_24 holds=True reduction=True first_diff=26 (K+2=26)
+C: R_25 holds=True reduction=True first_diff=27 (K+2=27)
+C: R_26 holds=True reduction=True first_diff=28 (K+2=28)
+C: R_27 holds=True reduction=True first_diff=29 (K+2=29)
+C: R_28 holds=True reduction=True first_diff=30 (K+2=30)
+C: R_29 holds=True reduction=True first_diff=31 (K+2=31)
+C: R_30 holds=True reduction=True first_diff=32 (K+2=32)
+D: top-end formulas d_{n-3}, d_{n-4} on all partitions 4 <= n <= 16: 908 shapes, 0 failures
+E: Theorem H(i),(ii) (hook multisets, C_2, C_1 = -(3k^2+9k-2)/2, C_1 diff 2, squares differ) for k <= 40: 0 failures
+F: H_1 n=14 diff idx == {k+4..n-4}: True (first 5, last 10) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_2 n=17 diff idx == {k+4..n-4}: True (first 6, last 13) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_3 n=20 diff idx == {k+4..n-4}: True (first 7, last 16) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_4 n=23 diff idx == {k+4..n-4}: True (first 8, last 19) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_5 n=26 diff idx == {k+4..n-4}: True (first 9, last 22) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_6 n=29 diff idx == {k+4..n-4}: True (first 10, last 25) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_7 n=32 diff idx == {k+4..n-4}: True (first 11, last 28) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_8 n=35 diff idx == {k+4..n-4}: True (first 12, last 31) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_9 n=38 diff idx == {k+4..n-4}: True (first 13, last 34) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_10 n=41 diff idx == {k+4..n-4}: True (first 14, last 37) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_11 n=44 diff idx == {k+4..n-4}: True (first 15, last 40) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_12 n=47 diff idx == {k+4..n-4}: True (first 16, last 43) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_13 n=50 diff idx == {k+4..n-4}: True (first 17, last 46) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+F: H_14 n=53 diff idx == {k+4..n-4}: True (first 18, last 49) LemmaB-application=True d_{n-4} differs=True top4 equal=True
+G: |H| = 24
+G: box 8: cells seen so far 162 (new 162), S3 failures 0
+G: box 16: cells seen so far 162 (new 0), S3 failures 0
+G: box 24: cells seen so far 162 (new 0), S3 failures 0
+G: 200000 random points up to 10^4: new cells 0, S3 failures 0

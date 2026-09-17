@@ -1,0 +1,49 @@
+A: box 16: 39168 points, 0 failures
+A: box 30: 446400 points, 0 failures
+A: random large (un-normalised a,b): failures 0
+A: exhaustive a in [-6,6]^3 strictly decreasing, b in [-4,4]^3 (ties/unsorted): 208494 cases, 0 failures
+B: |H| = 24 [(0, 0, 0, 1), (0, 0, 1, -1), (0, 0, 1, 0), (0, 1, -1, 0), (0, 1, -1, 1), (0, 1, 0, -1), (0, 1, 0, 0), (0, 1, 0, 1), (0, 1, 1, -1), (0, 1, 1, 0), (1, 0, -1, 0), (1, 0, -1, 1), (1, 0, 0, -1), (1, 0, 0, 0), (1, 0, 0, 1), (1, 0, 1, -1), (1, 0, 1, 0), (1, 1, -1, 0), (1, 1, -1, 1), (1, 1, 0, -1), (1, 1, 0, 0), (1, 1, 0, 1), (1, 1, 1, -1), (1, 1, 1, 0)]
+B: candidate rays (both signs): 300, max |coord| = 3 (claimed <= 4)
+B: candidate rays in closed region: 17
+B: cells meeting the region (from ray sums): 162
+B: max |coordinate| of the ray-sum representatives: 8 (claimed <= 16)
+B: sign vectors realised in the box 16: 162
+B: cells missing from box: 0 ; box sign vectors not among cells: 0
+B: S3 failures on cell representatives / constancy violations: 0
+B: box 4 realises 84 of 162 cells
+B: box 6 realises 144 of 162 cells
+B: box 8 realises 162 of 162 cells
+B: box 10 realises 162 of 162 cells
+B: box 12 realises 162 of 162 cells
+B: box 14 realises 162 of 162 cells
+C: chain symmetry nu_1<=10, j<=24: 7150 cases, 0 failures
+D: R_1: holds=True first diff=3 (K+2=3) reduction=True
+D: R_2: holds=True first diff=4 (K+2=4) reduction=True
+D: R_3: holds=True first diff=5 (K+2=5) reduction=True
+D: R_4: holds=True first diff=6 (K+2=6) reduction=True
+D: R_5: holds=True first diff=7 (K+2=7) reduction=True
+D: R_6: holds=True first diff=8 (K+2=8) reduction=True
+D: R_7: holds=True first diff=9 (K+2=9) reduction=True
+D: R_8: holds=True first diff=10 (K+2=10) reduction=True
+D: R_9: holds=True first diff=11 (K+2=11) reduction=True
+D: R_10: holds=True first diff=12 (K+2=12) reduction=True
+D: R_11: holds=True first diff=13 (K+2=13) reduction=True
+D: R_12: holds=True first diff=14 (K+2=14) reduction=True
+D: R_13: holds=True first diff=15 (K+2=15) reduction=True
+D: R_14: holds=True first diff=16 (K+2=16) reduction=True
+D: R_15: holds=True first diff=17 (K+2=17) reduction=True
+D: R_16: holds=True first diff=18 (K+2=18) reduction=True
+D: R_17: holds=True first diff=19 (K+2=19) reduction=True
+D: R_18: holds=True first diff=20 (K+2=20) reduction=True
+D: R_19: holds=True first diff=21 (K+2=21) reduction=True
+D: R_20: holds=True first diff=22 (K+2=22) reduction=True
+D: H_1 n=14 diff idx == {k+4..n-4}: True (first 5 last 10) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -5 -7
+D: H_2 n=17 diff idx == {k+4..n-4}: True (first 6 last 13) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -14 -16
+D: H_3 n=20 diff idx == {k+4..n-4}: True (first 7 last 16) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -26 -28
+D: H_4 n=23 diff idx == {k+4..n-4}: True (first 8 last 19) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -41 -43
+D: H_5 n=26 diff idx == {k+4..n-4}: True (first 9 last 22) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -59 -61
+D: H_6 n=29 diff idx == {k+4..n-4}: True (first 10 last 25) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -80 -82
+D: H_7 n=32 diff idx == {k+4..n-4}: True (first 11 last 28) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -104 -106
+D: H_8 n=35 diff idx == {k+4..n-4}: True (first 12 last 31) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -131 -133
+D: H_9 n=38 diff idx == {k+4..n-4}: True (first 13 last 34) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -161 -163
+D: H_10 n=41 diff idx == {k+4..n-4}: True (first 14 last 37) LemmaB-diff=True LemmaB-abs=True f_eq=True C2_eq=True C1: -194 -196

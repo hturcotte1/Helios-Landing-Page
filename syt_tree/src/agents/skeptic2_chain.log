@@ -1,0 +1,37 @@
+S3 finite check: box 16, 39168 parameter points, 0 failures
+S3 PROVED by finite check: True
+chain symmetry N_j(nu) = N_j(nu*): 3465 cases (nu_1<=8, j<=20), 0 failures
+R_1 holds; first differing index 3 (= K+2: True); reduction to N_j verified
+R_2 holds; first differing index 4 (= K+2: True); reduction to N_j verified
+R_3 holds; first differing index 5 (= K+2: True); reduction to N_j verified
+R_4 holds; first differing index 6 (= K+2: True); reduction to N_j verified
+R_5 holds; first differing index 7 (= K+2: True); reduction to N_j verified
+R_6 holds; first differing index 8 (= K+2: True); reduction to N_j verified
+R_7 holds; first differing index 9 (= K+2: True); reduction to N_j verified
+R_8 holds; first differing index 10 (= K+2: True); reduction to N_j verified
+R_9 holds; first differing index 11 (= K+2: True); reduction to N_j verified
+R_10 holds; first differing index 12 (= K+2: True); reduction to N_j verified
+R_11 holds; first differing index 13 (= K+2: True); reduction to N_j verified
+R_12 holds; first differing index 14 (= K+2: True); reduction to N_j verified
+R_13 holds; first differing index 15 (= K+2: True); reduction to N_j verified
+R_14 holds; first differing index 16 (= K+2: True); reduction to N_j verified
+R_15 holds; first differing index 17 (= K+2: True); reduction to N_j verified
+R_16 holds; first differing index 18 (= K+2: True); reduction to N_j verified
+R_17 holds; first differing index 19 (= K+2: True); reduction to N_j verified
+R_18 holds; first differing index 20 (= K+2: True); reduction to N_j verified
+R_19 holds; first differing index 21 (= K+2: True); reduction to N_j verified
+R_20 holds; first differing index 22 (= K+2: True); reduction to N_j verified
+R_21 holds; first differing index 23 (= K+2: True); reduction to N_j verified
+R_22 holds; first differing index 24 (= K+2: True); reduction to N_j verified
+H_1 n=14: differing indices == {k+4..n-4}: True  (first 5 last 10 ham 6)
+H_2 n=17: differing indices == {k+4..n-4}: True  (first 6 last 13 ham 8)
+H_3 n=20: differing indices == {k+4..n-4}: True  (first 7 last 16 ham 10)
+H_4 n=23: differing indices == {k+4..n-4}: True  (first 8 last 19 ham 12)
+H_5 n=26: differing indices == {k+4..n-4}: True  (first 9 last 22 ham 14)
+H_6 n=29: differing indices == {k+4..n-4}: True  (first 10 last 25 ham 16)
+H_7 n=32: differing indices == {k+4..n-4}: True  (first 11 last 28 ham 18)
+H_8 n=35: differing indices == {k+4..n-4}: True  (first 12 last 31 ham 20)
+H_9 n=38: differing indices == {k+4..n-4}: True  (first 13 last 34 ham 22)
+H_10 n=41: differing indices == {k+4..n-4}: True  (first 14 last 37 ham 24)
+H_11 n=44: differing indices == {k+4..n-4}: True  (first 15 last 40 ham 26)
+H_12 n=47: differing indices == {k+4..n-4}: True  (first 16 last 43 ham 28)

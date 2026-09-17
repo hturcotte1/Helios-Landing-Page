@@ -1,0 +1,3 @@
+box 16: 162
+box 32: 162 new vs box16: 0
+random large: sign vectors 99 new vs box16: 0 ; S3 failures: 0

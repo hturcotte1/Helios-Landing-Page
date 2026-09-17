@@ -1,0 +1,6 @@
+[G] d-vector collisions (all, n<=14) other than transpose pairs: []
+[G] d-vector collisions (<=3 rows, n<=30) other than transpose pairs: []
+
+real	0m0.087s
+user	0m0.082s
+sys	0m0.004s

@@ -1,0 +1,18 @@
+cross-check own chi/dvec vs project, n<=10: mismatches = 0
+(24,) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 228250211305338670494289
+(23, 1) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 23
+(12, 12) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 427456963287933223453228
+(8, 8, 8) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 363064244779755160719506
+(6, 6, 6, 6) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 379102071447342435657036
+(20, 3, 1) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 28531276413167333807442
+(13, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 83968559774160891820718
+(9, 7, 5, 2, 1) S3: True transform: True small deltas: True derangement value: True n!P(-1) = -29819572332992071039872
+(30,) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 97581073836835777732377428235481
+(29, 1) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 29
+(15, 15) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 182745546015255384535075739802645
+(10, 10, 10) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 155216056502018254845396421581090
+(6, 6, 6, 6, 6) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 160715604317864424182053629196410
+(25, 3, 2) S3: True transform: True small deltas: True derangement value: True n!P(-1) = -16263512306139296288724657076375
+(12, 8, 5, 3, 2) S3: True transform: True small deltas: True derangement value: True n!P(-1) = 552508425990918933700666524750
+(16, 7, 4, 2, 1) S3: True transform: True small deltas: True derangement value: True n!P(-1) = -3385352808724691311138625768775
+large-shape mismatches = 0

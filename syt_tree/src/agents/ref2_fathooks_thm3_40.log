@@ -1,0 +1,4 @@
+(A) own recursion vs brute-force filters/linear extensions, n<=9: done, fails so far 0
+(B) inclusion-exclusion + orders of vanishing: fails so far 0
+(C),(D),(E) n<=40: 3917 shapes, balanced = 90, maxread violations = 0; (3.1) at degree x1+x2+1: holds 3113, fails 804
+TOTAL FAILS = 0
