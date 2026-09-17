@@ -1,0 +1,15 @@
+symmetry N_j(u,v)=N_j(v,u) failures: 0  (u,v<=8, j<=24)
+K=1: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=2: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=3: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=4: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=5: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=6: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=7: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=8: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=9: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=10: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=11: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+K=12: d_j(3^K,2,2,2)==N_j(1,4) for j<=K: True; ==N_j(4,1): True; d_j(3^K,1,1,1)==N_j(4,1): True
+N_j(1,4) for j<=10: [1, 2, 5, 13, 34, 90, 240, 645, 1745, 4750, 13001]
+N_j(4,1) for j<=10: [1, 2, 5, 13, 34, 90, 240, 645, 1745, 4750, 13001]

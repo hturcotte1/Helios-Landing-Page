@@ -55,3 +55,4 @@
 - Workflow relaunched at 02:36 UTC for fathooks/structure/skeptic + trimmed referees.
 - Third pass of the top-end agent (appendix in agent_notes/topend.md, cut off by a credit limit but internally complete): Kerov transition formula with elementary proof, exact f-criterion for mirror moves, refuted conjecture, Prop M0, scan to n=84 (first top-8 agreement at n=84; pair re-verified here: equal f, C_1=0, equal even moments, C_3 differs), B' typo (3f not 6f). Incorporated into results.md 4.10.
 - 2026-09-16: launched reduced workflow (fathooks, structure, skeptic + referees for top-end Theorems A, P, F'/K).
+- 2026-09-17: fat-hook and structure angles completed; six top-end referees all HOLDS (one cosmetic slip in the (I6) proof). Re-verified myself: fat-hook closed forms (n ≤ 44), Theorem F (n ≤ 26), Theorem S3 (n ≤ 7), sign thresholds (9 / 16), three-row formula (n ≤ 18). Added results.md 4.11, 4.12. Skeptic angle + remaining referees relaunched.

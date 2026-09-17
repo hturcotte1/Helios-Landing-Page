@@ -1,0 +1,3 @@
+Test 1: 2778 instances of Lemma A checked, failures=0
+Corollary sharpness: histogram of (first differing j) - (J2+1): {0: 180}
+total f-equal solutions: 0

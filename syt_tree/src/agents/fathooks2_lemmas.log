@@ -1,0 +1,4 @@
+[W1,W1',W2,W2',READ: n<=40; BOX: n<=24] 3917 shapes, failures = 0
+Conjecture B among 2-corner shapes, n <= 40: non-transpose collisions = 0
+[S1-S4: all parameter values with n <= 60] 190 (c,d) pairs, failures = 0
+[Theorem F vs all partitions, n <= 30] 861 shapes, failures = 0
