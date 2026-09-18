@@ -1,0 +1,17 @@
+Dear Dr. Worley,
+
+My name is [NAME]. I am writing about Problems 2 and 3 of your notebook of open problems (arXiv:2509.25446); the attached manuscript responds to both.
+
+Conjecture A of Problem 3 is false as stated: at a vertex of shape (3,2,1) one can transpose the subtrees of a single mirror pair of children, a parity invariant shows this is not a limit of compositions of your partial transposes, and we propose these pair transposes as the corrected generators.
+
+Conjecture B is verified for every shape with at most 75 boxes and proved for rectangles, shapes avoiding (3,2,1), two-corner shapes with two unit parameters, and pairs of shapes with at most four rows.
+
+The finite reformulation of the census is Theorem 2.2 of R. P. Stanley, "On the enumeration of skew Young tableaux" (2003).
+
+This work was produced by an AI research session directed and reviewed by humans; every statement is labelled PROVED, COMPUTATIONALLY VERIFIED (with range) or CONJECTURAL, and the code and data are public at [REPO URL], so everything can be rerun.
+
+Corrections are welcome, and I would be glad if you noted this in the next version of the notebook.
+
+Sincerely,
+[NAME]
+[EMAIL]
