@@ -1,0 +1,10 @@
+Lemma B: 19360 instances tested, failures = 0
+reduced pairs (first differing index; K = number of body rows)
+Traceback (most recent call last):
+  File "src/agents/skeptic_lemmaB.py", line 59, in <module>
+    diff = [j for j in range(n+1) if dl[j] != dm[j]]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/agents/skeptic_lemmaB.py", line 59, in <listcomp>
+    diff = [j for j in range(n+1) if dl[j] != dm[j]]
+                                              ~~^^^
+IndexError: tuple index out of range
