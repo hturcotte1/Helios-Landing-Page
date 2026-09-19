@@ -43,8 +43,17 @@ g++ -O2 -std=c++17 -o src/dcensus_modp src/dcensus_modp.cpp && src/dcensus_modp 
 python3 src/automorphism_check.py 5 6 7      # group computations (sympy)
 ```
 
-Requirements: Python 3 with `sympy` and `pytest`; a C++17 compiler for the mod-p scan. `dcensus_scan.py N D` scans all n ≤ N exactly and writes the d-vectors for n ≤ D; `dcensus_modp N p` scans to n = N modulo the prime selected by p (0 for 2^61 − 1, 1 for 2^62 − 57); n = 75 takes a few minutes and about 9 GB of memory. Each scan reports, for every n, the number of distinct vectors and a digest of the whole set, and lists every group of partitions with equal vectors other than {λ} (λ symmetric) or {λ, λ^t}: the Python scan writes them to `data/collisions_python.txt`, the C++ scan prints `COLLISION` lines. No such group occurs for n ≤ 75. The shifted-tree computations are `python3 src/shifted_scan.py census 40 14` (truncated census of all strict partitions of n ≤ 40 to depth 14; `census 60 21` for the n ≤ 60 run), `python3 src/shifted_scan.py identity` and `python3 src/shifted_scan.py fomin` (see the docstring).
+Requirements: Python 3 with `sympy` and `pytest`; a C++17 compiler for the mod-p scan; the `markdown` package for `render_manuscript.py`; pandoc and XeLaTeX to rebuild the PDF. `dcensus_scan.py N D` scans all n ≤ N exactly and writes the d-vectors for n ≤ D; `dcensus_modp N p` scans to n = N modulo the prime selected by p (0 for 2^61 − 1, 1 for 2^62 − 57); n = 75 takes a few minutes and about 9 GB of memory. Each scan reports, for every n, the number of distinct vectors and a digest of the whole set, and lists every group of partitions with equal vectors other than {λ} (λ symmetric) or {λ, λ^t}: the Python scan writes them to `data/collisions_python.txt`, the C++ scan prints `COLLISION` lines. No such group occurs for n ≤ 75. Note that the scans overwrite the committed records in `data/` (`collisions_python.txt`, `dvectors_n*.txt.gz`, `shifted_census_*.txt`) with the output of the run just made, so run them in a copy of the repository or restore the files afterwards with `git checkout -- data`. The shifted-tree computations are `python3 src/shifted_scan.py census 40 14` (truncated census of all strict partitions of n ≤ 40 to depth 14; `census 60 21` for the n ≤ 60 run), `python3 src/shifted_scan.py identity` and `python3 src/shifted_scan.py fomin` (see the docstring).
+
+## Rebuilding the manuscript PDF
+
+`for_worley/manuscript.md` is generated from `results.md` by `python3 for_worley/build_manuscript.py`; the PDF is built from it with
+
+```
+cd for_worley
+pandoc manuscript.md -o manuscript.pdf --pdf-engine=xelatex -V geometry:margin=2.4cm -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -V fontsize=10pt -V colorlinks=true -V linkcolor=blue --toc --toc-depth=3
+```
 
 ## Test suite status
 
-`python3 -m pytest tests -q` (28 tests, run from the repository root): `28 passed in 0.65s`
+`python3 -m pytest tests -q` (28 tests, run from the repository root): `28 passed in 0.74s`

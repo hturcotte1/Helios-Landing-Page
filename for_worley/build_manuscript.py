@@ -4,7 +4,7 @@ The mathematics is frozen.  This script applies (1) an explicit, asserted list o
 substitutions that remove internal artifacts and neutralise provenance wording, (2) mechanical
 formatting: heading identifiers and hyperlinked section cross-references, (3) new front matter
 (title, provenance block, abstract, guide to the reader) and a references list.  Every substitution
-is recorded in REPHRASINGS (printed at the end) so that the diff against results.md is auditable.
+is recorded in REPHRASINGS (printed with --list) so that the diff against results.md is auditable.
 """
 import os, re, sys
 
@@ -212,7 +212,7 @@ REFS = r"""
 
 manuscript = FRONT + LEGEND + body.rstrip() + "\n" + REFS
 open(OUT, "w", encoding="utf-8").write(manuscript)
-print("wrote", OUT, len(manuscript), "bytes;", len(REPHRASINGS), "substitutions applied")
+print("wrote", OUT, len(manuscript.encode("utf-8")), "bytes;", len(REPHRASINGS), "rephrasings and", len(FORMATTING), "formatting substitutions applied")
 if "--list" in sys.argv:
     for old, new in REPHRASINGS:
         print("\nBEFORE:", old, "\nAFTER: ", new)

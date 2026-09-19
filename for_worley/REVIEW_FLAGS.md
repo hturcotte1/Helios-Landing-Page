@@ -52,8 +52,8 @@ humans named in the provenance block before the package is sent.
 
 7. **Placeholders.** `[NAMES]` and `[REPO URL]` in `manuscript.md` (provenance block); `[NAME]`,
    `[REPO URL]`, `[EMAIL]` in `cover_email.txt`; `[NAMES]` in the repository `README.md`. The PDF must be
-   rebuilt after filling them in (the pandoc command is in the final report; the same command
-   with the filled-in `manuscript.md`).
+   rebuilt after filling them in (the pandoc command is in the repository `README.md`, section
+   "Rebuilding the manuscript PDF").
 
 ## Points a reader may raise (no change made)
 
